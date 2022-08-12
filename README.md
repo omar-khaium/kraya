@@ -10,4 +10,6 @@ BASE_URL = "api.kraya.com/v1/stable";
 
 ###### [generate-otp](https://github.com/Omar-Khaium/kraya/blob/main/data/remote/login/generate-otp/README.md)
 
+###### [resend-otp](https://github.com/Omar-Khaium/kraya/blob/main/data/remote/login/resend-otp/README.md)
+
 ###### [verify-otp](https://github.com/Omar-Khaium/kraya/blob/main/data/remote/login/verify-otp/README.md)
