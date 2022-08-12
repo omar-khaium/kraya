@@ -12,7 +12,7 @@ response = {
   "success" : true,   // boolean
   "error" : null,     // null for successive call or string message while encounterning error,
   "result" : {
-    "user-id" : "123456789",    // user's unique id
+    "user-id" : "ADFSASD-ASDFASDF-ASDFASD-ADSA",    // user's guid id or empty if new user
   }
 }
 ```
