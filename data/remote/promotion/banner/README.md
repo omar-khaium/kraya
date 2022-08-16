@@ -11,7 +11,7 @@ response = {
         "url" : String,
         "action" : String,
         "expiresAt" : int,
-      }
-    ], ...
+      }, ...
+    ]
 }
 ```
