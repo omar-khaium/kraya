@@ -29,7 +29,7 @@ response = {
         "available": bool,
         "from": int or null
       },
-      "tenant": int or null
+      "tenant": String or null
   }
 }
 ```
