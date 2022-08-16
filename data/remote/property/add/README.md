@@ -4,6 +4,7 @@ method = Http.POST (MULTI-PART/form-data)
 url = "BASE_URL/property/add"
 
 headers = {
+  "user-id" : String,
   "type" : "Enum -> (residential, commercial)",
   "subType" : "Enum -> (flat, apartment, building)",
   "buildingName" : String,
