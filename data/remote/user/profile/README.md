@@ -4,7 +4,7 @@ method = Http.GET
 url = "BASE_URL/user/profile"
 
 headers = {
-  "user-id" : "user's guid id",
+  "id" : "user's guid id",
 }
 
 response = {
