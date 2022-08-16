@@ -1,5 +1,5 @@
 ```dart
-method = Http.POST (MULTI-PART)
+method = Http.POST (MULTI-PART/form-data)
 
 url = "BASE_URL/registration"
 
@@ -14,7 +14,7 @@ headers = {
 }
 
 body = {
-    File(images/.*) : multi-part image file
+    "profilePicture" : <File(images/.*)>
 }
 
 response = {
