@@ -4,7 +4,7 @@ method = Http.GET
 url = "BASE_URL/user/profile"
 
 headers = {
-  "user-id" : "user's guid id",
+  "id" : "user's guid id",
 }
 
 response = {
@@ -16,7 +16,8 @@ response = {
       "last-name": "doe",
       "email": "john@kraya.com",
       "date-of-birth": 192312312361281236,
-      "gender": 0     // enum based: 0->male, 1->female, 2->non-binary,
+      "gender": 0     // enum based: 0->male, 1->female,
+      "role": 0     // enum based: 0->owner, 1->tenant,
       "profile-picture": "http://.....",
     }
   }
