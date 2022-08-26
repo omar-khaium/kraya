@@ -18,15 +18,15 @@ void main() {
     usecase = GenerateOtpUseCase(repository);
   });
 
-  final phone = "123";
-  final generateOtp = GenerateOtpEntity(phone: "123");
+  const phone = "123";
+  const entity = GenerateOtpEntity(phone: "123");
 
-  test("should get response from login repository", () {
-    when(repository.generateOtp(phone)).thenAnswer((_) async => Right(generateOtp));
+  test("should get response from login repository", () async {
+    when(repository.generateOtp(phone)).thenAnswer((_) async => const Right(entity));
 
-    final result = usecase.execute(phone: phone);
+    final result = await usecase.execute(phone: phone);
 
-    expect(result, Right(generateOtp));
+    expect(result, const Right(entity));
 
     verify(repository.generateOtp(phone));
     verifyNoMoreInteractions(repository);
