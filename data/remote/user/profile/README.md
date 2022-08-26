@@ -9,7 +9,7 @@ headers = {
 
 response = {
   "success" : true,   // boolean
-  "error" : null,     // null for successive call or string message while encounterning error,
+  "error" : null,     // null for successive call or string message while encountering error,
   "result" : {
     "user" : {
       "first-name": "john",
