@@ -16,8 +16,11 @@ response = {
   "error" : null,     // null for successive call or string message while encountering error,
   "result" : [
         {
+            "bill-id": int,
             "property-id": int,
-            "status": enum 
+            "status": PaymentStatus,
+            "amount": int,
+            "payment-date": int or null,
         }
     ]
 }

@@ -1,12 +1,10 @@
 ```dart
 method = Http.GET
 
-url = "BASE_URL/tenant/add-property/get-available-property"
+url = "BASE_URL/tenant/all-properties"
 
 headers = {
-  "keyword" : String,
-  "property-type": Enum, // residential, commercial
-  "property-sub-type": Enum, // shop, office, building
+    "tenant-id" : String
 }
 
 response = {

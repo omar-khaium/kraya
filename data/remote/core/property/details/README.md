@@ -11,6 +11,8 @@ response = {
   "success" : true,   // boolean
   "error" : null,     // null for successive call or string message while encountering error,
   "result" : {    
+      "owner-id": String,
+      "tenant-id": String or null,
       "type" : PropertyType,
       "sub-type" : PropertySubType,
       "building-name" : String,
@@ -29,7 +31,7 @@ response = {
         "available": bool,
         "from": int or null
       },
-      "tenant": String or null
+      "created-at": int
   }
 }
 ```

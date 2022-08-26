@@ -1,7 +1,7 @@
 ```dart
 method = Http.GET
 
-url = "BASE_URL/tenant/add-property/submit"
+url = "BASE_URL/tenant/registration/add-property/submit"
 
 headers = {
   "tenant-id" : String,
