@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 
-class GenerateOtp extends Equatable {
+class GenerateOtpEntity extends Equatable {
   final String phone;
 
-  const GenerateOtp({required this.phone});
+  const GenerateOtpEntity({required this.phone});
 
   @override
   List<Object?> get props => [phone];
