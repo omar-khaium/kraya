@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:kraya/core/usecase/usecase.dart';
 
 import '../../../../core/error/failures.dart';
+import '../../../../core/usecase/usecase.dart';
 import '../entities/generate_otp.dart';
 import '../repositories/login.dart';
 
