@@ -26,7 +26,7 @@ void main() {
   test("should get response from login repository", () async {
     when(mockRepository.generateOtp(phone)).thenAnswer((_) async => const Right(GenerateOtpEntity(phone: phone)));
 
-    final result = await usecase(phone: phone);
+    final result = await usecase(Params(phone: phone));
 
     expect(result, const Right(entity));
 
