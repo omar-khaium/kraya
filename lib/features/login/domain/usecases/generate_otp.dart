@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:kraya/core/error/failures.dart';
-import 'package:kraya/features/login/domain/entities/generate_otp.dart';
-import 'package:kraya/features/login/domain/repositories/login.dart';
+
+import '../../../../core/error/failures.dart';
+import '../entities/generate_otp.dart';
+import '../repositories/login.dart';
 
 class GenerateOtpUseCase {
   final LoginRepository repository;
