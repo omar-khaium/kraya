@@ -12,6 +12,7 @@ response = {
   "error" : null,     // null for successive call or string message while encountering error,
   "result" : {
     "message" : "A 6 digit OTP code is sent to your phone number",
+    "phone" : String,
   }
 }
 ```
