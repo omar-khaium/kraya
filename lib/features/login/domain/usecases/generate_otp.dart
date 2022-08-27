@@ -9,7 +9,7 @@ class GenerateOtpUseCase {
 
   GenerateOtpUseCase(this.repository);
 
-  Future<Either<Failure, GenerateOtpEntity>> execute({required String phone}) async {
+  Future<Either<Failure, GenerateOtpEntity>> call({required String phone}) async {
     return await repository.generateOtp(phone);
   }
 }
