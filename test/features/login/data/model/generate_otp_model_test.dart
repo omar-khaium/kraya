@@ -24,4 +24,13 @@ void main() {
     // assert
     expect(result, generateOtpModel);
   });
+
+  test("should return valid Map<String, dynamic> after calling toJson() method", () {
+    // arrange
+    final result = generateOtpModel.toJson();
+    final expectedMap = {"phone": "123"};
+
+    // assert
+    expect(result, expectedMap);
+  });
 }
