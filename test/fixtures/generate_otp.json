@@ -1,1 +1,8 @@
-{}
+{
+  "success" : true,
+  "error" : null,
+  "result" : {
+    "message" : "A 6 digit OTP code is sent to your phone number",
+    "phone" : "123"
+  }
+}
