@@ -4,7 +4,7 @@ method = Http.POST
 url = "BASE_URL/core/login/resend-otp"
 
 headers = {
-  "phone" : String,   // 11 or 14 digit valid phone number
+  "phone" : String*,   // 11 or 14 digit valid phone number
 }
 
 response = {
@@ -15,3 +15,5 @@ response = {
   }
 }
 ```
+
+* means required

@@ -4,9 +4,9 @@ method = Http.POST
 url = "BASE_URL/owner/payment/notify"
 
 header = {
-    "tenant-id" : String,
-    "property-id" : int,
-    "month" : String
+    "tenant-id" : String*,
+    "property-id" : int*,
+    "month" : String*
 }
 
 response = {
@@ -15,3 +15,4 @@ response = {
   "result" : null
 }
 ```
+* means required

@@ -4,8 +4,8 @@ method = Http.POST (MULTI-PART/form-data)
 url = "BASE_URL/tenant/profile/update"
 
 headers = {
-    "tenant-id" : String,
-    "nid-number" : String,
+    "tenant-id" : String*,
+    "nid-number" : String*,
     "passport-number" : String,
     "email" : String,
     "religion" : Religion,
@@ -25,3 +25,5 @@ response = {
   "result" : null
 }
 ```
+
+* means required

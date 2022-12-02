@@ -4,14 +4,14 @@ method = Http.POST
 url = "BASE_URL/owner/appointment/add"
 
 header = {
-    "owner-id": String,
-    "name": String,
-    "phone": String,
-    "address": String,
-    "latitude": double,
-    "longitude": double,
-    "second-phone": String,
-    "date": int,
+    "owner-id": String*,
+    "name": String*,
+    "phone": String*,
+    "address": String*,
+    "latitude": double*,
+    "longitude": double*,
+    "second-phone": String*,
+    "date": int*,
 }
 
 response = {
@@ -20,3 +20,5 @@ response = {
   "result" : null
 }
 ```
+
+* means required

@@ -4,10 +4,10 @@ method = Http.POST
 url = "BASE_URL/tenant/payment/send-note"
 
 header = {
-    "bill-id" : int,
-    "tenant-id" : String,
-    "property-id" : int,
-    "note" : String,
+    "bill-id" : int*,
+    "tenant-id" : String*,
+    "property-id" : int*,
+    "note" : String*,
 }
 
 response = {
@@ -16,3 +16,5 @@ response = {
   "result" : null,
 }
 ```
+
+* means required

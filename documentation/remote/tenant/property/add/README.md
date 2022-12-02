@@ -4,8 +4,8 @@ method = Http.POST
 url = "BASE_URL/tenant/property/add"
 
 headers = {
-  "tenant-id" : String,
-  "property-id" : int
+  "tenant-id" : String*,
+  "property-id" : int*
 }
 
 response = {
@@ -14,3 +14,5 @@ response = {
   "result" : null
 }
 ```
+
+* means required

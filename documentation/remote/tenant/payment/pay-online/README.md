@@ -4,9 +4,9 @@ method = Http.POST
 url = "BASE_URL/tenant/payment/pay-online"
 
 header = {
-    "tenant-id" : String,
-    "bill-id" : int,
-    "amount" : int
+    "tenant-id" : String*,
+    "bill-id" : int*,
+    "amount" : int*
 }
 
 response = {
@@ -15,3 +15,5 @@ response = {
   "result" : null
 }
 ```
+
+* means required

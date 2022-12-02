@@ -4,9 +4,9 @@ method = Http.GET
 url = "BASE_URL/tenant/finance/overview"
 
 headers = {
-    "tenant-id" : String,
-    "from" : int,
-    "to" : int
+    "tenant-id" : String*,
+    "from" : int*,
+    "to" : int*
 }
 
 response = {
@@ -19,3 +19,5 @@ response = {
   }
 }
 ```
+
+* means required
