@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kraya/login/screen_add_property.dart';
 import 'package:kraya/login/screen_create_account.dart';
 import 'package:kraya/login/screen_login.dart';
 import 'package:kraya/login/screen_new_user_type_selection.dart';
@@ -9,6 +10,7 @@ class AppRouter {
   static const String otpVerification = "/login/otp-verification";
   static const String newUserTypeSelectionScreen = "/login/new-user-type-selection";
   static const String createAccount = "/create-account";
+  static const String addProperty = "/add-property";
   Route onGenerate(RouteSettings settings) {
     switch (settings.name) {
       case login:
@@ -19,6 +21,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const NewUserTypeSelectionScreen());
       case createAccount:
         return MaterialPageRoute(builder: (_) => const CreateAccountScreen());
+      case addProperty:
+        return MaterialPageRoute(builder: (_) => const AddPropertyScreen());
       default:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
     }

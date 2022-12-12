@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:kraya/core/custom_app_bar.dart';
 
 import '../core/app_router.dart';
 import '../core/colors.dart';
-import '../core/custom_app_bar.dart';
 import '../core/gradient_button.dart';
 import '../core/text_button.dart';
 import '../core/text_style.dart';
 
-class CreateAccountScreen extends StatefulWidget {
-  const CreateAccountScreen({super.key});
+class AddPropertyScreen extends StatefulWidget {
+  const AddPropertyScreen({super.key});
 
   @override
-  State<CreateAccountScreen> createState() => _CreateAccountScreenState();
+  State<AddPropertyScreen> createState() => _AddPropertyScreenState();
 }
 
-class _CreateAccountScreenState extends State<CreateAccountScreen> {
+class _AddPropertyScreenState extends State<AddPropertyScreen> {
   final TextEditingController firstName = TextEditingController();
   final TextEditingController lastName = TextEditingController();
   final TextEditingController email = TextEditingController();
@@ -26,8 +26,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
       body: Column(
         children: [
           const CustomAppBar(
-            firstWord: "Create",
-            lastWord: "Account",
+            firstWord: "Add",
+            lastWord: "Property",
           ),
           const SizedBox(height: 16),
           Expanded(
@@ -334,9 +334,7 @@ class AlertAskForAddProperty extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: AlternateButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
+                    onPressed: () {},
                     text: "Skip",
                     hideIcon: true,
                   ),
@@ -345,9 +343,7 @@ class AlertAskForAddProperty extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: GradientButton(
-                    onPressed: () {
-                      Navigator.of(context).popAndPushNamed(AppRouter.addProperty);
-                    },
+                    onPressed: () {},
                     text: "Add property",
                     hideIcon: true,
                     smallText: true,

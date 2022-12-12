@@ -136,7 +136,7 @@ class _NewUserTypeSelectionScreenState extends State<NewUserTypeSelectionScreen>
     return InkWell(
       onTap: () => onTap(),
       child: PhysicalModel(
-        elevation: 4,
+        elevation: 1,
         borderRadius: BorderRadius.circular(8),
         color: selected ? ColorSystem.instance.primary : ColorSystem.instance.card,
         shadowColor: selected ? ColorSystem.instance.primary : ColorSystem.instance.cardDeep,
