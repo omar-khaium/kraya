@@ -8,7 +8,7 @@ class ColorSystem {
   ColorSystem._();
 
   Color get background => Colors.white;
-  Color get card => Colors.grey.shade50;
+  Color get card => Colors.grey.shade100;
   Color get cardDeep => Colors.grey.shade200;
   Color get primary => const Color.fromARGB(255, 85, 148, 241);
   Color get gradientStart => const Color.fromARGB(255, 65, 114, 227);
