@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/login/screen_create_account.dart';
-import 'package:kraya/login/screen_login.dart';
+import 'package:kraya/ui/screen/screen_create_account.dart';
+import 'package:kraya/ui/screen/screen_login.dart';
 import 'package:kraya/login/screen_new_user_type_selection.dart';
-import 'package:kraya/login/screen_otp_verification.dart';
+import 'package:kraya/ui/screen/screen_otp_verification.dart';
 
 class AppRouter {
   static const String login = "/login";

@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/colors.dart';
 import 'package:kraya/core/gradient_button.dart';
+import 'package:kraya/core/text_style.dart';
 import 'package:pinput/pinput.dart';
 
-import '../core/text_style.dart';
-
-class OtpVerificationScreen extends StatefulWidget {
-  const OtpVerificationScreen({super.key});
+class WidgetVerifyOtpForm extends StatefulWidget {
+  WidgetVerifyOtpForm({Key? key}) : super(key: key);
 
   @override
-  State<OtpVerificationScreen> createState() => _OtpVerificationScreenState();
+  State<WidgetVerifyOtpForm> createState() => _WidgetVerifyOtpFormState();
 }
 
-class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
+class _WidgetVerifyOtpFormState extends State<WidgetVerifyOtpForm> {
   final pinController = TextEditingController();
+
   final focusNode = FocusNode();
 
   final defaultPinTheme = PinTheme(
@@ -30,44 +30,6 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorSystem.instance.background,
-      body: Stack(
-        children: [
-          Positioned(
-            top: MediaQuery.of(context).padding.top + 16,
-            left: 16,
-            child: backButton(),
-          ),
-          Center(child: greetings()),
-          Positioned(
-            bottom: 16,
-            left: 16,
-            right: 16,
-            child: form(),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget backButton() {
-    return IconButton(
-      iconSize: 48,
-      splashRadius: 28,
-      splashColor: ColorSystem.instance.cardDeep,
-      onPressed: () => Navigator.of(context).pushReplacementNamed(AppRouter.login),
-      visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
-      padding: EdgeInsets.zero,
-      icon: CircleAvatar(
-        radius: 24,
-        backgroundColor: ColorSystem.instance.primary,
-        child: const Icon(Icons.arrow_back_rounded, color: Colors.white),
-      ),
-    );
-  }
-
-  Widget form() {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -142,28 +104,6 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
             Navigator.of(context).pushReplacementNamed(AppRouter.newUserTypeSelectionScreen);
           },
           text: "Verify",
-        ),
-      ],
-    );
-  }
-
-  Widget greetings() {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        CircleAvatar(
-          backgroundColor: ColorSystem.instance.primary,
-          radius: MediaQuery.of(context).size.shortestSide * .2,
-          child: Icon(Icons.phone_android_rounded, color: Colors.white, size: MediaQuery.of(context).size.shortestSide * .2),
-        ),
-        const SizedBox(height: 16),
-        RichText(
-          text: TextSpan(
-            text: "OTP",
-            style: TextSystem.instance.large(ColorSystem.instance.primary),
-            children: [TextSpan(text: " verification", style: TextSystem.instance.large(ColorSystem.instance.text))],
-          ),
-          textAlign: TextAlign.center,
         ),
       ],
     );

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:kraya/ui/widgets/login/create_account/widget_create_acc_date_of_birth.dart';
+import 'package:kraya/ui/widgets/login/create_account/widget_input_text.dart';
+import 'package:kraya/ui/widgets/login/verify_otp/widget_back_button.dart';
 
-import '../core/app_router.dart';
-import '../core/colors.dart';
-import '../core/text_style.dart';
+import '../../core/app_router.dart';
+import '../../core/colors.dart';
+import '../../core/text_style.dart';
 
 class CreateAccountScreen extends StatefulWidget {
   const CreateAccountScreen({super.key});
@@ -28,7 +31,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                backButton(),
+                const WidgetBackButton(route: AppRouter.newUserTypeSelectionScreen),
                 RichText(
                   text: TextSpan(
                     text: "Create ",
@@ -53,7 +56,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   Row(
                     children: [
                       Expanded(
-                        child: input(
+                        child: WidgetInputText(
                           label: "First name",
                           controller: firstName,
                           icon: Icons.person_outline_rounded,
@@ -62,7 +65,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       ),
                       const SizedBox(width: 16),
                       Expanded(
-                        child: input(
+                        child: WidgetInputText(
                           label: "Last name",
                           controller: lastName,
                           icon: Icons.person_outline_rounded,
@@ -72,7 +75,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     ],
                   ),
                   const SizedBox(height: 24),
-                  input(
+                  WidgetInputText(
                     label: "Email",
                     controller: email,
                     icon: Icons.email_outlined,
@@ -81,7 +84,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   const SizedBox(height: 24),
                   Row(
                     children: [
-                      Expanded(child: dateOfBirth()),
+                      const Expanded(child: WidgetDateOfBirth()),
                       const SizedBox(width: 16),
                       Expanded(child: gender()),
                     ],
@@ -92,62 +95,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
           ),
         ],
       ),
-    );
-  }
-
-  Widget input({required String label, required TextEditingController controller, required IconData icon, required TextInputType type}) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(label, style: TextSystem.instance.small(ColorSystem.instance.hint)),
-        const SizedBox(height: 4),
-        PhysicalModel(
-          elevation: 4,
-          color: ColorSystem.instance.card,
-          shadowColor: ColorSystem.instance.cardDeep,
-          borderRadius: BorderRadius.circular(8),
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          child: TextField(
-            controller: controller,
-            keyboardType: type,
-            decoration: InputDecoration(
-              prefixIcon: Icon(icon, color: ColorSystem.instance.primary),
-              border: InputBorder.none,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget dateOfBirth() {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text("Date of birth", style: TextSystem.instance.small(ColorSystem.instance.hint)),
-        const SizedBox(height: 4),
-        PhysicalModel(
-          elevation: 4,
-          color: ColorSystem.instance.card,
-          shadowColor: ColorSystem.instance.cardDeep,
-          borderRadius: BorderRadius.circular(8),
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          child: Padding(
-            padding: const EdgeInsets.all(12),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.access_time_rounded, color: ColorSystem.instance.primary),
-                const SizedBox(width: 12),
-                Text("Date of birth", style: TextSystem.instance.normal(ColorSystem.instance.text)),
-                Expanded(child: Container()),
-              ],
-            ),
-          ),
-        ),
-      ],
     );
   }
 
@@ -213,21 +160,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
     );
   }
 
-  Widget backButton() {
-    return IconButton(
-      iconSize: 48,
-      splashRadius: 28,
-      splashColor: ColorSystem.instance.cardDeep,
-      onPressed: () => Navigator.of(context).pushReplacementNamed(AppRouter.newUserTypeSelectionScreen),
-      visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
-      padding: EdgeInsets.zero,
-      icon: CircleAvatar(
-        radius: 24,
-        backgroundColor: ColorSystem.instance.primary,
-        child: const Icon(Icons.arrow_back_rounded, color: Colors.white),
-      ),
-    );
-  }
 }
 
 enum _GenderSelection { none, male, female }

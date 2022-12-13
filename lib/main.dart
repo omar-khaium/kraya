@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/colors.dart';
-import 'package:kraya/login/screen_login.dart';
+import 'package:kraya/ui/screen/screen_login.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
