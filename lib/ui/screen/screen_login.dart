@@ -11,7 +11,6 @@ import 'package:kraya/ui/widgets/login/widget_login_form.dart';
 import 'package:kraya/ui/widgets/login/widget_login_gradient.dart';
 import 'package:kraya/ui/widgets/login/widget_login_greetings.dart';
 
-import '../../core/text_style.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
