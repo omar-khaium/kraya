@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kraya/core/colors.dart';
 import 'package:kraya/core/text_style.dart';
 
-class WidgetInputText extends StatefulWidget {
+class WidgetInput extends StatefulWidget {
   final String label;
   final TextEditingController controller;
   final IconData icon;
@@ -10,9 +10,9 @@ class WidgetInputText extends StatefulWidget {
 
 
   @override
-  State<WidgetInputText> createState() => _WidgetInputTextState();
+  State<WidgetInput> createState() => _WidgetInputState();
 
-  const WidgetInputText({super.key,
+  const WidgetInput({super.key,
     required this.label,
     required this.controller,
     required this.icon,
@@ -20,7 +20,7 @@ class WidgetInputText extends StatefulWidget {
   });
 }
 
-class _WidgetInputTextState extends State<WidgetInputText> {
+class _WidgetInputState extends State<WidgetInput> {
   @override
   Widget build(BuildContext context) {
     return Column(
