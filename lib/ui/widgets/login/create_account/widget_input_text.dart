@@ -30,7 +30,7 @@ class _WidgetInputState extends State<WidgetInput> {
         Text(widget.label, style: TextSystem.instance.small(ColorSystem.instance.hint)),
         const SizedBox(height: 4),
         PhysicalModel(
-          elevation: 4,
+          elevation: 2,
           color: ColorSystem.instance.card,
           shadowColor: ColorSystem.instance.cardDeep,
           borderRadius: BorderRadius.circular(8),

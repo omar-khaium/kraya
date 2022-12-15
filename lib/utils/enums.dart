@@ -1,1 +1,0 @@
-enum GenderSelection { none, male, female }

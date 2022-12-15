@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kraya/core/gradient_button.dart';
+import 'package:kraya/login/screen_add_property.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_create_acc_date_of_birth.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_gender.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_input_text.dart';
@@ -123,7 +124,18 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             child: GradientButton(
               hideIcon: false,
               onPressed: () {
-                Navigator.of(context).pushReplacementNamed(AppRouter.newUserTypeSelectionScreen);
+                showModalBottomSheet(
+                  context: context,
+                  backgroundColor: ColorSystem.instance.background,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(24),
+                      topRight: Radius.circular(24),
+                    ),
+                  ),
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  builder: (_) => const AlertAskForAddProperty(),
+                );
               },
               text: "Done",
             ),

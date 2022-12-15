@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/custom_app_bar.dart';
+import 'package:kraya/core/widget_counter.dart';
+import 'package:kraya/core/widget_custom_menu_card.dart';
+import 'package:kraya/core/widget_lable_text.dart';
+import 'package:kraya/ui/widgets/login/create_account/widget_input_text.dart';
 
-import '../core/app_router.dart';
 import '../core/colors.dart';
 import '../core/gradient_button.dart';
 import '../core/text_button.dart';
@@ -15,15 +19,18 @@ class AddPropertyScreen extends StatefulWidget {
 }
 
 class _AddPropertyScreenState extends State<AddPropertyScreen> {
-  final TextEditingController firstName = TextEditingController();
-  final TextEditingController lastName = TextEditingController();
-  final TextEditingController email = TextEditingController();
-  _GenderSelection genderSelection = _GenderSelection.female;
+  final TextEditingController buildingController = TextEditingController();
+  final TextEditingController flatController = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
+  final TextEditingController propertySizeController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorSystem.instance.background,
       body: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const CustomAppBar(
             firstWord: "Add",
@@ -32,48 +39,125 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
           const SizedBox(height: 16),
           Expanded(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const WidgetLabelText(text: "Property type"),
+                  const SizedBox(height: 4),
                   Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Expanded(
-                        child: input(
-                          label: "First name",
-                          controller: firstName,
-                          icon: Icons.person_outline_rounded,
-                          type: TextInputType.name,
+                        flex: 2,
+                        child: WidgetMenuCard(
+                          text: "Residential",
+                          iconData: Icons.home_outlined,
+                          onTap: () {},
                         ),
                       ),
                       const SizedBox(width: 16),
                       Expanded(
-                        child: input(
-                          label: "Last name",
-                          controller: lastName,
-                          icon: Icons.person_outline_rounded,
-                          type: TextInputType.name,
+                        flex: 2,
+                        child: WidgetMenuCard(
+                          text: "Residential",
+                          iconData: Icons.store_outlined,
+                          onTap: () {},
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  const WidgetLabelText(text: "Select one"),
+                  const SizedBox(height: 4),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: WidgetMenuCard(
+                          text: "Flat",
+                          iconData: Icons.home_filled,
+                          onTap: () {},
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        flex: 2,
+                        child: WidgetMenuCard(
+                          text: "Apartment",
+                          iconData: Icons.apartment,
+                          onTap: () {},
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        flex: 2,
+                        child: WidgetMenuCard(
+                          text: "Building",
+                          iconData: Icons.warehouse_outlined,
+                          onTap: () {},
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  WidgetInput(
+                      label: "Building name",
+                      controller: buildingController,
+                      icon: Icons.maps_home_work_outlined,
+                      type: TextInputType.text),
+                  const SizedBox(height: 16),
+                  WidgetInput(
+                      label: "Flat name",
+                      controller: flatController,
+                      icon: Icons.apartment,
+                      type: TextInputType.text),
+                  const SizedBox(height: 16),
+                  WidgetInput(
+                      label: "Address",
+                      controller: flatController,
+                      icon: Icons.location_on_outlined,
+                      type: TextInputType.text),
+                  const SizedBox(height: 16),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: WidgetInput(label: "Property size", controller: propertySizeController, icon: Icons.numbers, type: TextInputType.number,
+
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      const Expanded(
+                        flex: 2,
+                        child: WidgetCounter(
+                          text: "Room",
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 24),
-                  input(
-                    label: "Email",
-                    controller: email,
-                    icon: Icons.email_outlined,
-                    type: TextInputType.emailAddress,
-                  ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 16),
                   Row(
-                    children: [
-                      Expanded(child: dateOfBirth()),
-                      const SizedBox(width: 16),
-                      Expanded(child: gender()),
+                    mainAxisSize: MainAxisSize.min,
+                    children: const [
+                      Expanded(
+                        flex: 2,
+                        child: WidgetCounter(
+                          text: "Bathroom",
+                        ),
+                      ),
+                      SizedBox(width: 8),
+                      Expanded(
+                        flex: 2,
+                        child: WidgetCounter(
+                          text: "Bedroom",
+                        ),
+                      ),
                     ],
                   ),
-                  const SizedBox(height: 24),
-                  profilePicture(),
                 ],
               ),
             ),
@@ -102,205 +186,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
       ),
     );
   }
-
-  Widget input({required String label, required TextEditingController controller, required IconData icon, required TextInputType type}) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(label, style: TextSystem.instance.small(ColorSystem.instance.hint)),
-        const SizedBox(height: 4),
-        PhysicalModel(
-          elevation: 1,
-          color: ColorSystem.instance.card,
-          shadowColor: ColorSystem.instance.cardDeep,
-          borderRadius: BorderRadius.circular(8),
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          child: TextField(
-            controller: controller,
-            keyboardType: type,
-            decoration: InputDecoration(
-              prefixIcon: Icon(icon, color: ColorSystem.instance.primary),
-              border: InputBorder.none,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget dateOfBirth() {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text("Date of birth", style: TextSystem.instance.small(ColorSystem.instance.hint)),
-        const SizedBox(height: 4),
-        PhysicalModel(
-          elevation: 1,
-          color: ColorSystem.instance.card,
-          shadowColor: ColorSystem.instance.cardDeep,
-          borderRadius: BorderRadius.circular(8),
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          child: Padding(
-            padding: const EdgeInsets.all(12),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.access_time_rounded, color: ColorSystem.instance.primary),
-                const SizedBox(width: 12),
-                Text("Date of birth", style: TextSystem.instance.normal(ColorSystem.instance.text)),
-                Expanded(child: Container()),
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget gender() {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text("Gender", style: TextSystem.instance.small(ColorSystem.instance.hint)),
-        const SizedBox(height: 4),
-        PhysicalModel(
-          elevation: 1,
-          color: ColorSystem.instance.card,
-          shadowColor: ColorSystem.instance.cardDeep,
-          borderRadius: BorderRadius.circular(8),
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          child: Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Expanded(
-                  child: PhysicalModel(
-                    color: genderSelection == _GenderSelection.male ? ColorSystem.instance.primary : ColorSystem.instance.card,
-                    borderRadius: BorderRadius.circular(8),
-                    child: InkWell(
-                      onTap: () {
-                        setState(() {
-                          genderSelection = _GenderSelection.male;
-                        });
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 12),
-                        child: Row(
-                          children: [
-                            Icon(Icons.male_rounded,
-                                color: genderSelection == _GenderSelection.male ? ColorSystem.instance.background : ColorSystem.instance.text,
-                                size: 16),
-                            Text(
-                              "Male",
-                              style: TextSystem.instance.small(
-                                  genderSelection == _GenderSelection.male ? ColorSystem.instance.background : ColorSystem.instance.text),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: PhysicalModel(
-                    color: genderSelection == _GenderSelection.female ? ColorSystem.instance.primary : ColorSystem.instance.card,
-                    borderRadius: BorderRadius.circular(8),
-                    child: InkWell(
-                      onTap: () {
-                        setState(() {
-                          genderSelection = _GenderSelection.female;
-                        });
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 12),
-                        child: Row(
-                          children: [
-                            Icon(Icons.female_rounded,
-                                color: genderSelection == _GenderSelection.female ? ColorSystem.instance.background : ColorSystem.instance.text,
-                                size: 16),
-                            Text(
-                              "Female",
-                              style: TextSystem.instance.small(
-                                  genderSelection == _GenderSelection.female ? ColorSystem.instance.background : ColorSystem.instance.text),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget profilePicture() {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text("Profile picture (optional)", style: TextSystem.instance.small(ColorSystem.instance.hint)),
-        const SizedBox(height: 12),
-        Align(
-          alignment: Alignment.center,
-          child: SizedBox(
-            width: 200,
-            height: 200,
-            child: Stack(
-              children: [
-                Positioned(
-                  top: 0,
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  child: PhysicalModel(
-                    elevation: 1,
-                    color: ColorSystem.instance.card,
-                    shadowColor: ColorSystem.instance.cardDeep,
-                    borderRadius: BorderRadius.circular(100),
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    child: Center(
-                        child: Icon(
-                      Icons.person_rounded,
-                      color: ColorSystem.instance.primary,
-                      size: 100,
-                    )),
-                  ),
-                ),
-                Positioned(
-                  bottom: 4,
-                  right: 4,
-                  child: CircleAvatar(
-                    backgroundColor: ColorSystem.instance.primary,
-                    radius: 24,
-                    child: IconButton(
-                      padding: EdgeInsets.zero,
-                      visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.add,
-                        color: ColorSystem.instance.background,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
 }
-
-enum _GenderSelection { none, male, female }
 
 class AlertAskForAddProperty extends StatelessWidget {
   const AlertAskForAddProperty({super.key});
@@ -343,7 +229,9 @@ class AlertAskForAddProperty extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: GradientButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushReplacementNamed(AppRouter.addProperty);
+                    },
                     text: "Add property",
                     hideIcon: true,
                     smallText: true,
