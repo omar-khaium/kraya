@@ -4,7 +4,8 @@ method = Http.GET
 url = "BASE_URL/core/profile"
 
 headers = {
-  "id" : String,      // user's guid id
+  "id" : int,      // user unique id
+  "phone": String, // user phone number, if id is available, ignore phone number, id is not available, phone number is required.
 }
 
 response = {
@@ -12,6 +13,8 @@ response = {
   "error" : null,     // null for successive call or string message while encountering error,
   "result" : {
     "user" : {
+      "id": int,
+      "phone": String;
       "first-name": String,
       "last-name": String,
       "email": String,
