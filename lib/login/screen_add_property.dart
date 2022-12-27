@@ -23,6 +23,8 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
   final TextEditingController flatController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
   final TextEditingController propertySizeController = TextEditingController();
+  final TextEditingController advanceRentController = TextEditingController();
+  final TextEditingController monthlyRentController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +63,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                       Expanded(
                         flex: 2,
                         child: WidgetMenuCard(
-                          text: "Residential",
+                          text: "Commercial",
                           iconData: Icons.store_outlined,
                           onTap: () {},
                         ),
@@ -109,28 +111,24 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                       icon: Icons.maps_home_work_outlined,
                       type: TextInputType.text),
                   const SizedBox(height: 16),
-                  WidgetInput(
-                      label: "Flat name",
-                      controller: flatController,
-                      icon: Icons.apartment,
-                      type: TextInputType.text),
+                  WidgetInput(label: "Flat name", controller: flatController, icon: Icons.apartment, type: TextInputType.text),
                   const SizedBox(height: 16),
                   WidgetInput(
-                      label: "Address",
-                      controller: flatController,
-                      icon: Icons.location_on_outlined,
-                      type: TextInputType.text),
+                      label: "Address", controller: flatController, icon: Icons.location_on_outlined, type: TextInputType.text),
                   const SizedBox(height: 16),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Expanded(
                         flex: 2,
-                        child: WidgetInput(label: "Property size", controller: propertySizeController, icon: Icons.numbers, type: TextInputType.number,
-
+                        child: WidgetInput(
+                          label: "Property size",
+                          controller: propertySizeController,
+                          icon: Icons.numbers,
+                          type: TextInputType.number,
                         ),
                       ),
-                      const SizedBox(width: 8),
+                      const SizedBox(width: 12),
                       const Expanded(
                         flex: 2,
                         child: WidgetCounter(
@@ -149,7 +147,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                           text: "Bathroom",
                         ),
                       ),
-                      SizedBox(width: 8),
+                      SizedBox(width: 12),
                       Expanded(
                         flex: 2,
                         child: WidgetCounter(
@@ -158,6 +156,56 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 16),
+                  Text("Description", style: TextSystem.instance.small(ColorSystem.instance.hint)),
+                  const SizedBox(height: 4),
+                  PhysicalModel(
+                    elevation: 2,
+                    color: ColorSystem.instance.card,
+                    shadowColor: ColorSystem.instance.cardDeep,
+                    borderRadius: BorderRadius.circular(8),
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    child: const TextField(
+                      keyboardType: TextInputType.multiline,
+                      minLines: 3,
+                      maxLines: 5,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text("Picture(optional)", style: TextSystem.instance.small(ColorSystem.instance.hint)),
+                  const SizedBox(height: 4),
+                  GradientButton(
+                    onPressed: () {},
+                    text: "Upload",
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: WidgetInput(
+                            label: "Advance amount",
+                            controller: advanceRentController,
+                            icon: Icons.money,
+                            type: TextInputType.text),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        flex: 2,
+                        child: WidgetInput(
+                            label: "Monthly amount",
+                            controller: monthlyRentController,
+                            icon: Icons.casino_sharp,
+                            type: TextInputType.text),
+                      ),
+                    ],
+                  ),
+
+                  //TODO-----Image upload+residential/commercial switch+date picker
                 ],
               ),
             ),
@@ -165,20 +213,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: GradientButton(
-              onPressed: () {
-                showModalBottomSheet(
-                  context: context,
-                  backgroundColor: ColorSystem.instance.background,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(24),
-                      topRight: Radius.circular(24),
-                    ),
-                  ),
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  builder: (_) => const AlertAskForAddProperty(),
-                );
-              },
+              onPressed: () {},
               text: "Done",
             ),
           ),

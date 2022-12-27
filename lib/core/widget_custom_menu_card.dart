@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kraya/core/colors.dart';
+import 'package:kraya/core/enums.dart';
 import 'package:kraya/core/text_style.dart';
 
-class WidgetMenuCard extends StatelessWidget {
+class WidgetMenuCard extends StatefulWidget {
   final String text;
   final IconData iconData;
   final Function? onTap;
@@ -10,10 +11,16 @@ class WidgetMenuCard extends StatelessWidget {
   const WidgetMenuCard({Key? key, required this.text, required this.iconData, required this.onTap}) : super(key: key);
 
   @override
+  State<WidgetMenuCard> createState() => _WidgetMenuCardState();
+}
+
+class _WidgetMenuCardState extends State<WidgetMenuCard> {
+  PropertySelection propertyType=PropertySelection.residential;
+  @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        onTap!();
+        widget.onTap!();
       },
       child: SizedBox(
         width: MediaQuery.of(context).size.width,
@@ -27,9 +34,9 @@ class WidgetMenuCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(iconData,color: ColorSystem.instance.primary,),
+              Icon(widget.iconData,color: ColorSystem.instance.primary,),
               const SizedBox(height: 4),
-              Text(text,style: TextSystem.instance.small(ColorSystem.instance.primary),)
+              Text(widget.text,style: TextSystem.instance.small(ColorSystem.instance.primary),)
             ],
           ),
         ),
