@@ -1,4 +1,4 @@
 enum LanguageEnum { english, bangla }
 enum GenderSelection { none, male, female }
-enum PropertySelection { residential,commercial }
-enum BuildingType { flat,apartment,building }
+enum PropertySelection { none,residential,commercial }
+enum BuildingTypeSelection { none,flat,apartment,building }

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/custom_app_bar.dart';
+import 'package:kraya/core/enums.dart';
 import 'package:kraya/core/widget_counter.dart';
 import 'package:kraya/core/widget_custom_menu_card.dart';
 import 'package:kraya/core/widget_lable_text.dart';
+import 'package:kraya/core/widget_selection_card.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_input_text.dart';
 
 import '../core/colors.dart';
@@ -25,6 +27,9 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
   final TextEditingController propertySizeController = TextEditingController();
   final TextEditingController advanceRentController = TextEditingController();
   final TextEditingController monthlyRentController = TextEditingController();
+
+  PropertySelection propertySelection = PropertySelection.none;
+  BuildingTypeSelection buildingTypeSelection = BuildingTypeSelection.none;
 
   @override
   Widget build(BuildContext context) {
@@ -53,19 +58,29 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                     children: [
                       Expanded(
                         flex: 2,
-                        child: WidgetMenuCard(
-                          text: "Residential",
-                          iconData: Icons.home_outlined,
-                          onTap: () {},
+                        child: WidgetCardSelection(
+                          label: "Residential",
+                          icon: Icons.apartment_rounded,
+                          selected: propertySelection == PropertySelection.residential,
+                          onTap: () {
+                            setState(() {
+                              propertySelection = PropertySelection.residential;
+                            });
+                          },
                         ),
                       ),
                       const SizedBox(width: 16),
                       Expanded(
                         flex: 2,
-                        child: WidgetMenuCard(
-                          text: "Commercial",
-                          iconData: Icons.store_outlined,
-                          onTap: () {},
+                        child: WidgetCardSelection(
+                          label: "Commercial",
+                          icon: Icons.store_outlined,
+                          selected: propertySelection == PropertySelection.commercial,
+                          onTap: () {
+                            setState(() {
+                              propertySelection = PropertySelection.commercial;
+                            });
+                          },
                         ),
                       )
                     ],
@@ -78,28 +93,43 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                     children: [
                       Expanded(
                         flex: 2,
-                        child: WidgetMenuCard(
-                          text: "Flat",
-                          iconData: Icons.home_filled,
-                          onTap: () {},
+                        child: WidgetCardSelection(
+                          label: "Flat",
+                          icon: Icons.home_filled,
+                          selected: buildingTypeSelection==BuildingTypeSelection.flat,
+                          onTap: () {
+                            setState(() {
+                              buildingTypeSelection=BuildingTypeSelection.flat;
+                            });
+                          },
                         ),
                       ),
                       const SizedBox(width: 8),
                       Expanded(
                         flex: 2,
-                        child: WidgetMenuCard(
-                          text: "Apartment",
-                          iconData: Icons.apartment,
-                          onTap: () {},
+                        child: WidgetCardSelection(
+                          label: "Apartment",
+                          icon: Icons.home_filled,
+                          selected: buildingTypeSelection==BuildingTypeSelection.apartment,
+                          onTap: () {
+                            setState(() {
+                              buildingTypeSelection=BuildingTypeSelection.apartment;
+                            });
+                          },
                         ),
                       ),
                       const SizedBox(width: 8),
                       Expanded(
                         flex: 2,
-                        child: WidgetMenuCard(
-                          text: "Building",
-                          iconData: Icons.warehouse_outlined,
-                          onTap: () {},
+                        child: WidgetCardSelection(
+                          label: "Building",
+                          icon: Icons.warehouse_outlined,
+                          selected: buildingTypeSelection==BuildingTypeSelection.building,
+                          onTap: () {
+                            setState(() {
+                              buildingTypeSelection=BuildingTypeSelection.building;
+                            });
+                          },
                         ),
                       )
                     ],
