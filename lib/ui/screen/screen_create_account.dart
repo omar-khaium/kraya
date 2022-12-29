@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kraya/core/gradient_button.dart';
-import 'package:kraya/login/screen_add_property.dart';
+import 'package:kraya/ui/screen/screen_add_property.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_create_acc_date_of_birth.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_gender.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_input_text.dart';

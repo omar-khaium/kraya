@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../core/app_router.dart';
-import '../core/colors.dart';
-import '../core/text_style.dart';
+import '../../core/app_router.dart';
+import '../../core/colors.dart';
+import '../../core/text_style.dart';
 
 class NewUserTypeSelectionScreen extends StatefulWidget {
   const NewUserTypeSelectionScreen({super.key});
