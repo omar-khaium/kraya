@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:kraya/model/bill.dart';
 import 'package:kraya/ui/screen/screen_add_property.dart';
+import 'package:kraya/ui/screen/screen_confirm_property.dart';
 import 'package:kraya/ui/screen/screen_new_user_type_selection.dart';
 import 'package:kraya/ui/screen/screen_utility_bills.dart';
 
@@ -14,6 +16,7 @@ class AppRouter {
   static const String createAccount = "/create-account";
   static const String addProperty = "/add-property";
   static const String utilityBills = "/utility_bills";
+  static const String confirmProperty = "/confirm_property";
 
   Route onGenerate(RouteSettings settings) {
     switch (settings.name) {
@@ -29,6 +32,12 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const AddPropertyScreen());
       case utilityBills:
         return MaterialPageRoute(builder: (_) => const UtilityBillsScreen());
+      case confirmProperty:
+        final List<Bill> bills = settings.arguments as List<Bill>;
+        return MaterialPageRoute(
+            builder: (_) => ConfirmPropertyScreen(
+                  billsList: bills,
+                ));
       default:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
     }

@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:kraya/core/colors.dart';
 import 'package:kraya/core/text_style.dart';
 
-class WidgetLabelText extends StatelessWidget {
+class WidgetTitleText extends StatelessWidget {
   final String text;
-  final Color colorSystem;
 
-  const WidgetLabelText({Key? key, required this.text,required this.colorSystem}) : super(key: key);
+  const WidgetTitleText({Key? key, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextSystem.instance.small(colorSystem),
+      style: TextSystem.instance.large(ColorSystem.instance.text),
     );
   }
 }

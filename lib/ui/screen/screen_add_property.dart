@@ -51,7 +51,10 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const WidgetLabelText(text: "Property type"),
+                  WidgetLabelText(
+                    text: "Property type",
+                    colorSystem: ColorSystem.instance.hint,
+                  ),
                   const SizedBox(height: 4),
                   Row(
                     mainAxisSize: MainAxisSize.min,
@@ -86,7 +89,10 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  const WidgetLabelText(text: "Select one"),
+                  WidgetLabelText(
+                    text: "Select one",
+                    colorSystem: ColorSystem.instance.hint,
+                  ),
                   const SizedBox(height: 4),
                   Row(
                     mainAxisSize: MainAxisSize.min,
@@ -96,10 +102,10 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                         child: WidgetCardSelection(
                           label: "Flat",
                           icon: Icons.home_filled,
-                          selected: buildingTypeSelection==BuildingTypeSelection.flat,
+                          selected: buildingTypeSelection == BuildingTypeSelection.flat,
                           onTap: () {
                             setState(() {
-                              buildingTypeSelection=BuildingTypeSelection.flat;
+                              buildingTypeSelection = BuildingTypeSelection.flat;
                             });
                           },
                         ),
@@ -110,10 +116,10 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                         child: WidgetCardSelection(
                           label: "Apartment",
                           icon: Icons.home_filled,
-                          selected: buildingTypeSelection==BuildingTypeSelection.apartment,
+                          selected: buildingTypeSelection == BuildingTypeSelection.apartment,
                           onTap: () {
                             setState(() {
-                              buildingTypeSelection=BuildingTypeSelection.apartment;
+                              buildingTypeSelection = BuildingTypeSelection.apartment;
                             });
                           },
                         ),
@@ -124,10 +130,10 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                         child: WidgetCardSelection(
                           label: "Building",
                           icon: Icons.warehouse_outlined,
-                          selected: buildingTypeSelection==BuildingTypeSelection.building,
+                          selected: buildingTypeSelection == BuildingTypeSelection.building,
                           onTap: () {
                             setState(() {
-                              buildingTypeSelection=BuildingTypeSelection.building;
+                              buildingTypeSelection = BuildingTypeSelection.building;
                             });
                           },
                         ),
@@ -141,10 +147,17 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                       icon: Icons.maps_home_work_outlined,
                       type: TextInputType.text),
                   const SizedBox(height: 16),
-                  WidgetInput(label: "Flat name", controller: flatController, icon: Icons.apartment, type: TextInputType.text),
+                  WidgetInput(
+                      label: "Flat name",
+                      controller: flatController,
+                      icon: Icons.apartment,
+                      type: TextInputType.text),
                   const SizedBox(height: 16),
                   WidgetInput(
-                      label: "Address", controller: flatController, icon: Icons.location_on_outlined, type: TextInputType.text),
+                      label: "Address",
+                      controller: flatController,
+                      icon: Icons.location_on_outlined,
+                      type: TextInputType.text),
                   const SizedBox(height: 16),
                   Row(
                     mainAxisSize: MainAxisSize.min,
@@ -205,7 +218,8 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  Text("Picture(optional)", style: TextSystem.instance.small(ColorSystem.instance.hint)),
+                  Text("Picture(optional)",
+                      style: TextSystem.instance.small(ColorSystem.instance.hint)),
                   const SizedBox(height: 4),
                   GradientButton(
                     onPressed: () {},

@@ -1,22 +1,12 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/colors.dart';
 import 'package:kraya/core/custom_app_bar.dart';
-import 'package:kraya/core/enums.dart';
 import 'package:kraya/core/gradient_button.dart';
 import 'package:kraya/core/text_style.dart';
 import 'package:kraya/core/widget_custom_menu_card.dart';
 import 'package:kraya/model/bill.dart';
-import 'package:kraya/ui/widgets/alert_add_bills.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_input_text.dart';
-import 'package:kraya/ui/widgets/login/verify_otp/widget_back_button.dart';
-import 'package:kraya/ui/widgets/login/widget_language_toggle.dart';
-import 'package:kraya/ui/widgets/login/widget_login_form.dart';
-import 'package:kraya/ui/widgets/login/widget_login_gradient.dart';
-import 'package:kraya/ui/widgets/login/widget_login_greetings.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class UtilityBillsScreen extends StatefulWidget {
@@ -45,82 +35,113 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
         children: [
           const CustomAppBar(firstWord: "Add", lastWord: "Bills"),
           Expanded(
-            child: GridView.builder(
-              itemCount: bills.length,
-              physics: const BouncingScrollPhysics(),
-              shrinkWrap: true,
-              padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 24),
-              itemBuilder: (_, index) {
-                final Bill bill = bills[index];
-                return WidgetMenuCard(
-                  text: bill.billName,
-                  iconData: Icons.electric_bolt,
-                  onTap: () {},
-                  amount: bill.amount,
-                );
-              },
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
-                childAspectRatio: (itemWidth / itemHeight),
-              ),
-            ),
-          )
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: ColorSystem.instance.primary,
-        onPressed: () {
-          showModalBottomSheet(
-            context: context,
-            backgroundColor: ColorSystem.instance.background,
-            isScrollControlled: true,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(24),
-                topRight: Radius.circular(24),
-              ),
-            ),
-            clipBehavior: Clip.antiAliasWithSaveLayer,
-            builder: (_) => Padding(
-              padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Align(
-                      child: Text(
-                        "Add Bill",
-                        style: TextSystem.instance.large(ColorSystem.instance.text),
-                      ),
+            child: bills.isEmpty
+                ? Center(
+                    child: Text(
+                      "No bills added yet",
+                      style: TextSystem.instance.small(ColorSystem.instance.text),
                     ),
-                    WidgetInput(
-                        label: "Bill name", controller: billNameController, icon: Icons.badge_outlined, type: TextInputType.text),
-                    WidgetInput(
-                        label: "Amount", controller: billAmountController, icon: MdiIcons.currencyBdt, type: TextInputType.text),
-                    const SizedBox(
-                      height: 24,
+                  )
+                : GridView.builder(
+                    itemCount: bills.length,
+                    physics: const BouncingScrollPhysics(),
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 24),
+                    itemBuilder: (_, index) {
+                      final Bill bill = bills[index];
+                      return WidgetMenuCard(
+                        text: bill.billName,
+                        iconData: Icons.electric_bolt,
+                        onTap: () {},
+                        amount: bill.amount,
+                      );
+                    },
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 16,
+                      mainAxisSpacing: 16,
+                      childAspectRatio: (itemWidth / itemHeight),
                     ),
-                    GradientButton(
-                        onPressed: () {
-                          setState(() {
-                            bills.add(Bill.name(billNameController.text, int.parse(billAmountController.text)));
-                            billNameController.text="";
-                            billAmountController.text="";
-                            Navigator.of(context).pop();
-                          });
-                        },
-                        text: "Submit")
-                  ],
+                  ),
+          ),
+          InkWell(
+            onTap: () {
+              showModalBottomSheet(
+                context: context,
+                backgroundColor: ColorSystem.instance.background,
+                isScrollControlled: true,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(24),
+                    topRight: Radius.circular(24),
+                  ),
+                ),
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                builder: (_) => Padding(
+                  padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Align(
+                          child: Text(
+                            "Add Bill",
+                            style: TextSystem.instance.large(ColorSystem.instance.text),
+                          ),
+                        ),
+                        WidgetInput(
+                            label: "Bill name",
+                            controller: billNameController,
+                            icon: Icons.badge_outlined,
+                            type: TextInputType.text),
+                        WidgetInput(
+                            label: "Amount",
+                            controller: billAmountController,
+                            icon: MdiIcons.currencyBdt,
+                            type: TextInputType.text),
+                        const SizedBox(
+                          height: 24,
+                        ),
+                        GradientButton(
+                            onPressed: () {
+                              setState(() {
+                                bills.add(Bill.name(
+                                    billNameController.text, int.parse(billAmountController.text)));
+                                billNameController.text = "";
+                                billAmountController.text = "";
+                                Navigator.of(context).pop();
+                              });
+                            },
+                            text: "Submit")
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            },
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                decoration: BoxDecoration(
+                    color: ColorSystem.instance.primary, borderRadius: BorderRadius.circular(48)),
+                child: Icon(
+                  Icons.add,
+                  size: 64,
+                  color: ColorSystem.instance.background,
                 ),
               ),
             ),
-          );
-        },
-        child: const Icon(Icons.add),
+          ),
+          GradientButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed(AppRouter.confirmProperty,arguments: bills);
+            },
+            text: "Done",
+          ),
+        ],
       ),
     );
   }

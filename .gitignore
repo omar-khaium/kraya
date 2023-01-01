@@ -48,3 +48,9 @@ app.*.map.json
 pubspec.lock
 pubspec.lock
 pubspec.lock
+/ios/Flutter/flutter_export_environment.sh
+/ios/Flutter/Generated.xcconfig
+/ios/Runner/GeneratedPluginRegistrant.h
+/ios/Runner/GeneratedPluginRegistrant.m
+/macos/Flutter/ephemeral/Flutter-Generated.xcconfig
+/macos/Flutter/ephemeral/flutter_export_environment.sh
