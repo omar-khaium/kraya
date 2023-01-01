@@ -5,7 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:kraya_backend/features/owner/bank-account/data/datasource/remote.dart'
+import 'package:kraya_backend/features/owner/bank_account/data/datasource/remote.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 

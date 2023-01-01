@@ -7,7 +7,7 @@ import 'dart:async' as _i4;
 
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:kraya_backend/core/error/failures.dart' as _i5;
-import 'package:kraya_backend/features/owner/bank-account/domain/repository/registration.dart'
+import 'package:kraya_backend/features/owner/bank_account/domain/repository/registration.dart'
     as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
