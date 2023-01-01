@@ -1,0 +1,25 @@
+{
+    "owner-id": 0,
+    "tenant-id": 0,
+    "type": "",
+    "sub-type": "",
+    "building-name": "",
+    "flat-name": "",
+    "address": "",
+    "size": 0,
+    "room": 0,
+    "bathroom": 0,
+    "balcony": 0,
+    "advance": 0,
+    "rent": 0,
+    "description": "",
+    "pictures": [
+    ],
+    "features": [
+    ],
+    "availability": {
+        "available": true,
+        "from": 946663200000
+    },
+    "created-at": 946663200000
+}

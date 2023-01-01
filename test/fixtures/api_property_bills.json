@@ -1,0 +1,13 @@
+{
+    "success": true,
+    "error": null,
+    "result": {
+        "total": 10,
+        "bills": [
+            {
+                "name": "",
+                "amount": 10
+            }
+        ]
+    }
+}

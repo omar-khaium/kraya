@@ -1,0 +1,17 @@
+{
+    "success": true,
+    "error": null,
+    "result": {
+        "user": {
+            "id": 1,
+            "phone": "",
+            "first-name": "",
+            "last-name": "",
+            "email": "",
+            "date-of-birth": 0,
+            "gender": "",
+            "role": "",
+            "profile-picture": ""
+        }
+    }
+}
