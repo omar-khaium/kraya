@@ -4,7 +4,7 @@ import 'package:dartz/dartz.dart';
 import 'package:kraya_backend/core/error/exceptions.dart';
 import 'package:kraya_backend/core/error/failures.dart';
 import 'package:kraya_backend/core/network/network_info.mocks.dart';
-import 'package:kraya_backend/features/core/bank/data/datasource/bank.mocks.dart';
+import 'package:kraya_backend/features/core/bank/data/datasource/remote.mocks.dart';
 import 'package:kraya_backend/features/core/bank/data/model/bank.dart';
 import 'package:kraya_backend/features/core/bank/data/repository/bank_impl.dart';
 import 'package:mockito/mockito.dart';

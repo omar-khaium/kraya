@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/network/network_info.dart';
-import '../datasource/bank.dart';
+import '../datasource/remote.dart';
 
 import '../../../../../core/error/failures.dart';
 import '../../domain/entity/bank.dart';

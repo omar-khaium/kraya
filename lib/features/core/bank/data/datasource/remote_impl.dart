@@ -5,7 +5,7 @@ import 'package:http/http.dart';
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/network/api_response.dart';
 import '../model/bank.dart';
-import 'bank.dart';
+import 'remote.dart';
 
 class BankRemoteDataSourceImpl extends BankRemoteDataSource {
   final Client client;
