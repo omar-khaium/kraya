@@ -2,7 +2,7 @@ import 'package:mockito/annotations.dart';
 
 @GenerateNiceMocks([MockSpec<OwnerBankAccountRemoteDataSource>()])
 abstract class OwnerBankAccountRemoteDataSource {
-  Future<bool> submit({
+  Future<bool> add({
     required int ownerId,
     required int bankId,
     required String name,

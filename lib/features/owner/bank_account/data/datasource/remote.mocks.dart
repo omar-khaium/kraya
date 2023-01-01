@@ -5,8 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:kraya_backend/features/owner/bank_account/data/datasource/remote.dart'
-    as _i2;
+import 'package:kraya_backend/features/owner/bank_account/data/datasource/remote.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -23,10 +22,9 @@ import 'package:mockito/mockito.dart' as _i1;
 /// A class which mocks [OwnerBankAccountRemoteDataSource].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockOwnerBankAccountRemoteDataSource extends _i1.Mock
-    implements _i2.OwnerBankAccountRemoteDataSource {
+class MockOwnerBankAccountRemoteDataSource extends _i1.Mock implements _i2.OwnerBankAccountRemoteDataSource {
   @override
-  _i3.Future<bool> submit({
+  _i3.Future<bool> add({
     required int? ownerId,
     required int? bankId,
     required String? name,

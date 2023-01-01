@@ -16,7 +16,7 @@ class OwnerBankAccountRepositoryImpl extends OwnerBankAccountRepository {
 
   OwnerBankAccountRepositoryImpl({required this.remoteDataSource, required this.networkInfo});
   @override
-  Future<Either<Failure, bool>> submit({
+  Future<Either<Failure, bool>> add({
     required int ownerId,
     required int bankId,
     required String name,
@@ -24,7 +24,7 @@ class OwnerBankAccountRepositoryImpl extends OwnerBankAccountRepository {
     required String branch,
   }) async {
     if (await networkInfo.online) {
-      final result = await remoteDataSource.submit(
+      final result = await remoteDataSource.add(
         ownerId: ownerId,
         bankId: bankId,
         name: name,

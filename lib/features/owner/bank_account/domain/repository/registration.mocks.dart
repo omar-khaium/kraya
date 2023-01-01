@@ -7,8 +7,7 @@ import 'dart:async' as _i4;
 
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:kraya_backend/core/error/failures.dart' as _i5;
-import 'package:kraya_backend/features/owner/bank_account/domain/repository/registration.dart'
-    as _i3;
+import 'package:kraya_backend/features/owner/bank_account/domain/repository/registration.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -35,10 +34,9 @@ class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
 /// A class which mocks [OwnerBankAccountRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockOwnerBankAccountRepository extends _i1.Mock
-    implements _i3.OwnerBankAccountRepository {
+class MockOwnerBankAccountRepository extends _i1.Mock implements _i3.OwnerBankAccountRepository {
   @override
-  _i4.Future<_i2.Either<_i5.Failure, bool>> submit({
+  _i4.Future<_i2.Either<_i5.Failure, bool>> add({
     required int? ownerId,
     required int? bankId,
     required String? name,
@@ -57,8 +55,7 @@ class MockOwnerBankAccountRepository extends _i1.Mock
             #branch: branch,
           },
         ),
-        returnValue: _i4.Future<_i2.Either<_i5.Failure, bool>>.value(
-            _FakeEither_0<_i5.Failure, bool>(
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, bool>>.value(_FakeEither_0<_i5.Failure, bool>(
           this,
           Invocation.method(
             #submit,
@@ -72,9 +69,7 @@ class MockOwnerBankAccountRepository extends _i1.Mock
             },
           ),
         )),
-        returnValueForMissingStub:
-            _i4.Future<_i2.Either<_i5.Failure, bool>>.value(
-                _FakeEither_0<_i5.Failure, bool>(
+        returnValueForMissingStub: _i4.Future<_i2.Either<_i5.Failure, bool>>.value(_FakeEither_0<_i5.Failure, bool>(
           this,
           Invocation.method(
             #submit,

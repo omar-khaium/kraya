@@ -16,7 +16,7 @@ class RegistrationRemoteDataSourceImpl extends OwnerBankAccountRemoteDataSource 
 
   RegistrationRemoteDataSourceImpl({required this.multipartRequest});
   @override
-  Future<bool> submit({
+  Future<bool> add({
     required int ownerId,
     required int bankId,
     required String name,

@@ -11,7 +11,7 @@ class AddOwnerBankAccountUsecase extends Usecase<bool, AddOwnerBankAccountParams
 
   @override
   Future<Either<Failure, bool>> call(param) async {
-    return await _repository.submit(
+    return await _repository.add(
       ownerId: param.ownerId,
       bankId: param.bankId,
       name: param.name,
