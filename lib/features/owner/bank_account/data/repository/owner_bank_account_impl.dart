@@ -1,13 +1,9 @@
 import '../../../../../core/error/failures.dart';
 
-import '../../../../../core/enum/enums.dart';
-
 import 'package:dartz/dartz.dart';
 
-import 'dart:io';
-
 import '../../../../../core/network/network_info.dart';
-import '../../domain/repository/registration.dart';
+import '../../domain/repository/bank_account.dart';
 import '../datasource/remote.dart';
 
 class OwnerBankAccountRepositoryImpl extends OwnerBankAccountRepository {

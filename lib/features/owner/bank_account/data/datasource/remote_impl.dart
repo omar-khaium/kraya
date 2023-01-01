@@ -11,10 +11,10 @@ import 'remote.dart';
 import '../../../../../core/network/api_response.dart';
 
 @GenerateNiceMocks([MockSpec<MultipartRequest>()])
-class RegistrationRemoteDataSourceImpl extends OwnerBankAccountRemoteDataSource {
+class OwnerBankAccountRemoteDataSourceImpl extends OwnerBankAccountRemoteDataSource {
   final MultipartRequest multipartRequest;
 
-  RegistrationRemoteDataSourceImpl({required this.multipartRequest});
+  OwnerBankAccountRemoteDataSourceImpl({required this.multipartRequest});
   @override
   Future<bool> add({
     required int ownerId,
