@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kraya/core/colors.dart';
 import 'package:kraya/core/custom_app_bar.dart';
 import 'package:kraya/core/gradient_button.dart';
+import 'package:kraya/core/text_style.dart';
 import 'package:kraya/core/widget_lable_text.dart';
 import 'package:kraya/core/widget_title_text.dart';
 import 'package:kraya/model/bill.dart';
@@ -133,32 +134,50 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
                 const SizedBox(height: 16),
                 WidgetLabelText(text: "Bills", colorSystem: ColorSystem.instance.text),
                 const SizedBox(height: 8),
-                 Expanded(
-                   child: GridView.builder(
-                     itemCount: widget.billsList.length,
-                     physics: const BouncingScrollPhysics(),
-                     shrinkWrap: true,
-                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                     itemBuilder: (_, index) {
-                       final Bill bill = widget.billsList[index];
-                       return WidgetConfirmPropertyBillsCard(
-                         text: bill.billName,
-                         iconData: Icons.electric_bolt,
-                         onTap: () {},
-                         amount: bill.amount,
-                       );
-                     },
-                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                       crossAxisCount: 2,
-                       crossAxisSpacing: 16,
-                       mainAxisSpacing: 16,
-                       childAspectRatio: (itemWidth / itemHeight),
-                     ),
-                   ),
-                 )
+                Expanded(
+                  child: GridView.builder(
+                    itemCount: widget.billsList.length,
+                    physics: const BouncingScrollPhysics(),
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                    itemBuilder: (_, index) {
+                      final Bill bill = widget.billsList[index];
+                      return WidgetConfirmPropertyBillsCard(
+                        text: bill.billName,
+                        iconData: Icons.electric_bolt,
+                        onTap: () {},
+                        amount: bill.amount,
+                      );
+                    },
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 16,
+                      mainAxisSpacing: 16,
+                      childAspectRatio: (itemWidth / itemHeight),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: PhysicalModel(
+              color: ColorSystem.instance.card,
+              borderRadius: BorderRadius.circular(8),
+              elevation: 5,
+              child: ListTile(
+                dense: true,
+                visualDensity: VisualDensity.comfortable,
+                leading:  Icon(Icons.person,color: ColorSystem.instance.primary,),
+                title: Text(
+                  "Add varatia profile",
+                  style: TextSystem.instance.normal(ColorSystem.instance.primary),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height:16),
           GradientButton(
             onPressed: () {},
             text: "Done",
