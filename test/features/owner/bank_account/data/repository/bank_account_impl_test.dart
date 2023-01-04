@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:kraya_backend/core/error/failures.dart';
 import 'package:kraya_backend/core/network/network_info.mocks.dart';
 import 'package:kraya_backend/features/owner/bank_account/data/datasource/remote.mocks.dart';
-import 'package:kraya_backend/features/owner/bank_account/data/repository/owner_bank_account_impl.dart';
+import 'package:kraya_backend/features/owner/bank_account/data/repository/bank_account_impl.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
