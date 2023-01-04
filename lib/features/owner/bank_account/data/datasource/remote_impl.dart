@@ -1,10 +1,8 @@
 import 'dart:io';
 
 import 'package:http/http.dart';
-import '../../../../../core/enum/parser.dart';
 import '../../../../../core/error/exceptions.dart';
 import 'package:mockito/annotations.dart';
-import '../../../../../core/enum/enums.dart';
 
 import 'remote.dart';
 

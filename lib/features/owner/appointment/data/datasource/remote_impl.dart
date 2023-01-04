@@ -1,20 +1,18 @@
 import 'dart:io';
 
 import 'package:http/http.dart';
-import '../../../../../core/enum/parser.dart';
 import '../../../../../core/error/exceptions.dart';
 import 'package:mockito/annotations.dart';
-import '../../../../../core/enum/enums.dart';
 
 import 'remote.dart';
 
 import '../../../../../core/network/api_response.dart';
 
 @GenerateNiceMocks([MockSpec<MultipartRequest>()])
-class OwnerBankAccountRemoteDataSourceImpl extends OwnerAppointmentRemoteDataSource {
+class OwnerAppointmentRemoteDataSourceImpl extends OwnerAppointmentRemoteDataSource {
   final MultipartRequest multipartRequest;
 
-  OwnerBankAccountRemoteDataSourceImpl({required this.multipartRequest});
+  OwnerAppointmentRemoteDataSourceImpl({required this.multipartRequest});
   
   @override
   Future<bool> add({required int ownerId, required String name, required String phone, required String? secondPhone, required String address, required double latitude, required double longitude, required DateTime date}) async {
