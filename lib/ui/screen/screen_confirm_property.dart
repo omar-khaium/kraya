@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/colors.dart';
 import 'package:kraya/core/custom_app_bar.dart';
 import 'package:kraya/core/gradient_button.dart';
@@ -179,7 +180,9 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
           ),
           const SizedBox(height:16),
           GradientButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed(AppRouter.dashboard);
+            },
             text: "Done",
           ),
         ],
