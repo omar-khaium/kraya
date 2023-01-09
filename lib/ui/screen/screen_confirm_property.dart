@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/colors.dart';
@@ -8,7 +7,7 @@ import 'package:kraya/core/text_style.dart';
 import 'package:kraya/core/widget_lable_text.dart';
 import 'package:kraya/core/widget_title_text.dart';
 import 'package:kraya/model/bill.dart';
-import 'package:kraya/ui/widgets/confirm_property/widget_cofirm_propert_bills_card.dart';
+import 'package:kraya/ui/widgets/confirm_property/widget_confirm_property_bills_card.dart';
 import 'package:kraya/ui/widgets/confirm_property/widget_confirm_property_rent_menu_card.dart';
 
 class ConfirmPropertyScreen extends StatefulWidget {
@@ -39,8 +38,7 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
               padding: const EdgeInsets.all(16),
               children: [
                 Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8), color: ColorSystem.instance.card),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: ColorSystem.instance.card),
                   width: MediaQuery.of(context).size.width,
                   height: 200,
                 ),
@@ -136,28 +134,35 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
                 WidgetLabelText(text: "Bills", colorSystem: ColorSystem.instance.text),
                 const SizedBox(height: 8),
                 Expanded(
-                  child: GridView.builder(
-                    itemCount: widget.billsList.length,
-                    physics: const BouncingScrollPhysics(),
-                    shrinkWrap: true,
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                    itemBuilder: (_, index) {
-                      final Bill bill = widget.billsList[index];
-                      return WidgetConfirmPropertyBillsCard(
-                        text: bill.billName,
-                        iconData: Icons.electric_bolt,
-                        onTap: () {},
-                        amount: bill.amount,
-                      );
-                    },
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 16,
-                      mainAxisSpacing: 16,
-                      childAspectRatio: (itemWidth / itemHeight),
-                    ),
-                  ),
-                ),
+                  child: widget.billsList.isEmpty
+                      ? Center(
+                          child: WidgetLabelText(
+                            text: "No bills added",
+                            colorSystem: ColorSystem.instance.text,
+                          ),
+                        )
+                      : GridView.builder(
+                          itemCount: widget.billsList.length,
+                          physics: const BouncingScrollPhysics(),
+                          shrinkWrap: true,
+                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                          itemBuilder: (_, index) {
+                            final Bill bill = widget.billsList[index];
+                            return WidgetConfirmPropertyBillsCard(
+                              text: bill.billName,
+                              iconData: Icons.electric_bolt,
+                              onTap: () {},
+                              amount: bill.amount,
+                            );
+                          },
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 16,
+                            mainAxisSpacing: 16,
+                            childAspectRatio: (itemWidth / itemHeight),
+                          ),
+                        ),
+                )
               ],
             ),
           ),

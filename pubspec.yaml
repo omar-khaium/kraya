@@ -21,6 +21,7 @@ dependencies:
   mockito: ^5.3.0
   pinput: ^2.2.0
   material_design_icons_flutter: ^5.0.6295
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:

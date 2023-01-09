@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/enums.dart';
 import 'package:kraya/core/text_style.dart';
 
 class WidgetMenuCard extends StatelessWidget {
@@ -10,10 +9,9 @@ class WidgetMenuCard extends StatelessWidget {
   final IconData iconData;
   final Function onTap;
 
-  WidgetMenuCard({Key? key, required this.text, required this.iconData, required this.onTap, required this.amount})
+  const WidgetMenuCard({Key? key, required this.text, required this.iconData, required this.onTap, required this.amount})
       : super(key: key);
 
-  PropertySelection propertyType = PropertySelection.none;
 
   @override
   Widget build(BuildContext context) {

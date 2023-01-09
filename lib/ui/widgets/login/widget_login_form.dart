@@ -30,7 +30,8 @@ class WidgetLoginForm extends StatelessWidget {
         const SizedBox(height: 32),
         GradientButton(
           onPressed: () {
-            Navigator.of(context).pushReplacementNamed(AppRouter.otpVerification);
+            //Navigator.of(context).pushReplacementNamed(AppRouter.otpVerification);
+            Navigator.of(context).pushReplacementNamed(AppRouter.dashboard);
           },
           text: "Get OTP",
         ),

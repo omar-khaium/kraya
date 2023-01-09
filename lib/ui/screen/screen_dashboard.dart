@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kraya/business_logic/bottom_navigation/bottom_navigation_cubit.dart';
 import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/custom_app_bar.dart';
-import 'package:kraya/ui/widgets/dashboard/dashboard_custom_app_bar.dart';
 import 'package:kraya/ui/widgets/fragments/dashboard_fragment.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class ScreenDashboard extends StatefulWidget {
   const ScreenDashboard({Key? key}) : super(key: key);
@@ -34,37 +33,39 @@ class _ScreenDashboardState extends State<ScreenDashboard> with SingleTickerProv
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorSystem.instance.background,
-      body: BlocBuilder<BottomNavigationCubit, BottomNavigationState>(
-        builder: (_, state) {
-          return IndexedStack(
-            index: state.index,
-            children: const [
-              DashboardFragment(),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: ColorSystem.instance.background,
+        body: BlocBuilder<BottomNavigationCubit, BottomNavigationState>(
+          builder: (_, state) {
+            return IndexedStack(
+              index: state.index,
+              children: const [
+                DashboardFragment(),
+              ],
+            );
+          },
+        ),
+        bottomNavigationBar: BlocBuilder<BottomNavigationCubit, BottomNavigationState>(builder: (_, state) {
+          return BottomNavigationBar(
+            selectedItemColor: ColorSystem.instance.primary,
+            unselectedItemColor: ColorSystem.instance.secondaryText,
+            currentIndex: state.index,
+            type: BottomNavigationBarType.fixed,
+            elevation: 5,
+            onTap: (int index) {
+              BlocProvider.of<BottomNavigationCubit>(context).changePage(index);
+            },
+            items: const [
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+              BottomNavigationBarItem(icon: Icon(MdiIcons.ticketPercent), label: "Bill"),
+              BottomNavigationBarItem(icon: Icon(Icons.apartment), label: "Property"),
+              BottomNavigationBarItem(icon: Icon(Icons.payments), label: "Payment"),
+              BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
             ],
           );
-        },
+        }),
       ),
-      bottomNavigationBar: BlocBuilder<BottomNavigationCubit, BottomNavigationState>(builder: (_, state) {
-        return BottomNavigationBar(
-          selectedItemColor: ColorSystem.instance.primary,
-          unselectedItemColor: ColorSystem.instance.card,
-          currentIndex: state.index,
-          type: BottomNavigationBarType.fixed,
-          elevation: 5,
-          onTap: (int index) {
-            BlocProvider.of<BottomNavigationCubit>(context).changePage(index);
-          },
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.send), label: "Bill"),
-            BottomNavigationBarItem(icon: Icon(Icons.apartment), label: "Property"),
-            BottomNavigationBarItem(icon: Icon(Icons.payments), label: "Payment"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-          ],
-        );
-      }),
     );
   }
 }

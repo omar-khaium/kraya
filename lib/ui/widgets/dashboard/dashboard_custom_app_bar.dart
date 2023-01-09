@@ -12,6 +12,7 @@ class DashboardCustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
+      alignment: Alignment.center,
       height: 88,
       decoration: BoxDecoration(
           gradient: LinearGradient(
