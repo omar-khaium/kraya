@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kraya/business_logic/bottom_navigation/bottom_navigation_cubit.dart';
+import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/colors.dart';
 import 'package:kraya/ui/widgets/fragments/dashboard_fragment.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -54,6 +55,9 @@ class _ScreenDashboardState extends State<ScreenDashboard> with SingleTickerProv
             type: BottomNavigationBarType.fixed,
             elevation: 5,
             onTap: (int index) {
+              if(index==1){
+                Navigator.of(context).pushNamed(AppRouter.bills);
+              }
               BlocProvider.of<BottomNavigationCubit>(context).changePage(index);
             },
             items: const [
