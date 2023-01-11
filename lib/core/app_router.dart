@@ -6,7 +6,6 @@ import 'package:kraya/ui/screen/screen_add_property.dart';
 import 'package:kraya/ui/screen/screen_confirm_property.dart';
 import 'package:kraya/ui/screen/screen_dashboard.dart';
 import 'package:kraya/ui/screen/screen_new_user_type_selection.dart';
-import 'package:kraya/ui/screen/screen_submit_bills.dart';
 import 'package:kraya/ui/screen/screen_utility_bills.dart';
 
 import '../ui/screen/screen_create_account.dart';
@@ -22,7 +21,6 @@ class AppRouter {
   static const String utilityBills = "/utility_bills";
   static const String confirmProperty = "/confirm_property";
   static const String dashboard = "/dashboard";
-  static const String bills = "/bills";
 
   Route onGenerate(RouteSettings settings) {
     switch (settings.name) {
@@ -36,8 +34,6 @@ class AppRouter {
                 ));
       case otpVerification:
         return MaterialPageRoute(builder: (_) => const OtpVerificationScreen());
-      case bills:
-        return MaterialPageRoute(builder: (_) => const ScreenSubmitBills());
       case newUserTypeSelectionScreen:
         return MaterialPageRoute(builder: (_) => const NewUserTypeSelectionScreen());
       case createAccount:
