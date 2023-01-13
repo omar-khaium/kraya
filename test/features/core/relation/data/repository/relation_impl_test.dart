@@ -8,8 +8,7 @@ import 'package:kraya_backend/features/core/relation/data/datasource/remote.mock
 import 'package:kraya_backend/features/core/relation/data/model/relation.dart';
 import 'package:kraya_backend/features/core/relation/data/repository/relation_impl.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/expect.dart';
-import 'package:test/scaffolding.dart';
+import 'package:test/test.dart';
 
 void main() {
   late RelationRepositoryImpl repository;

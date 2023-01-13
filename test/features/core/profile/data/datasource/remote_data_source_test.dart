@@ -2,8 +2,7 @@ import 'dart:io';
 
 import 'package:http/http.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/expect.dart';
-import 'package:test/scaffolding.dart';
+import 'package:test/test.dart';
 
 import 'package:kraya_backend/core/enum/enums.dart';
 import 'package:kraya_backend/core/error/exceptions.dart';

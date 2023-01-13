@@ -4,8 +4,7 @@ import 'package:kraya_backend/features/core/feature/domain/entity/feature.dart';
 import 'package:kraya_backend/features/core/feature/domain/repository/feature.mocks.dart';
 import 'package:kraya_backend/features/core/feature/domain/usecase/get_all.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/expect.dart';
-import 'package:test/scaffolding.dart';
+import 'package:test/test.dart';
 
 void main() {
   late GetAllFeaturesUsecase usecase;

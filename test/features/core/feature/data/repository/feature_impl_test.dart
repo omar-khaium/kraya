@@ -8,8 +8,7 @@ import 'package:kraya_backend/features/core/feature/data/datasource/feature.mock
 import 'package:kraya_backend/features/core/feature/data/model/feature.dart';
 import 'package:kraya_backend/features/core/feature/data/repository/feature_impl.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/expect.dart';
-import 'package:test/scaffolding.dart';
+import 'package:test/test.dart';
 
 void main() {
   late FeatureRepositoryImpl repository;

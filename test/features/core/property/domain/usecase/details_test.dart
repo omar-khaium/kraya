@@ -3,8 +3,7 @@ import 'package:kraya_backend/features/core/property/domain/entity/details.dart'
 import 'package:kraya_backend/features/core/property/domain/repository/property.mocks.dart';
 import 'package:kraya_backend/features/core/property/domain/usecase/details.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/expect.dart';
-import 'package:test/scaffolding.dart';
+import 'package:test/test.dart';
 
 import 'package:kraya_backend/core/enum/enums.dart';
 

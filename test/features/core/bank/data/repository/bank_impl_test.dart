@@ -8,8 +8,7 @@ import 'package:kraya_backend/features/core/bank/data/datasource/remote.mocks.da
 import 'package:kraya_backend/features/core/bank/data/model/bank.dart';
 import 'package:kraya_backend/features/core/bank/data/repository/bank_impl.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/expect.dart';
-import 'package:test/scaffolding.dart';
+import 'package:test/test.dart';
 
 void main() {
   late BankRepositoryImpl repository;

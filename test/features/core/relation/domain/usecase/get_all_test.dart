@@ -4,8 +4,7 @@ import 'package:kraya_backend/features/core/relation/domain/entity/relation.dart
 import 'package:kraya_backend/features/core/relation/domain/repository/relation.mocks.dart';
 import 'package:kraya_backend/features/core/relation/domain/usecase/get_all.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/expect.dart';
-import 'package:test/scaffolding.dart';
+import 'package:test/test.dart';
 
 void main() {
   late GetAllRelationsUsecase usecase;
