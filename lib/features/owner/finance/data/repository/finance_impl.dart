@@ -8,20 +8,20 @@ import '../datasource/remote.dart';
 import '../../../../../core/error/failures.dart';
 import '../../domain/repository/finance.dart';
 
-class FinanceRepositoryImpl extends FinanceRepository {
-  final FinanceRemoteDataSource remoteDataSource;
+class OwnerFinanceRepositoryImpl extends OwnerFinanceRepository {
+  final OwnerFinanceRemoteDataSource remoteDataSource;
   final NetworkInfo networkInfo;
 
-  FinanceRepositoryImpl({
+  OwnerFinanceRepositoryImpl({
     required this.remoteDataSource,
     required this.networkInfo,
   });
 
   @override
-  Future<Either<Failure, int>> overview() async {
+  Future<Either<Failure, int>> overview({required int ownerId, required DateTime from, required DateTime to}) async {
     try {
       if (await networkInfo.online) {
-        final result = await remoteDataSource.overview();
+        final result = await remoteDataSource.overview(ownerId: ownerId, from: from, to: to);
         return Right(result);
       } else {
         return Left(InteretDisconnectedFailure());

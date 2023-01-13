@@ -3,7 +3,7 @@ import 'package:mockito/annotations.dart';
 
 import '../../../../../core/error/failures.dart';
 
-@GenerateNiceMocks([MockSpec<FinanceRepository>()])
-abstract class FinanceRepository {
-  Future<Either<Failure, int>> overview();
+@GenerateNiceMocks([MockSpec<OwnerFinanceRepository>()])
+abstract class OwnerFinanceRepository {
+  Future<Either<Failure, int>> overview({required int ownerId, required DateTime from, required DateTime to});
 }

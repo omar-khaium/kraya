@@ -20,16 +20,26 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-/// A class which mocks [FinanceRemoteDataSource].
+/// A class which mocks [OwnerFinanceRemoteDataSource].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockFinanceRemoteDataSource extends _i1.Mock
-    implements _i2.FinanceRemoteDataSource {
+class MockOwnerFinanceRemoteDataSource extends _i1.Mock
+    implements _i2.OwnerFinanceRemoteDataSource {
   @override
-  _i3.Future<int> overview() => (super.noSuchMethod(
+  _i3.Future<int> overview({
+    required int? ownerId,
+    required DateTime? from,
+    required DateTime? to,
+  }) =>
+      (super.noSuchMethod(
         Invocation.method(
           #overview,
           [],
+          {
+            #ownerId: ownerId,
+            #from: from,
+            #to: to,
+          },
         ),
         returnValue: _i3.Future<int>.value(0),
         returnValueForMissingStub: _i3.Future<int>.value(0),

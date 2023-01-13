@@ -32,15 +32,26 @@ class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
         );
 }
 
-/// A class which mocks [FinanceRepository].
+/// A class which mocks [OwnerFinanceRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockFinanceRepository extends _i1.Mock implements _i3.FinanceRepository {
+class MockOwnerFinanceRepository extends _i1.Mock
+    implements _i3.OwnerFinanceRepository {
   @override
-  _i4.Future<_i2.Either<_i5.Failure, int>> overview() => (super.noSuchMethod(
+  _i4.Future<_i2.Either<_i5.Failure, int>> overview({
+    required int? ownerId,
+    required DateTime? from,
+    required DateTime? to,
+  }) =>
+      (super.noSuchMethod(
         Invocation.method(
           #overview,
           [],
+          {
+            #ownerId: ownerId,
+            #from: from,
+            #to: to,
+          },
         ),
         returnValue: _i4.Future<_i2.Either<_i5.Failure, int>>.value(
             _FakeEither_0<_i5.Failure, int>(
@@ -48,6 +59,11 @@ class MockFinanceRepository extends _i1.Mock implements _i3.FinanceRepository {
           Invocation.method(
             #overview,
             [],
+            {
+              #ownerId: ownerId,
+              #from: from,
+              #to: to,
+            },
           ),
         )),
         returnValueForMissingStub:
@@ -57,6 +73,11 @@ class MockFinanceRepository extends _i1.Mock implements _i3.FinanceRepository {
           Invocation.method(
             #overview,
             [],
+            {
+              #ownerId: ownerId,
+              #from: from,
+              #to: to,
+            },
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, int>>);
