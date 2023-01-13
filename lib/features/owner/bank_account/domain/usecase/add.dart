@@ -1,7 +1,7 @@
-import '../../../../../core/error/failures.dart';
 import 'package:dartz/dartz.dart';
-import '../../../../../core/usecase/usecase.dart';
 
+import '../../../../../core/error/failures.dart';
+import '../../../../../core/usecase/usecase.dart';
 import '../repository/bank_account.dart';
 
 class AddOwnerBankAccountUsecase extends Usecase<bool, AddOwnerBankAccountParams> {

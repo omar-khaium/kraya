@@ -1,12 +1,11 @@
 import 'dart:io';
 
 import 'package:http/http.dart';
-import '../../../../../core/error/exceptions.dart';
 import 'package:mockito/annotations.dart';
 
-import 'remote.dart';
-
+import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/network/api_response.dart';
+import 'remote.dart';
 
 @GenerateNiceMocks([MockSpec<MultipartRequest>()])
 class OwnerBankAccountRemoteDataSourceImpl extends OwnerBankAccountRemoteDataSource {

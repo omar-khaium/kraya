@@ -1,4 +1,5 @@
 import 'package:mockito/annotations.dart';
+
 import '../model/payment.dart';
 
 @GenerateNiceMocks([MockSpec<OwnerPaymentRemoteDataSource>()])

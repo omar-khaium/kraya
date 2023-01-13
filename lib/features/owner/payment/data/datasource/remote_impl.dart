@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:http/http.dart';
 import 'package:intl/intl.dart';
-import '../model/payment.dart';
 
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/network/api_response.dart';
+import '../model/payment.dart';
 import 'remote.dart';
 
 class PaymentRemoteDataSourceImpl extends OwnerPaymentRemoteDataSource {

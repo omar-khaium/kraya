@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:kraya_backend/core/usecase/no_param.dart';
 import 'package:kraya_backend/features/tenant/finance/domain/repository/finance.mocks.dart';
 import 'package:kraya_backend/features/tenant/finance/domain/usecase/overview.dart';
 import 'package:mockito/mockito.dart';

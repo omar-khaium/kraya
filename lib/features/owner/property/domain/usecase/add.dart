@@ -1,12 +1,11 @@
 import 'dart:io';
 
-import '../../../../core/property/domain/entity/bills.dart';
+import 'package:dartz/dartz.dart';
 
 import '../../../../../core/entity/availabiilty_entity.dart';
 import '../../../../../core/error/failures.dart';
-import 'package:dartz/dartz.dart';
 import '../../../../../core/usecase/usecase.dart';
-
+import '../../../../core/property/domain/entity/bills.dart';
 import '../repository/property.dart';
 
 class AddOwnerPropertyUsecase extends Usecase<bool, AddOwnerPropertyParams> {

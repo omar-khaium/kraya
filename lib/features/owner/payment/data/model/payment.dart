@@ -1,5 +1,4 @@
 import '../../../../../core/enum/parser.dart';
-
 import '../../domain/entity/payment.dart';
 
 class PaymentModel extends PaymentEntity {
