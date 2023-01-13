@@ -4,8 +4,7 @@ import 'package:kraya_backend/features/owner/payment/domain/entity/payment.dart'
 import 'package:kraya_backend/features/owner/payment/domain/repository/payment.mocks.dart';
 import 'package:kraya_backend/features/owner/payment/domain/usecase/overview.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/expect.dart';
-import 'package:test/scaffolding.dart';
+import 'package:test/test.dart';
 
 void main() {
   late PaymentOverviewUsecase usecase;

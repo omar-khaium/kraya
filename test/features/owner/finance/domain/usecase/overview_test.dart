@@ -3,34 +3,36 @@ import 'package:kraya_backend/core/usecase/no_param.dart';
 import 'package:kraya_backend/features/owner/finance/domain/repository/finance.mocks.dart';
 import 'package:kraya_backend/features/owner/finance/domain/usecase/overview.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/expect.dart';
-import 'package:test/scaffolding.dart';
+import 'package:test/test.dart';
 
 void main() {
-  late FinanceOverviewUsecase usecase;
-  late MockFinanceRepository mockRepository;
+  late OwnerFinanceOverviewUsecase usecase;
+  late MockOwnerFinanceRepository mockRepository;
 
   setUp(() {
-    mockRepository = MockFinanceRepository();
-    usecase = FinanceOverviewUsecase(mockRepository);
+    mockRepository = MockOwnerFinanceRepository();
+    usecase = OwnerFinanceOverviewUsecase(mockRepository);
   });
 
   final result = 0;
+  final int ownerId = 0;
+  final DateTime from = DateTime(2000);
+  final DateTime to = DateTime(2001);
 
   test("should get empty array from the repository", () async {
     // arrange
     when(
-      mockRepository.overview(),
+      mockRepository.overview(ownerId: ownerId, from: from, to: to),
     ).thenAnswer(
       (_) async => Right(result),
     );
 
     // act
-    final tResult = await usecase(NoParam());
+    final tResult = await usecase(OwnerFinanceOverviewParam(ownerId: ownerId, from: from, to: to));
 
     // assert
     expect(tResult, Right(result));
-    verify(mockRepository.overview());
+    verify(mockRepository.overview(ownerId: ownerId, from: from, to: to));
     verifyNoMoreInteractions(mockRepository);
   });
 }

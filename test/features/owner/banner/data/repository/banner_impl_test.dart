@@ -8,8 +8,7 @@ import 'package:kraya_backend/features/owner/promotion/data/datasource/remote.mo
 import 'package:kraya_backend/features/owner/promotion/data/model/banner.dart';
 import 'package:kraya_backend/features/owner/promotion/data/repository/banner_impl.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/expect.dart';
-import 'package:test/scaffolding.dart';
+import 'package:test/test.dart';
 
 void main() {
   late OwnerBannerPromotionRepositoryImpl repository;

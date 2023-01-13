@@ -4,8 +4,7 @@ import 'package:kraya_backend/features/owner/promotion/domain/entity/banner.dart
 import 'package:kraya_backend/features/owner/promotion/domain/repository/banner.mocks.dart';
 import 'package:kraya_backend/features/owner/promotion/domain/usecase/get_all.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/expect.dart';
-import 'package:test/scaffolding.dart';
+import 'package:test/test.dart';
 
 void main() {
   late GetAllOwnerBannerUsecase usecase;

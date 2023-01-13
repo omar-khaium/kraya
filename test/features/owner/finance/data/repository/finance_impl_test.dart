@@ -7,31 +7,33 @@ import 'package:kraya_backend/core/network/network_info.mocks.dart';
 import 'package:kraya_backend/features/owner/finance/data/datasource/remote.mocks.dart';
 import 'package:kraya_backend/features/owner/finance/data/repository/finance_impl.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/expect.dart';
-import 'package:test/scaffolding.dart';
+import 'package:test/test.dart';
 
 void main() {
-  late FinanceRepositoryImpl repository;
+  late OwnerFinanceRepositoryImpl repository;
 
-  late MockFinanceRemoteDataSource mockDataSource;
+  late MockOwnerFinanceRemoteDataSource mockDataSource;
   late MockNetworkInfo mockNetworkInfo;
 
   setUp(() {
     mockNetworkInfo = MockNetworkInfo();
-    mockDataSource = MockFinanceRemoteDataSource();
+    mockDataSource = MockOwnerFinanceRemoteDataSource();
 
-    repository = FinanceRepositoryImpl(
+    repository = OwnerFinanceRepositoryImpl(
       remoteDataSource: mockDataSource,
       networkInfo: mockNetworkInfo,
     );
   });
+  final int ownerId = 0;
+  final DateTime from = DateTime(2000);
+  final DateTime to = DateTime(2001);
 
   test("should check if device is online", () {
     // arrange
     when(mockNetworkInfo.online).thenAnswer((_) async => true);
 
     // act
-    repository.overview();
+    repository.overview(ownerId: ownerId, from: from, to: to);
 
     // assert
     verify(mockNetworkInfo.online);
@@ -60,40 +62,40 @@ void main() {
 
     test("should return remote data when remote call is successful", () async {
       // arrange
-      when(mockDataSource.overview()).thenAnswer((_) async => results);
+      when(mockDataSource.overview(ownerId: ownerId, from: from, to: to)).thenAnswer((_) async => results);
 
       // act
-      final tResult = await repository.overview();
+      final tResult = await repository.overview(ownerId: ownerId, from: from, to: to);
 
       // assert
       expect(tResult, equals(Right(results)));
-      verify(mockDataSource.overview());
+      verify(mockDataSource.overview(ownerId: ownerId, from: from, to: to));
       verifyNoMoreInteractions(mockDataSource);
     });
 
     test("should return ServerFailure while encountering ServerException in remote data source", () async {
       // arrange
-      when(mockDataSource.overview()).thenThrow(ServerException(""));
+      when(mockDataSource.overview(ownerId: ownerId, from: from, to: to)).thenThrow(ServerException(""));
 
       // act
-      final tResult = await repository.overview();
+      final tResult = await repository.overview(ownerId: ownerId, from: from, to: to);
 
       // assert
       expect(tResult, equals(Left(ServerFailure())));
-      verify(mockDataSource.overview());
+      verify(mockDataSource.overview(ownerId: ownerId, from: from, to: to));
       verifyNoMoreInteractions(mockDataSource);
     });
 
     test("should return ServerFailure while encountering SocketException in remote data source", () async {
       // arrange
-      when(mockDataSource.overview()).thenThrow(SocketException(""));
+      when(mockDataSource.overview(ownerId: ownerId, from: from, to: to)).thenThrow(SocketException(""));
 
       // act
-      final tResult = await repository.overview();
+      final tResult = await repository.overview(ownerId: ownerId, from: from, to: to);
 
       // assert
       expect(tResult, equals(Left(ServerFailure("Internet connection isn't stable"))));
-      verify(mockDataSource.overview());
+      verify(mockDataSource.overview(ownerId: ownerId, from: from, to: to));
       verifyNoMoreInteractions(mockDataSource);
     });
   });
@@ -103,7 +105,7 @@ void main() {
       // arrange
 
       // act
-      final result = await repository.overview();
+      final result = await repository.overview(ownerId: ownerId, from: from, to: to);
 
       // assert
       expect(result, equals(Left(InteretDisconnectedFailure())));

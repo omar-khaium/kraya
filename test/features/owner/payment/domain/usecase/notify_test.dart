@@ -2,8 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:kraya_backend/features/owner/payment/domain/repository/payment.mocks.dart';
 import 'package:kraya_backend/features/owner/payment/domain/usecase/notify.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/expect.dart';
-import 'package:test/scaffolding.dart';
+import 'package:test/test.dart';
 
 void main() {
   late PaymentNotifyUsecase usecase;

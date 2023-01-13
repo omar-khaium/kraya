@@ -19,45 +19,93 @@ void main() {
   });
 
   final results = 0;
+  final int ownerId = 0;
+  final DateTime from = DateTime(2000);
+  final DateTime to = DateTime(2001);
 
   test("should perform a call with [GET] request in [HttpClient] with valid response", () async {
     // arrange
-    when(mockHttpClient.get(Uri.parse("https://kraya.succour.ltd/api/v1/owner/finance/overview")))
-        .thenAnswer((_) async => Response(fixture("api_finance.json"), HttpStatus.ok));
+    when(mockHttpClient.get(
+      Uri.parse("https://kraya.succour.ltd/api/v1/owner/finance/overview"),
+      headers: {
+        'owner-id': ownerId.toString(),
+        'from': from.millisecondsSinceEpoch.toString(),
+        'to': to.millisecondsSinceEpoch.toString(),
+      },
+    )).thenAnswer((_) async => Response(fixture("api_finance.json"), HttpStatus.ok));
 
     // act
-    final result = await dataSource.overview();
+    final result = await dataSource.overview(ownerId: ownerId, from: from, to: to);
 
     // assert
-    verify(mockHttpClient.get(Uri.parse("https://kraya.succour.ltd/api/v1/owner/finance/overview")));
+    verify(
+      mockHttpClient.get(
+        Uri.parse("https://kraya.succour.ltd/api/v1/owner/finance/overview"),
+        headers: {
+          'owner-id': ownerId.toString(),
+          'from': from.millisecondsSinceEpoch.toString(),
+          'to': to.millisecondsSinceEpoch.toString(),
+        },
+      ),
+    );
     expect(result, equals(results));
   });
 
   test("""should throw a [ServerException] when performing a call with [GET] request
      in [HttpClient] with phone number in header only and url is wrong""", () async {
     // arrange
-    when(mockHttpClient.get(Uri.parse("https://kraya.succour.ltd/api/v1/owner/finance/overview")))
-        .thenAnswer((_) async => Response("", HttpStatus.notFound));
+    when(mockHttpClient.get(
+      Uri.parse("https://kraya.succour.ltd/api/v1/owner/finance/overview"),
+      headers: {
+        'owner-id': ownerId.toString(),
+        'from': from.millisecondsSinceEpoch.toString(),
+        'to': to.millisecondsSinceEpoch.toString(),
+      },
+    )).thenAnswer((_) async => Response("", HttpStatus.notFound));
 
     // act
 
     // assert
-    expect(() => dataSource.overview(), throwsA(isA<ServerException>()));
-    verify(mockHttpClient.get(Uri.parse("https://kraya.succour.ltd/api/v1/owner/finance/overview")));
+    expect(() => dataSource.overview(ownerId: ownerId, from: from, to: to), throwsA(isA<ServerException>()));
+    verify(
+      mockHttpClient.get(
+        Uri.parse("https://kraya.succour.ltd/api/v1/owner/finance/overview"),
+        headers: {
+          'owner-id': ownerId.toString(),
+          'from': from.millisecondsSinceEpoch.toString(),
+          'to': to.millisecondsSinceEpoch.toString(),
+        },
+      ),
+    );
     verifyNoMoreInteractions(mockHttpClient);
   });
 
   test("""should throw a [ServerException] when performing
     a call with [GET] request in [HttpClient] with phone number in header only while server is down""", () async {
     // arrange
-    when(mockHttpClient.get(Uri.parse("https://kraya.succour.ltd/api/v1/owner/finance/overview")))
-        .thenAnswer((_) async => Response("", HttpStatus.internalServerError));
+    when(mockHttpClient.get(
+      Uri.parse("https://kraya.succour.ltd/api/v1/owner/finance/overview"),
+      headers: {
+        'owner-id': ownerId.toString(),
+        'from': from.millisecondsSinceEpoch.toString(),
+        'to': to.millisecondsSinceEpoch.toString(),
+      },
+    )).thenAnswer((_) async => Response("", HttpStatus.internalServerError));
 
     // act
 
     // assert
-    expect(() => dataSource.overview(), throwsA(isA<ServerException>()));
-    verify(mockHttpClient.get(Uri.parse("https://kraya.succour.ltd/api/v1/owner/finance/overview")));
+    expect(() => dataSource.overview(ownerId: ownerId, from: from, to: to), throwsA(isA<ServerException>()));
+    verify(
+      mockHttpClient.get(
+        Uri.parse("https://kraya.succour.ltd/api/v1/owner/finance/overview"),
+        headers: {
+          'owner-id': ownerId.toString(),
+          'from': from.millisecondsSinceEpoch.toString(),
+          'to': to.millisecondsSinceEpoch.toString(),
+        },
+      ),
+    );
     verifyNoMoreInteractions(mockHttpClient);
   });
 }

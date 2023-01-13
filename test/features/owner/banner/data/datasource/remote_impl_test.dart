@@ -1,11 +1,8 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart';
-import 'package:kraya_backend/core/enum/enums.dart';
 import 'package:kraya_backend/core/error/exceptions.dart';
 import 'package:kraya_backend/features/core/property/data/datasource/remote.mocks.dart';
-import 'package:kraya_backend/features/core/registration/data/datasource/remote_impl.mocks.dart';
 import 'package:kraya_backend/features/owner/promotion/data/datasource/remote_impl.dart';
 import 'package:kraya_backend/features/owner/promotion/data/model/banner.dart';
 import 'package:mockito/mockito.dart';

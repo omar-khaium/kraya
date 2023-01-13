@@ -9,8 +9,7 @@ import 'package:kraya_backend/features/owner/payment/data/datasource/remote.mock
 import 'package:kraya_backend/features/owner/payment/data/model/payment.dart';
 import 'package:kraya_backend/features/owner/payment/data/repository/payment_impl.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/expect.dart';
-import 'package:test/scaffolding.dart';
+import 'package:test/test.dart';
 
 void main() {
   late OwnerPaymentRepositoryImpl repository;
