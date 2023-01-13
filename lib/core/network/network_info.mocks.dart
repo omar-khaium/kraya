@@ -3,11 +3,14 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i5;
+import 'dart:convert' as _i6;
+import 'dart:typed_data' as _i7;
 
+import 'package:http/http.dart' as _i3;
 import 'package:internet_connection_checker/internet_connection_checker.dart'
     as _i2;
-import 'package:kraya_backend/core/network/network_info.dart' as _i3;
+import 'package:kraya_backend/core/network/network_info.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -42,16 +45,57 @@ class _FakeAddressCheckResult_1 extends _i1.SmartFake
         );
 }
 
+class _FakeResponse_2 extends _i1.SmartFake implements _i3.Response {
+  _FakeResponse_2(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeStreamedResponse_3 extends _i1.SmartFake
+    implements _i3.StreamedResponse {
+  _FakeStreamedResponse_3(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeUri_4 extends _i1.SmartFake implements Uri {
+  _FakeUri_4(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeByteStream_5 extends _i1.SmartFake implements _i3.ByteStream {
+  _FakeByteStream_5(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [NetworkInfo].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockNetworkInfo extends _i1.Mock implements _i3.NetworkInfo {
+class MockNetworkInfo extends _i1.Mock implements _i4.NetworkInfo {
   @override
-  _i4.Future<bool> get online => (super.noSuchMethod(
+  _i5.Future<bool> get online => (super.noSuchMethod(
         Invocation.getter(#online),
-        returnValue: _i4.Future<bool>.value(false),
-        returnValueForMissingStub: _i4.Future<bool>.value(false),
-      ) as _i4.Future<bool>);
+        returnValue: _i5.Future<bool>.value(false),
+        returnValueForMissingStub: _i5.Future<bool>.value(false),
+      ) as _i5.Future<bool>);
   @override
   Duration get checkInterval => (super.noSuchMethod(
         Invocation.getter(#checkInterval),
@@ -91,29 +135,29 @@ class MockNetworkInfo extends _i1.Mock implements _i3.NetworkInfo {
         returnValueForMissingStub: null,
       );
   @override
-  _i4.Future<bool> get hasConnection => (super.noSuchMethod(
+  _i5.Future<bool> get hasConnection => (super.noSuchMethod(
         Invocation.getter(#hasConnection),
-        returnValue: _i4.Future<bool>.value(false),
-        returnValueForMissingStub: _i4.Future<bool>.value(false),
-      ) as _i4.Future<bool>);
+        returnValue: _i5.Future<bool>.value(false),
+        returnValueForMissingStub: _i5.Future<bool>.value(false),
+      ) as _i5.Future<bool>);
   @override
-  _i4.Future<_i2.InternetConnectionStatus> get connectionStatus =>
+  _i5.Future<_i2.InternetConnectionStatus> get connectionStatus =>
       (super.noSuchMethod(
         Invocation.getter(#connectionStatus),
-        returnValue: _i4.Future<_i2.InternetConnectionStatus>.value(
+        returnValue: _i5.Future<_i2.InternetConnectionStatus>.value(
             _i2.InternetConnectionStatus.connected),
         returnValueForMissingStub:
-            _i4.Future<_i2.InternetConnectionStatus>.value(
+            _i5.Future<_i2.InternetConnectionStatus>.value(
                 _i2.InternetConnectionStatus.connected),
-      ) as _i4.Future<_i2.InternetConnectionStatus>);
+      ) as _i5.Future<_i2.InternetConnectionStatus>);
   @override
-  _i4.Stream<_i2.InternetConnectionStatus> get onStatusChange =>
+  _i5.Stream<_i2.InternetConnectionStatus> get onStatusChange =>
       (super.noSuchMethod(
         Invocation.getter(#onStatusChange),
-        returnValue: _i4.Stream<_i2.InternetConnectionStatus>.empty(),
+        returnValue: _i5.Stream<_i2.InternetConnectionStatus>.empty(),
         returnValueForMissingStub:
-            _i4.Stream<_i2.InternetConnectionStatus>.empty(),
-      ) as _i4.Stream<_i2.InternetConnectionStatus>);
+            _i5.Stream<_i2.InternetConnectionStatus>.empty(),
+      ) as _i5.Stream<_i2.InternetConnectionStatus>);
   @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
@@ -127,7 +171,7 @@ class MockNetworkInfo extends _i1.Mock implements _i3.NetworkInfo {
         returnValueForMissingStub: false,
       ) as bool);
   @override
-  _i4.Future<_i2.AddressCheckResult> isHostReachable(
+  _i5.Future<_i2.AddressCheckResult> isHostReachable(
           _i2.AddressCheckOptions? options) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -135,7 +179,7 @@ class MockNetworkInfo extends _i1.Mock implements _i3.NetworkInfo {
           [options],
         ),
         returnValue:
-            _i4.Future<_i2.AddressCheckResult>.value(_FakeAddressCheckResult_1(
+            _i5.Future<_i2.AddressCheckResult>.value(_FakeAddressCheckResult_1(
           this,
           Invocation.method(
             #isHostReachable,
@@ -143,12 +187,457 @@ class MockNetworkInfo extends _i1.Mock implements _i3.NetworkInfo {
           ),
         )),
         returnValueForMissingStub:
-            _i4.Future<_i2.AddressCheckResult>.value(_FakeAddressCheckResult_1(
+            _i5.Future<_i2.AddressCheckResult>.value(_FakeAddressCheckResult_1(
           this,
           Invocation.method(
             #isHostReachable,
             [options],
           ),
         )),
-      ) as _i4.Future<_i2.AddressCheckResult>);
+      ) as _i5.Future<_i2.AddressCheckResult>);
+}
+
+/// A class which mocks [Client].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockClient extends _i1.Mock implements _i3.Client {
+  @override
+  _i5.Future<_i3.Response> head(
+    Uri? url, {
+    Map<String, String>? headers,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #head,
+          [url],
+          {#headers: headers},
+        ),
+        returnValue: _i5.Future<_i3.Response>.value(_FakeResponse_2(
+          this,
+          Invocation.method(
+            #head,
+            [url],
+            {#headers: headers},
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i3.Response>.value(_FakeResponse_2(
+          this,
+          Invocation.method(
+            #head,
+            [url],
+            {#headers: headers},
+          ),
+        )),
+      ) as _i5.Future<_i3.Response>);
+  @override
+  _i5.Future<_i3.Response> get(
+    Uri? url, {
+    Map<String, String>? headers,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #get,
+          [url],
+          {#headers: headers},
+        ),
+        returnValue: _i5.Future<_i3.Response>.value(_FakeResponse_2(
+          this,
+          Invocation.method(
+            #get,
+            [url],
+            {#headers: headers},
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i3.Response>.value(_FakeResponse_2(
+          this,
+          Invocation.method(
+            #get,
+            [url],
+            {#headers: headers},
+          ),
+        )),
+      ) as _i5.Future<_i3.Response>);
+  @override
+  _i5.Future<_i3.Response> post(
+    Uri? url, {
+    Map<String, String>? headers,
+    Object? body,
+    _i6.Encoding? encoding,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #post,
+          [url],
+          {
+            #headers: headers,
+            #body: body,
+            #encoding: encoding,
+          },
+        ),
+        returnValue: _i5.Future<_i3.Response>.value(_FakeResponse_2(
+          this,
+          Invocation.method(
+            #post,
+            [url],
+            {
+              #headers: headers,
+              #body: body,
+              #encoding: encoding,
+            },
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i3.Response>.value(_FakeResponse_2(
+          this,
+          Invocation.method(
+            #post,
+            [url],
+            {
+              #headers: headers,
+              #body: body,
+              #encoding: encoding,
+            },
+          ),
+        )),
+      ) as _i5.Future<_i3.Response>);
+  @override
+  _i5.Future<_i3.Response> put(
+    Uri? url, {
+    Map<String, String>? headers,
+    Object? body,
+    _i6.Encoding? encoding,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #put,
+          [url],
+          {
+            #headers: headers,
+            #body: body,
+            #encoding: encoding,
+          },
+        ),
+        returnValue: _i5.Future<_i3.Response>.value(_FakeResponse_2(
+          this,
+          Invocation.method(
+            #put,
+            [url],
+            {
+              #headers: headers,
+              #body: body,
+              #encoding: encoding,
+            },
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i3.Response>.value(_FakeResponse_2(
+          this,
+          Invocation.method(
+            #put,
+            [url],
+            {
+              #headers: headers,
+              #body: body,
+              #encoding: encoding,
+            },
+          ),
+        )),
+      ) as _i5.Future<_i3.Response>);
+  @override
+  _i5.Future<_i3.Response> patch(
+    Uri? url, {
+    Map<String, String>? headers,
+    Object? body,
+    _i6.Encoding? encoding,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #patch,
+          [url],
+          {
+            #headers: headers,
+            #body: body,
+            #encoding: encoding,
+          },
+        ),
+        returnValue: _i5.Future<_i3.Response>.value(_FakeResponse_2(
+          this,
+          Invocation.method(
+            #patch,
+            [url],
+            {
+              #headers: headers,
+              #body: body,
+              #encoding: encoding,
+            },
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i3.Response>.value(_FakeResponse_2(
+          this,
+          Invocation.method(
+            #patch,
+            [url],
+            {
+              #headers: headers,
+              #body: body,
+              #encoding: encoding,
+            },
+          ),
+        )),
+      ) as _i5.Future<_i3.Response>);
+  @override
+  _i5.Future<_i3.Response> delete(
+    Uri? url, {
+    Map<String, String>? headers,
+    Object? body,
+    _i6.Encoding? encoding,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #delete,
+          [url],
+          {
+            #headers: headers,
+            #body: body,
+            #encoding: encoding,
+          },
+        ),
+        returnValue: _i5.Future<_i3.Response>.value(_FakeResponse_2(
+          this,
+          Invocation.method(
+            #delete,
+            [url],
+            {
+              #headers: headers,
+              #body: body,
+              #encoding: encoding,
+            },
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i3.Response>.value(_FakeResponse_2(
+          this,
+          Invocation.method(
+            #delete,
+            [url],
+            {
+              #headers: headers,
+              #body: body,
+              #encoding: encoding,
+            },
+          ),
+        )),
+      ) as _i5.Future<_i3.Response>);
+  @override
+  _i5.Future<String> read(
+    Uri? url, {
+    Map<String, String>? headers,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #read,
+          [url],
+          {#headers: headers},
+        ),
+        returnValue: _i5.Future<String>.value(''),
+        returnValueForMissingStub: _i5.Future<String>.value(''),
+      ) as _i5.Future<String>);
+  @override
+  _i5.Future<_i7.Uint8List> readBytes(
+    Uri? url, {
+    Map<String, String>? headers,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #readBytes,
+          [url],
+          {#headers: headers},
+        ),
+        returnValue: _i5.Future<_i7.Uint8List>.value(_i7.Uint8List(0)),
+        returnValueForMissingStub:
+            _i5.Future<_i7.Uint8List>.value(_i7.Uint8List(0)),
+      ) as _i5.Future<_i7.Uint8List>);
+  @override
+  _i5.Future<_i3.StreamedResponse> send(_i3.BaseRequest? request) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #send,
+          [request],
+        ),
+        returnValue:
+            _i5.Future<_i3.StreamedResponse>.value(_FakeStreamedResponse_3(
+          this,
+          Invocation.method(
+            #send,
+            [request],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i3.StreamedResponse>.value(_FakeStreamedResponse_3(
+          this,
+          Invocation.method(
+            #send,
+            [request],
+          ),
+        )),
+      ) as _i5.Future<_i3.StreamedResponse>);
+  @override
+  void close() => super.noSuchMethod(
+        Invocation.method(
+          #close,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+}
+
+/// A class which mocks [MultipartRequest].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockMultipartRequest extends _i1.Mock implements _i3.MultipartRequest {
+  @override
+  Map<String, String> get fields => (super.noSuchMethod(
+        Invocation.getter(#fields),
+        returnValue: <String, String>{},
+        returnValueForMissingStub: <String, String>{},
+      ) as Map<String, String>);
+  @override
+  List<_i3.MultipartFile> get files => (super.noSuchMethod(
+        Invocation.getter(#files),
+        returnValue: <_i3.MultipartFile>[],
+        returnValueForMissingStub: <_i3.MultipartFile>[],
+      ) as List<_i3.MultipartFile>);
+  @override
+  int get contentLength => (super.noSuchMethod(
+        Invocation.getter(#contentLength),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+  @override
+  set contentLength(int? value) => super.noSuchMethod(
+        Invocation.setter(
+          #contentLength,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  String get method => (super.noSuchMethod(
+        Invocation.getter(#method),
+        returnValue: '',
+        returnValueForMissingStub: '',
+      ) as String);
+  @override
+  Uri get url => (super.noSuchMethod(
+        Invocation.getter(#url),
+        returnValue: _FakeUri_4(
+          this,
+          Invocation.getter(#url),
+        ),
+        returnValueForMissingStub: _FakeUri_4(
+          this,
+          Invocation.getter(#url),
+        ),
+      ) as Uri);
+  @override
+  Map<String, String> get headers => (super.noSuchMethod(
+        Invocation.getter(#headers),
+        returnValue: <String, String>{},
+        returnValueForMissingStub: <String, String>{},
+      ) as Map<String, String>);
+  @override
+  bool get persistentConnection => (super.noSuchMethod(
+        Invocation.getter(#persistentConnection),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+  @override
+  set persistentConnection(bool? value) => super.noSuchMethod(
+        Invocation.setter(
+          #persistentConnection,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  bool get followRedirects => (super.noSuchMethod(
+        Invocation.getter(#followRedirects),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+  @override
+  set followRedirects(bool? value) => super.noSuchMethod(
+        Invocation.setter(
+          #followRedirects,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  int get maxRedirects => (super.noSuchMethod(
+        Invocation.getter(#maxRedirects),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+  @override
+  set maxRedirects(int? value) => super.noSuchMethod(
+        Invocation.setter(
+          #maxRedirects,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  bool get finalized => (super.noSuchMethod(
+        Invocation.getter(#finalized),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+  @override
+  _i3.ByteStream finalize() => (super.noSuchMethod(
+        Invocation.method(
+          #finalize,
+          [],
+        ),
+        returnValue: _FakeByteStream_5(
+          this,
+          Invocation.method(
+            #finalize,
+            [],
+          ),
+        ),
+        returnValueForMissingStub: _FakeByteStream_5(
+          this,
+          Invocation.method(
+            #finalize,
+            [],
+          ),
+        ),
+      ) as _i3.ByteStream);
+  @override
+  _i5.Future<_i3.StreamedResponse> send() => (super.noSuchMethod(
+        Invocation.method(
+          #send,
+          [],
+        ),
+        returnValue:
+            _i5.Future<_i3.StreamedResponse>.value(_FakeStreamedResponse_3(
+          this,
+          Invocation.method(
+            #send,
+            [],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i3.StreamedResponse>.value(_FakeStreamedResponse_3(
+          this,
+          Invocation.method(
+            #send,
+            [],
+          ),
+        )),
+      ) as _i5.Future<_i3.StreamedResponse>);
 }

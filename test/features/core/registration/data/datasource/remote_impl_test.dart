@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:http/http.dart';
 import 'package:kraya_backend/core/enum/enums.dart';
 import 'package:kraya_backend/features/core/registration/data/datasource/remote_impl.dart';
-import 'package:kraya_backend/features/core/registration/data/datasource/remote_impl.mocks.dart';
+import 'package:kraya_backend/core/network/network_info.mocks.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 

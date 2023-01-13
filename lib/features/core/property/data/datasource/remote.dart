@@ -9,7 +9,6 @@ import '../model/bills.dart';
 import '../model/details.dart';
 
 @GenerateNiceMocks([MockSpec<PropertyRemoteDataSource>()])
-@GenerateNiceMocks([MockSpec<Client>()])
 abstract class PropertyRemoteDataSource {
   Future<PropertyDetailsModel> details({required int id});
   Future<PropertyBillsModel> bills({required int id});

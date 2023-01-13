@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:kraya_backend/features/core/profile/data/datasource/remote.mocks.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
@@ -7,7 +8,6 @@ import 'package:kraya_backend/core/error/exceptions.dart';
 import 'package:kraya_backend/core/error/failures.dart';
 import 'package:kraya_backend/core/network/network_info.mocks.dart';
 import 'package:kraya_backend/features/core/profile/data/datasource/local.mocks.dart';
-import 'package:kraya_backend/features/core/profile/data/datasource/remote.mocks.dart';
 import 'package:kraya_backend/features/core/profile/data/model/profile.dart';
 import 'package:kraya_backend/features/core/profile/data/repository/profile_impl.dart';
 

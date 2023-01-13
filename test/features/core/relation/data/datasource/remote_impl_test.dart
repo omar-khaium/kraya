@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:http/http.dart';
 import 'package:kraya_backend/core/error/exceptions.dart';
-import 'package:kraya_backend/features/core/profile/data/datasource/remote.mocks.dart';
+import 'package:kraya_backend/core/network/network_info.mocks.dart';
 import 'package:kraya_backend/features/core/relation/data/datasource/remote_impl.dart';
 import 'package:kraya_backend/features/core/relation/data/model/relation.dart';
 import 'package:mockito/mockito.dart';

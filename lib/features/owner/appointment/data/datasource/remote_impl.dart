@@ -1,13 +1,11 @@
 import 'dart:io';
 
 import 'package:http/http.dart';
-import 'package:mockito/annotations.dart';
 
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/network/api_response.dart';
 import 'remote.dart';
 
-@GenerateNiceMocks([MockSpec<MultipartRequest>()])
 class OwnerAppointmentRemoteDataSourceImpl extends OwnerAppointmentRemoteDataSource {
   final MultipartRequest multipartRequest;
 

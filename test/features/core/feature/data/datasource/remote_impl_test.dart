@@ -4,7 +4,8 @@ import 'package:http/http.dart';
 import 'package:kraya_backend/core/error/exceptions.dart';
 import 'package:kraya_backend/features/core/feature/data/datasource/remote_impl.dart';
 import 'package:kraya_backend/features/core/feature/data/model/feature.dart';
-import 'package:kraya_backend/features/core/profile/data/datasource/remote.mocks.dart';
+
+import 'package:kraya_backend/core/network/network_info.mocks.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 

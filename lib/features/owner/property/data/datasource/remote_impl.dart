@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:http/http.dart';
-import 'package:mockito/annotations.dart';
 
 import '../../../../../core/entity/availabiilty_entity.dart';
 import '../../../../../core/error/exceptions.dart';
@@ -9,7 +8,6 @@ import '../../../../../core/network/api_response.dart';
 import '../../../../core/property/domain/entity/bills.dart';
 import 'remote.dart';
 
-@GenerateNiceMocks([MockSpec<MultipartRequest>()])
 class OwnerPropertyRemoteDataSourceImpl extends OwnerPropertyRemoteDataSource {
   final Client client;
   final MultipartRequest multipartRequest;

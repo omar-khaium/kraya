@@ -6,26 +6,26 @@ import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/network/api_response.dart';
 import 'remote.dart';
 
-class OwnerBillRemoteDataSourceImpl extends OwnerBillRemoteDataSource {
+class OwnerBankAccountRemoteDataSourceImpl extends TenantBankAccountRemoteDataSource {
   final MultipartRequest multipartRequest;
 
-  OwnerBillRemoteDataSourceImpl({required this.multipartRequest});
+  OwnerBankAccountRemoteDataSourceImpl({required this.multipartRequest});
   @override
   Future<bool> add({
-    required int ownerId,
-    required int propertyId,
+    required int tenantId,
+    required int bankId,
     required String name,
-    required int amount,
-    required int extra,
+    required String accountNumber,
+    required String branch,
   }) async {
     multipartRequest.headers.addAll({"Content-Type": "multipart/form-data"});
     multipartRequest.fields.addAll(
       {
-        "owner_id": ownerId.toString(),
-        "property_id": propertyId.toString(),
+        "owner_id": tenantId.toString(),
+        "bank_id": bankId.toString(),
         "name": name,
-        "amount": amount.toString(),
-        "extra": extra.toString(),
+        "number": accountNumber,
+        "branch": branch,
       },
     );
 

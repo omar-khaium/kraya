@@ -10,7 +10,8 @@ import 'package:test/test.dart';
 
 import 'package:kraya_backend/core/enum/enums.dart';
 import 'package:kraya_backend/core/error/exceptions.dart';
-import 'package:kraya_backend/features/core/profile/data/datasource/remote.mocks.dart';
+
+import 'package:kraya_backend/core/network/network_info.mocks.dart';
 import '../../../../../fixtures/fixture_reader.dart';
 
 void main() {
@@ -105,7 +106,7 @@ void main() {
   });
 
   group("bills", () {
-     final tModel = PropertyBillsModel(
+    final tModel = PropertyBillsModel(
       total: 10,
       bills: [
         BillModel(

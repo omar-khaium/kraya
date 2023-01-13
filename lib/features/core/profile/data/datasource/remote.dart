@@ -8,7 +8,6 @@ import '../../../../../../core/network/api_response.dart';
 import '../model/profile.dart';
 
 @GenerateNiceMocks([MockSpec<ProfileRemoteDataSource>()])
-@GenerateNiceMocks([MockSpec<Client>()])
 abstract class ProfileRemoteDataSource {
   /// Identify if the an user exists with this [phone] number
   ///

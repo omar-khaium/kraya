@@ -1,7 +1,10 @@
+import 'package:http/http.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:mockito/annotations.dart';
 
 @GenerateNiceMocks([MockSpec<NetworkInfo>()])
+@GenerateNiceMocks([MockSpec<Client>()])
+@GenerateNiceMocks([MockSpec<MultipartRequest>()])
 abstract class NetworkInfo implements InternetConnectionChecker {
   Future<bool> get online;
 }
