@@ -1,4 +1,5 @@
 import 'package:mockito/annotations.dart';
+
 import '../model/feature.dart';
 
 @GenerateNiceMocks([MockSpec<FeatureRemoteDataSource>()])

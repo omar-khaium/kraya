@@ -1,13 +1,13 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import '../../../../../core/error/exceptions.dart';
-import '../../../../../core/network/network_info.dart';
-import '../datasource/remote.dart';
 
+import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/error/failures.dart';
+import '../../../../../core/network/network_info.dart';
 import '../../domain/entity/relation.dart';
 import '../../domain/repository/relation.dart';
+import '../datasource/remote.dart';
 
 class RelationRepositoryImpl extends RelationRepository {
   final RelationRemoteDataSource remoteDataSource;

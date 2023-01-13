@@ -170,14 +170,6 @@ class MockFirebaseAuth extends _i1.Mock implements _i2.FirebaseAuth {
         returnValueForMissingStub: null,
       );
   @override
-  set tenantId(String? tenantId) => super.noSuchMethod(
-        Invocation.setter(
-          #tenantId,
-          tenantId,
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
   Map<dynamic, dynamic> get pluginConstants => (super.noSuchMethod(
         Invocation.getter(#pluginConstants),
         returnValue: <dynamic, dynamic>{},
@@ -188,22 +180,6 @@ class MockFirebaseAuth extends _i1.Mock implements _i2.FirebaseAuth {
         Invocation.method(
           #useEmulator,
           [origin],
-        ),
-        returnValue: _i5.Future<void>.value(),
-        returnValueForMissingStub: _i5.Future<void>.value(),
-      ) as _i5.Future<void>);
-  @override
-  _i5.Future<void> useAuthEmulator(
-    String? host,
-    int? port,
-  ) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #useAuthEmulator,
-          [
-            host,
-            port,
-          ],
         ),
         returnValue: _i5.Future<void>.value(),
         returnValueForMissingStub: _i5.Future<void>.value(),
@@ -410,9 +386,6 @@ class MockFirebaseAuth extends _i1.Mock implements _i2.FirebaseAuth {
   _i5.Future<void> setSettings({
     bool? appVerificationDisabledForTesting,
     String? userAccessGroup,
-    String? phoneNumber,
-    String? smsCode,
-    bool? forceRecaptchaFlow,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -422,9 +395,6 @@ class MockFirebaseAuth extends _i1.Mock implements _i2.FirebaseAuth {
             #appVerificationDisabledForTesting:
                 appVerificationDisabledForTesting,
             #userAccessGroup: userAccessGroup,
-            #phoneNumber: phoneNumber,
-            #smsCode: smsCode,
-            #forceRecaptchaFlow: forceRecaptchaFlow,
           },
         ),
         returnValue: _i5.Future<void>.value(),
@@ -582,30 +552,6 @@ class MockFirebaseAuth extends _i1.Mock implements _i2.FirebaseAuth {
               #email: email,
               #emailLink: emailLink,
             },
-          ),
-        )),
-      ) as _i5.Future<_i2.UserCredential>);
-  @override
-  _i5.Future<_i2.UserCredential> signInWithAuthProvider(
-          _i6.AuthProvider? provider) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #signInWithAuthProvider,
-          [provider],
-        ),
-        returnValue: _i5.Future<_i2.UserCredential>.value(_FakeUserCredential_3(
-          this,
-          Invocation.method(
-            #signInWithAuthProvider,
-            [provider],
-          ),
-        )),
-        returnValueForMissingStub:
-            _i5.Future<_i2.UserCredential>.value(_FakeUserCredential_3(
-          this,
-          Invocation.method(
-            #signInWithAuthProvider,
-            [provider],
           ),
         )),
       ) as _i5.Future<_i2.UserCredential>);

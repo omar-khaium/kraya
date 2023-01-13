@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:kraya_backend/core/model/availability_model.dart';
 import 'package:kraya_backend/features/core/property/data/datasource/remote.mocks.dart';
 import 'package:kraya_backend/features/core/property/data/model/bills.dart';
 import 'package:kraya_backend/features/core/property/data/model/details.dart';

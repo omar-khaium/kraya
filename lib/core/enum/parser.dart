@@ -80,4 +80,26 @@ class EnumParser {
         return "None";
     }
   }
+
+  PaymentStatus toPaymentStatus(String value) {
+    switch (value.toLowerCase().trim()) {
+      case "paid":
+        return PaymentStatus.paid;
+      case "unpaid":
+        return PaymentStatus.unpaid;
+      default:
+        return PaymentStatus.none;
+    }
+  }
+
+  String fromPaymentStatus(PaymentStatus status) {
+    switch (status) {
+      case PaymentStatus.paid:
+        return "paid";
+      case PaymentStatus.unpaid:
+        return "unpaid";
+      case PaymentStatus.none:
+        return "";
+    }
+  }
 }

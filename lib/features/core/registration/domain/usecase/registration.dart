@@ -1,10 +1,10 @@
 import 'dart:io';
 
+import 'package:dartz/dartz.dart';
+
 import '../../../../../core/enum/enums.dart';
 import '../../../../../core/error/failures.dart';
-import 'package:dartz/dartz.dart';
 import '../../../../../core/usecase/usecase.dart';
-
 import '../repository/registration.dart';
 
 class RegistrationUsecase extends Usecase<String, RegistrationParams> {

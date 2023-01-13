@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:kraya_backend/core/model/availability_model.dart';
 import 'package:kraya_backend/features/core/property/data/model/details.dart';
 import 'package:kraya_backend/features/core/property/domain/entity/details.dart';
 import 'package:test/test.dart';

@@ -1,0 +1,13 @@
+{
+    "success": true,
+    "error": null,
+    "result": [
+        {
+            "bill-id": 0,
+            "property-id": 0,
+            "status": "",
+            "amount": 0,
+            "payment-date": 946663200000
+        }
+    ]
+}

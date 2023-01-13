@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:kraya_backend/features/core/property/domain/entity/bills.dart';
 
 import '../../../../../../core/error/exceptions.dart';
 import '../../../../../../core/error/failures.dart';
 import '../../../../../../core/network/network_info.dart';
+import '../../domain/entity/bills.dart';
 import '../../domain/entity/details.dart';
 import '../../domain/repository/property.dart';
 import '../datasource/remote.dart';

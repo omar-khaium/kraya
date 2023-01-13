@@ -1,4 +1,5 @@
 import 'package:mockito/annotations.dart';
+
 import '../model/relation.dart';
 
 @GenerateNiceMocks([MockSpec<RelationRemoteDataSource>()])

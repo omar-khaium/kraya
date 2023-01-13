@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
 
 class PropertyBillsEntity extends Equatable {
@@ -13,9 +14,24 @@ class PropertyBillsEntity extends Equatable {
 class BillEntity extends Equatable {
   final String name;
   final int amount;
+  final int extraCharge;
 
-  BillEntity({required this.name, required this.amount});
+  BillEntity({this.extraCharge = 0, required this.name, required this.amount});
 
   @override
-  List<Object?> get props => [name, amount];
+  List<Object?> get props => [name, amount, extraCharge];
+
+  
+
+  BillEntity copyWith({
+    String? name,
+    int? amount,
+    int? extraCharge,
+  }) {
+    return BillEntity(
+      name: name ?? this.name,
+      amount: amount ?? this.amount,
+      extraCharge: extraCharge ?? this.extraCharge,
+    );
+  }
 }

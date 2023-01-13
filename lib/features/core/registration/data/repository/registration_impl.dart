@@ -1,11 +1,9 @@
-import '../../../../../core/error/failures.dart';
-
-import '../../../../../core/enum/enums.dart';
+import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 
-import 'dart:io';
-
+import '../../../../../core/enum/enums.dart';
+import '../../../../../core/error/failures.dart';
 import '../../../../../core/network/network_info.dart';
 import '../../domain/repository/registration.dart';
 import '../datasource/remote.dart';

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:http/http.dart';
+import 'package:kraya_backend/core/model/availability_model.dart';
 import 'package:kraya_backend/features/core/property/data/datasource/remote.dart';
 import 'package:kraya_backend/features/core/property/data/model/bills.dart';
 import 'package:kraya_backend/features/core/property/data/model/details.dart';

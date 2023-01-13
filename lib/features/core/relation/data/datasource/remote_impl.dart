@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:http/http.dart';
-import 'package:kraya_backend/features/core/relation/data/model/relation.dart';
 
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/network/api_response.dart';
+import '../model/relation.dart';
 import 'remote.dart';
 
 class RelationRemoteDataSourceImpl extends RelationRemoteDataSource {

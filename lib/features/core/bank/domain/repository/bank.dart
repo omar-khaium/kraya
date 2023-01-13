@@ -1,7 +1,7 @@
-import 'package:mockito/annotations.dart';
 import 'package:dartz/dartz.dart';
-import '../../../../../core/error/failures.dart';
+import 'package:mockito/annotations.dart';
 
+import '../../../../../core/error/failures.dart';
 import '../entity/bank.dart';
 
 @GenerateNiceMocks([MockSpec<BankRepository>()])

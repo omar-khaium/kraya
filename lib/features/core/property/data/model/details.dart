@@ -1,6 +1,7 @@
-import 'package:kraya_backend/core/enum/parser.dart';
-
 import '../../../../../../core/enum/enums.dart';
+import '../../../../../core/entity/availabiilty_entity.dart';
+import '../../../../../core/enum/parser.dart';
+import '../../../../../core/model/availability_model.dart';
 import '../../domain/entity/details.dart';
 
 class PropertyDetailsModel extends PropertyDetailsEntity {
@@ -71,13 +72,4 @@ class PropertyDetailsModel extends PropertyDetailsEntity {
   }
 }
 
-class AvailabilityModel extends AvailabilityEntity {
-  AvailabilityModel({required bool available, required DateTime from}) : super(available: available, from: from);
 
-  factory AvailabilityModel.fromJson(Map<String, dynamic> map) {
-    return AvailabilityModel(
-      available: map["available"],
-      from: DateTime.fromMillisecondsSinceEpoch(map["from"]),
-    );
-  }
-}

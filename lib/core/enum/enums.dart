@@ -5,3 +5,5 @@ enum Role { owner, tenant, none }
 enum PropertyType { residential, commercial, none }
 
 enum PropertySubType { flat, building, shop, office, none }
+
+enum PaymentStatus { paid, unpaid, none }

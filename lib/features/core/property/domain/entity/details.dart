@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 import '../../../../../../core/enum/enums.dart';
+import '../../../../../core/entity/availabiilty_entity.dart';
 
 class PropertyDetailsEntity extends Equatable {
   final int id;
@@ -67,14 +68,4 @@ class PropertyDetailsEntity extends Equatable {
         availability,
         createdAt,
       ];
-}
-
-class AvailabilityEntity extends Equatable {
-  final bool available;
-  final DateTime from;
-
-  AvailabilityEntity({required this.available, required this.from});
-
-  @override
-  List<Object?> get props => [available, from];
 }
