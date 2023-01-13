@@ -11,9 +11,11 @@ import 'remote.dart';
 
 @GenerateNiceMocks([MockSpec<MultipartRequest>()])
 class OwnerPropertyRemoteDataSourceImpl extends OwnerPropertyRemoteDataSource {
+  final Client client;
   final MultipartRequest multipartRequest;
 
-  OwnerPropertyRemoteDataSourceImpl({required this.multipartRequest});
+  OwnerPropertyRemoteDataSourceImpl({required this.multipartRequest, required this.client});
+
   @override
   Future<bool> add({
     required int ownerId,
@@ -181,6 +183,24 @@ class OwnerPropertyRemoteDataSourceImpl extends OwnerPropertyRemoteDataSource {
       return apiResponse.success;
     } else {
       throw ServerException.fromStreamedResponse(streamedResponse, await streamedResponse.stream.bytesToString());
+    }
+  }
+
+  @override
+  Future<List<int>> allProperties({required int ownerId}) async {
+    final Map<String, String> headers = {"owner-id": ownerId.toString()};
+
+    final response = await client.get(Uri.parse("https://kraya.succour.ltd/api/v1/owner/property/all-properties"), headers: headers);
+
+    if (response.statusCode == HttpStatus.ok) {
+      final ApiResponse<List<int>> apiResponse = ApiResponse.fromJson(response.body);
+      if (apiResponse.success && apiResponse.result != null) {
+        return apiResponse.result ?? [];
+      } else {
+        throw ServerException.fromHttpResponse(response);
+      }
+    } else {
+      throw ServerException.fromHttpResponse(response);
     }
   }
 }

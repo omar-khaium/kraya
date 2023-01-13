@@ -148,4 +148,15 @@ class MockOwnerPropertyRemoteDataSource extends _i1.Mock
         returnValue: _i3.Future<bool>.value(false),
         returnValueForMissingStub: _i3.Future<bool>.value(false),
       ) as _i3.Future<bool>);
+  @override
+  _i3.Future<List<int>> allProperties({required int? ownerId}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #allProperties,
+          [],
+          {#ownerId: ownerId},
+        ),
+        returnValue: _i3.Future<List<int>>.value(<int>[]),
+        returnValueForMissingStub: _i3.Future<List<int>>.value(<int>[]),
+      ) as _i3.Future<List<int>>);
 }

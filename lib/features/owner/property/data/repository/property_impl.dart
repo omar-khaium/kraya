@@ -126,4 +126,14 @@ class OwnerPropertyRepositoryImpl extends OwnerPropertyRepository {
       return Left(InteretDisconnectedFailure());
     }
   }
+
+  @override
+  Future<Either<Failure, List<int>>> allProperties({required int ownerId}) async {
+    if (await networkInfo.online) {
+      final result = await remoteDataSource.allProperties(ownerId: ownerId);
+      return Right(result);
+    } else {
+      return Left(InteretDisconnectedFailure());
+    }
+  }
 }

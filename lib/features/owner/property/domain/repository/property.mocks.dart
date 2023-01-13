@@ -297,4 +297,33 @@ class MockOwnerPropertyRepository extends _i1.Mock
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, bool>>);
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, List<int>>> allProperties(
+          {required int? ownerId}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #allProperties,
+          [],
+          {#ownerId: ownerId},
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, List<int>>>.value(
+            _FakeEither_0<_i5.Failure, List<int>>(
+          this,
+          Invocation.method(
+            #allProperties,
+            [],
+            {#ownerId: ownerId},
+          ),
+        )),
+        returnValueForMissingStub:
+            _i4.Future<_i2.Either<_i5.Failure, List<int>>>.value(
+                _FakeEither_0<_i5.Failure, List<int>>(
+          this,
+          Invocation.method(
+            #allProperties,
+            [],
+            {#ownerId: ownerId},
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, List<int>>>);
 }

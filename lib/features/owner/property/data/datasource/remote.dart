@@ -55,4 +55,5 @@ abstract class OwnerPropertyRemoteDataSource {
     required int propertyId,
     required int tenantId,
   });
+  Future<List<int>> allProperties({required int ownerId});
 }

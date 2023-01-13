@@ -58,7 +58,7 @@ abstract class OwnerPropertyRepository {
     required int propertyId,
   });
 
-  // Future<Either<Failure, PropertyEntity>> allProperties({
-  //   required int ownerId,
-  // });
+  Future<Either<Failure, List<int>>> allProperties({
+    required int ownerId,
+  });
 }
