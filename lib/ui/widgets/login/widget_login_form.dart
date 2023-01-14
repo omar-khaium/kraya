@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/gradient_button.dart';
+import 'package:kraya/ui/reusable_widgets/gradient_button.dart';
 import 'package:kraya/core/text_style.dart';
 
 class WidgetLoginForm extends StatelessWidget {

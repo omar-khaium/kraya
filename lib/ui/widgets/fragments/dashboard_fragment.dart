@@ -3,7 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:kraya/core/colors.dart';
 import 'package:kraya/core/text_style.dart';
-import 'package:kraya/core/widget_lable_text.dart';
+import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
 import 'package:kraya/ui/widgets/dashboard/dashboard_custom_app_bar.dart';
 import 'package:kraya/ui/widgets/dashboard/widget_dashboard_menu_card.dart';
 

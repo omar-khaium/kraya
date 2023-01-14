@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/gradient_button.dart';
+import 'package:kraya/ui/reusable_widgets/gradient_button.dart';
 import 'package:kraya/ui/widgets/login/verify_otp/widget_back_button.dart';
 import 'package:kraya/ui/widgets/login/verify_otp/widget_verift_otp_greetings.dart';
 import 'package:kraya/ui/widgets/login/verify_otp/widget_verify_otp_form.dart';

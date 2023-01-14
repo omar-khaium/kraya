@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/gradient_button.dart';
+import 'package:kraya/ui/reusable_widgets/gradient_button.dart';
 import 'package:kraya/core/text_style.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_input_text.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';

@@ -1,8 +1,9 @@
+import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:kraya/core/colors.dart';
 import 'package:kraya/core/custom_app_bar.dart';
 import 'package:kraya/core/text_style.dart';
-import 'package:kraya/core/widget_lable_text.dart';
+import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class FragmentSubmitBills extends StatefulWidget {
@@ -99,15 +100,33 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
                               ),
                             )),
                       ),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: IconButton(
-                          icon: const Icon(Icons.keyboard_arrow_down),
-                          onPressed: () {
-
-                          },
+                      Expandable(
+                        collapsed: const Text(""),
+                        expanded: SizedBox(
+                          height: 200,
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            physics: const NeverScrollableScrollPhysics(),
+                            padding: const EdgeInsets.all(8),
+                            itemCount: 5,
+                            itemBuilder: (context, int index) {
+                              return ListTile(
+                                dense: true,
+                                visualDensity: VisualDensity.compact,
+                                leading: WidgetLabelText(
+                                  text: "Bill",
+                                  colorSystem: ColorSystem.instance.text,
+                                ),
+                                trailing: WidgetLabelText(
+                                  text: "Amount",
+                                  colorSystem: ColorSystem.instance.text,
+                                ),
+                              );
+                            },
+                          ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 );
@@ -125,6 +144,28 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
   }
 }
 
-Widget billsItem(){
-  return
+Widget billsItem() {
+  return Expandable(
+    collapsed: const Text(""),
+    expanded: ListView.builder(
+      shrinkWrap: true,
+      scrollDirection: Axis.vertical,
+      padding: const EdgeInsets.all(8),
+      itemCount: 5,
+      itemBuilder: (context, int index) {
+        return ListTile(
+          dense: true,
+          visualDensity: VisualDensity.compact,
+          leading: WidgetLabelText(
+            text: "Bill",
+            colorSystem: ColorSystem.instance.text,
+          ),
+          trailing: WidgetLabelText(
+            text: "Amount",
+            colorSystem: ColorSystem.instance.text,
+          ),
+        );
+      },
+    ),
+  );
 }

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/colors.dart';
 import 'package:kraya/core/enums.dart';
-import 'package:kraya/core/gradient_button.dart';
+import 'package:kraya/ui/reusable_widgets/gradient_button.dart';
 import 'package:kraya/ui/widgets/login/widget_language_toggle.dart';
 import 'package:kraya/ui/widgets/login/widget_login_form.dart';
 import 'package:kraya/ui/widgets/login/widget_login_gradient.dart';
