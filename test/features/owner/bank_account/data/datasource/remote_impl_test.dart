@@ -24,7 +24,7 @@ void main() {
   final String accountNumber = "";
   final String branch = "";
 
-  final String result = fixture("api_add_owner_bank_account.json");
+  final String result = fixture("api_owner_add_bank_account.json");
 
   test("""should perform a call with [POST] request in [HttpClient] 
     and get created user guid as valid response""", () async {

@@ -1,4 +1,3 @@
-
 import 'package:dartz/dartz.dart';
 import 'package:kraya_backend/core/error/failures.dart';
 import 'package:kraya_backend/core/network/network_info.mocks.dart';
@@ -53,7 +52,7 @@ void main() {
       setUp(() {
         when(mockNetworkInfo.online).thenAnswer((_) async => true);
       });
-      body();
+      body.call();
     });
   }
 
@@ -62,7 +61,7 @@ void main() {
       setUp(() {
         when(mockNetworkInfo.online).thenAnswer((_) async => false);
       });
-      body();
+      body.call();
     });
   }
 

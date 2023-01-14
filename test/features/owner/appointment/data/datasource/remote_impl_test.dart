@@ -27,7 +27,7 @@ void main() {
   final double longitude = 0.0;
   final DateTime date = DateTime(2000);
 
-  final String result = fixture("api_add_owner_appointment.json");
+  final String result = fixture("api_owner_add_appointment.json");
 
   test("""should perform a call with [POST] request in [HttpClient] 
     and get created user guid as valid response""", () async {
