@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 
-import '../../../../../../core/enum/enums.dart';
 
 class ProfileEntity extends Equatable {
   final int id;
@@ -8,8 +7,8 @@ class ProfileEntity extends Equatable {
   final String firstName;
   final String lastName;
   final String? email;
-  final Gender gender;
-  final Role role;
+  final int gender;
+  final int role;
   final DateTime dateOfBirth;
   final String? profilePicture;
 

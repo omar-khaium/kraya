@@ -1,14 +1,13 @@
 import 'package:equatable/equatable.dart';
 
-import '../../../../../../core/enum/enums.dart';
-import '../../../../../core/entity/availabiilty_entity.dart';
+import '../../../../../core/entity/availabiilty.dart';
 
 class PropertyDetailsEntity extends Equatable {
   final int id;
   final int ownerId;
   final int? tenantId;
-  final PropertyType propertyType;
-  final PropertySubType propertySubType;
+  final int propertyType;
+  final int propertySubType;
   final String buildingName;
   final String flatName;
   final String address;

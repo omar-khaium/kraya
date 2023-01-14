@@ -1,7 +1,5 @@
-import '../../../../../../core/enum/enums.dart';
-import '../../../../../core/entity/availabiilty_entity.dart';
-import '../../../../../core/enum/parser.dart';
-import '../../../../../core/model/availability_model.dart';
+import '../../../../../core/entity/availabiilty.dart';
+import '../../../../../core/model/availability.dart';
 import '../../domain/entity/details.dart';
 
 class PropertyDetailsModel extends PropertyDetailsEntity {
@@ -9,8 +7,8 @@ class PropertyDetailsModel extends PropertyDetailsEntity {
     required int id,
     required int ownerId,
     int? tenantId,
-    required PropertyType propertyType,
-    required PropertySubType propertySubType,
+    required int propertyType,
+    required int propertySubType,
     required String buildingName,
     required String flatName,
     required String address,
@@ -52,8 +50,8 @@ class PropertyDetailsModel extends PropertyDetailsEntity {
       id: id,
       ownerId: map["owner-id"],
       tenantId: map["tenant-id"],
-      propertyType: EnumParser.instance.toPropertyType(map["type"]),
-      propertySubType: EnumParser.instance.toPropertySubType(map["sub-type"]),
+      propertyType: map["type"] ?? -1,
+      propertySubType: map["sub-type"] ?? -1,
       buildingName: map["building-name"],
       flatName: map["flat-name"],
       address: map["address"],
@@ -71,5 +69,3 @@ class PropertyDetailsModel extends PropertyDetailsEntity {
     );
   }
 }
-
-

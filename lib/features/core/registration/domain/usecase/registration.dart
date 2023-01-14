@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 
-import '../../../../../core/enum/enums.dart';
 import '../../../../../core/error/failures.dart';
 import '../../../../../core/usecase/usecase.dart';
 import '../repository/registration.dart';
@@ -33,8 +32,8 @@ class RegistrationParams {
   final String phone;
   final String? email;
   final DateTime dateOfBirth;
-  final Gender gender;
-  final Role role;
+  final int gender;
+  final int role;
   final File? profilePicture;
 
   RegistrationParams({

@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:http/http.dart';
 import 'package:mockito/annotations.dart';
 
-import '../../../../../../core/error/exceptions.dart';
 import '../../../../../../core/network/api_response.dart';
+import '../../../../../core/error/exceptions.dart';
 import '../model/bills.dart';
 import '../model/details.dart';
 

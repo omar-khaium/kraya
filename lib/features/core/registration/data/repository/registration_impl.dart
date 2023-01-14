@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 
-import '../../../../../core/enum/enums.dart';
 import '../../../../../core/error/failures.dart';
 import '../../../../../core/network/network_info.dart';
 import '../../domain/repository/registration.dart';
@@ -20,8 +19,8 @@ class RegistrationRepositoryImpl extends RegistrationRepository {
     required String phone,
     String? email,
     required DateTime dateOfBirth,
-    required Gender gender,
-    required Role role,
+    required int gender,
+    required int role,
     File? profilePicture,
   }) async {
     if (await networkInfo.online) {

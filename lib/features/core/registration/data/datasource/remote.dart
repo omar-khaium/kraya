@@ -2,8 +2,6 @@ import 'dart:io';
 
 import 'package:mockito/annotations.dart';
 
-import '../../../../../core/enum/enums.dart';
-
 @GenerateNiceMocks([MockSpec<RegistrationRemoteDataSource>()])
 abstract class RegistrationRemoteDataSource {
   Future<String> submit({
@@ -12,8 +10,8 @@ abstract class RegistrationRemoteDataSource {
     required String phone,
     String? email,
     required DateTime dateOfBirth,
-    required Gender gender,
-    required Role role,
+    required int gender,
+    required int role,
     File? profilePicture,
   });
 }

@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 
-import '../../../../../../core/error/exceptions.dart';
 import '../../../../../../core/error/failures.dart';
 import '../../../../../../core/network/network_info.dart';
+import '../../../../../core/error/exceptions.dart';
 import '../../domain/entity/bills.dart';
 import '../../domain/entity/details.dart';
 import '../../domain/repository/property.dart';

@@ -1,6 +1,4 @@
-import '../../../../../../core/enum/enums.dart';
-import '../../../../../../core/enum/parser.dart';
-import '../../../../../../core/error/exceptions.dart';
+import '../../../../../core/error/exceptions.dart';
 import '../../domain/entity/profile.dart';
 
 class ProfileModel extends ProfileEntity {
@@ -10,8 +8,8 @@ class ProfileModel extends ProfileEntity {
     required String firstName,
     required String lastName,
     String? email,
-    required Gender gender,
-    required Role role,
+    required int gender,
+    required int role,
     required DateTime dateOfBirth,
     String? profilePicture,
   }) : super(
@@ -34,8 +32,8 @@ class ProfileModel extends ProfileEntity {
         firstName: map["first-name"] ?? "",
         lastName: map["last-name"] ?? "",
         email: map["email"].toString().isEmpty ? null : map["email"],
-        gender: EnumParser.instance.toGender(map["gender"] ?? ""),
-        role: EnumParser.instance.toRole(map["role"] ?? ""),
+        gender: map["gender"] ?? -1,
+        role: map["role"] ?? -1,
         dateOfBirth: DateTime.fromMillisecondsSinceEpoch(map["date-of-birth"] ?? 0),
         profilePicture: map["profile-picture"].toString().isEmpty ? null : map["profile-picture"],
       );

@@ -4,10 +4,9 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
-import 'dart:io' as _i7;
+import 'dart:io' as _i6;
 
 import 'package:dartz/dartz.dart' as _i2;
-import 'package:kraya_backend/core/enum/enums.dart' as _i6;
 import 'package:kraya_backend/core/error/failures.dart' as _i5;
 import 'package:kraya_backend/features/core/registration/domain/repository/registration.dart'
     as _i3;
@@ -46,9 +45,9 @@ class MockRegistrationRepository extends _i1.Mock
     required String? phone,
     String? email,
     required DateTime? dateOfBirth,
-    required _i6.Gender? gender,
-    required _i6.Role? role,
-    _i7.File? profilePicture,
+    required int? gender,
+    required int? role,
+    _i6.File? profilePicture,
   }) =>
       (super.noSuchMethod(
         Invocation.method(

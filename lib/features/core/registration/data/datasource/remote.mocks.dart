@@ -4,9 +4,8 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
-import 'dart:io' as _i5;
+import 'dart:io' as _i4;
 
-import 'package:kraya_backend/core/enum/enums.dart' as _i4;
 import 'package:kraya_backend/features/core/registration/data/datasource/remote.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
@@ -34,9 +33,9 @@ class MockRegistrationRemoteDataSource extends _i1.Mock
     required String? phone,
     String? email,
     required DateTime? dateOfBirth,
-    required _i4.Gender? gender,
-    required _i4.Role? role,
-    _i5.File? profilePicture,
+    required int? gender,
+    required int? role,
+    _i4.File? profilePicture,
   }) =>
       (super.noSuchMethod(
         Invocation.method(

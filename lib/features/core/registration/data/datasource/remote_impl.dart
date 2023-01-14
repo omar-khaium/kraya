@@ -2,8 +2,6 @@ import 'dart:io';
 
 import 'package:http/http.dart';
 
-import '../../../../../core/enum/enums.dart';
-import '../../../../../core/enum/parser.dart';
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/network/api_response.dart';
 import 'remote.dart';
@@ -19,8 +17,8 @@ class RegistrationRemoteDataSourceImpl extends RegistrationRemoteDataSource {
     required String phone,
     String? email,
     required DateTime dateOfBirth,
-    required Gender gender,
-    required Role role,
+    required int gender,
+    required int role,
     File? profilePicture,
   }) async {
     multipartRequest.headers.addAll({"Content-Type": "multipart/form-data"});
@@ -30,8 +28,8 @@ class RegistrationRemoteDataSourceImpl extends RegistrationRemoteDataSource {
         "last_name": lastName,
         "phone": phone,
         "date_of_birth": dateOfBirth.millisecondsSinceEpoch.toString(),
-        "gender": EnumParser.instance.fromGender(gender),
-        "role": EnumParser.instance.fromRole(role),
+        "gender": gender.toString(),
+        "role": role.toString(),
       },
     );
     if (email != null) {
