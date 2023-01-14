@@ -4,7 +4,6 @@ import 'package:http/http.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
-import 'package:kraya_backend/core/enum/enums.dart';
 import 'package:kraya_backend/core/error/exceptions.dart';
 import 'package:kraya_backend/features/core/profile/data/datasource/remote.dart';
 
@@ -28,8 +27,8 @@ void main() {
       phone: "",
       firstName: "",
       lastName: "",
-      gender: Gender.none,
-      role: Role.none,
+      gender: -1,
+      role: -1,
       dateOfBirth: DateTime(1970, 1, 1, 6, 0),
     );
     test("""should perform a call with [GET] request in [HttpClient] 
@@ -95,8 +94,8 @@ void main() {
       phone: "",
       firstName: "",
       lastName: "",
-      gender: Gender.none,
-      role: Role.none,
+      gender: -1,
+      role: -1,
       dateOfBirth: DateTime(1970, 1, 1, 6, 0),
     );
     test("""should perform a call with [GET] request in [HttpClient] 

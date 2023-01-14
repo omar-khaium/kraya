@@ -5,8 +5,6 @@ import 'package:kraya_backend/features/core/property/domain/usecase/details.dart
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
-import 'package:kraya_backend/core/enum/enums.dart';
-
 void main() {
   late PropertyDetailsUsecase usercase;
   late MockPropertyRepository mockRepository;
@@ -21,8 +19,8 @@ void main() {
   final PropertyDetailsEntity tEntity = PropertyDetailsEntity(
     id: 0,
     ownerId: 0,
-    propertyType: PropertyType.none,
-    propertySubType: PropertySubType.none,
+    propertyType: -1,
+    propertySubType: -1,
     buildingName: "",
     flatName: "",
     address: "",

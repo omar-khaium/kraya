@@ -1,14 +1,13 @@
 import 'dart:io';
 
 import 'package:http/http.dart';
-import 'package:kraya_backend/core/model/availability_model.dart';
+import 'package:kraya_backend/core/model/availability.dart';
 import 'package:kraya_backend/features/core/property/data/datasource/remote.dart';
 import 'package:kraya_backend/features/core/property/data/model/bills.dart';
 import 'package:kraya_backend/features/core/property/data/model/details.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
-import 'package:kraya_backend/core/enum/enums.dart';
 import 'package:kraya_backend/core/error/exceptions.dart';
 
 import 'package:kraya_backend/core/network/network_info.mocks.dart';
@@ -30,8 +29,8 @@ void main() {
       id: tPropertyId,
       ownerId: 0,
       tenantId: 0,
-      propertyType: PropertyType.none,
-      propertySubType: PropertySubType.none,
+      propertyType: -1,
+      propertySubType: -1,
       buildingName: "",
       flatName: "",
       address: "",

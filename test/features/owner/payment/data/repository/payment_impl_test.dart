@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:kraya_backend/core/enum/enums.dart';
+
 import 'package:kraya_backend/core/error/exceptions.dart';
 import 'package:kraya_backend/core/error/failures.dart';
 import 'package:kraya_backend/core/network/network_info.mocks.dart';
@@ -63,7 +63,7 @@ void main() {
           id: 0,
           propertyId: 0,
           amount: 0,
-          status: PaymentStatus.none,
+          status: -1,
           date: DateTime(2000),
         )
       ];

@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:kraya_backend/core/enum/enums.dart';
+
 import 'package:kraya_backend/core/error/failures.dart';
 import 'package:kraya_backend/core/network/network_info.mocks.dart';
 import 'package:kraya_backend/features/core/registration/data/datasource/remote.mocks.dart';
@@ -30,8 +30,8 @@ void main() {
   final String phone = "";
   final String email = "";
   final DateTime dateOfBirth = DateTime(2000);
-  final Gender gender = Gender.none;
-  final Role role = Role.none;
+  final int gender = -1;
+  final int role = -1;
   final File? profilePicture = null;
 
   final String guid = "";

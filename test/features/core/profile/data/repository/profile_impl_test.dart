@@ -3,7 +3,6 @@ import 'package:kraya_backend/features/core/profile/data/datasource/remote.mocks
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
-import 'package:kraya_backend/core/enum/enums.dart';
 import 'package:kraya_backend/core/error/exceptions.dart';
 import 'package:kraya_backend/core/error/failures.dart';
 import 'package:kraya_backend/core/network/network_info.mocks.dart';
@@ -37,8 +36,8 @@ void main() {
       phone: tPhone,
       firstName: "",
       lastName: "",
-      gender: Gender.none,
-      role: Role.none,
+      gender: -1,
+      role: -1,
       dateOfBirth: DateTime(1970, 1, 1, 6, 0),
     );
     test("should check if device is online", () {
@@ -167,8 +166,8 @@ void main() {
       phone: "",
       firstName: "",
       lastName: "",
-      gender: Gender.none,
-      role: Role.none,
+      gender: -1,
+      role: -1,
       dateOfBirth: DateTime(1970, 1, 1, 6, 0),
     );
     test("should check if device is online", () {

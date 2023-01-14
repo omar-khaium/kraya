@@ -2,33 +2,29 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart';
-
-import 'package:kraya_backend/features/core/registration/data/datasource/remote_impl.dart';
 import 'package:kraya_backend/core/network/network_info.mocks.dart';
+import 'package:kraya_backend/features/tenant/bank_account/data/datasource/remote_impl.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
 import '../../../../../fixtures/fixture_reader.dart';
 
 void main() {
-  late RegistrationRemoteDataSourceImpl dataSource;
+  late TenantBankAccountRemoteDataSourceImpl dataSource;
   late MockMultipartRequest mockMultipartRequest;
 
   setUp(() {
     mockMultipartRequest = MockMultipartRequest();
-    dataSource = RegistrationRemoteDataSourceImpl(multipartRequest: mockMultipartRequest);
+    dataSource = TenantBankAccountRemoteDataSourceImpl(multipartRequest: mockMultipartRequest);
   });
 
-  final String firstName = "";
-  final String lastName = "";
-  final String phone = "";
-  final String email = "";
-  final DateTime dateOfBirth = DateTime(2000);
-  final int gender = -1;
-  final int role = -1;
-  final File? profilePicture = null;
+  final int tenantId = 0;
+  final int bankId = 0;
+  final String name = "";
+  final String accountNumber = "";
+  final String branch = "";
 
-  final String result = fixture("api_registration.json");
+  final String result = fixture("api_add_tenant_bank_account.json");
 
   test("""should perform a call with [POST] request in [HttpClient] 
     and get created user guid as valid response""", () async {
@@ -38,15 +34,12 @@ void main() {
     ).thenAnswer((_) async => StreamedResponse(ByteStream.fromBytes(utf8.encode(result)), HttpStatus.ok));
 
     // act
-    await dataSource.submit(
-      firstName: firstName,
-      lastName: lastName,
-      phone: phone,
-      email: email,
-      dateOfBirth: dateOfBirth,
-      gender: gender,
-      role: role,
-      profilePicture: profilePicture,
+    await dataSource.add(
+      tenantId: tenantId,
+      bankId: bankId,
+      name: name,
+      accountNumber: accountNumber,
+      branch: branch,
     );
 
     // assert

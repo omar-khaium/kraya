@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:kraya_backend/core/enum/enums.dart';
 import 'package:kraya_backend/features/owner/payment/data/model/payment.dart';
 import 'package:kraya_backend/features/owner/payment/domain/entity/payment.dart';
 import 'package:test/test.dart';
@@ -12,7 +11,7 @@ void main() {
     id: 0,
     propertyId: 0,
     amount: 0,
-    status: PaymentStatus.none,
+    status: -1,
     date: DateTime(2000),
   );
 

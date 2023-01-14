@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:test/test.dart';
 
-import 'package:kraya_backend/core/enum/enums.dart';
 import 'package:kraya_backend/core/error/exceptions.dart';
 import 'package:kraya_backend/features/core/profile/data/model/profile.dart';
 import 'package:kraya_backend/features/core/profile/domain/entity/profile.dart';
@@ -14,8 +13,8 @@ void main() {
     phone: "",
     firstName: "",
     lastName: "",
-    gender: Gender.none,
-    role: Role.none,
+    gender: -1,
+    role: -1,
     dateOfBirth: DateTime(1970, 1, 1, 6, 0),
   );
 

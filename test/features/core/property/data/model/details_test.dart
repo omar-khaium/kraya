@@ -1,11 +1,10 @@
 import 'dart:convert';
 
-import 'package:kraya_backend/core/model/availability_model.dart';
+import 'package:kraya_backend/core/model/availability.dart';
 import 'package:kraya_backend/features/core/property/data/model/details.dart';
 import 'package:kraya_backend/features/core/property/domain/entity/details.dart';
 import 'package:test/test.dart';
 
-import 'package:kraya_backend/core/enum/enums.dart';
 import '../../../../../fixtures/fixture_reader.dart';
 
 void main() {
@@ -13,8 +12,8 @@ void main() {
     id: 0,
     ownerId: 0,
     tenantId: 0,
-    propertyType: PropertyType.none,
-    propertySubType: PropertySubType.none,
+    propertyType: -1,
+    propertySubType: -1,
     buildingName: "",
     flatName: "",
     address: "",
