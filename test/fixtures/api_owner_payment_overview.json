@@ -5,7 +5,7 @@
         {
             "bill-id": 0,
             "property-id": 0,
-            "status": "",
+            "status": -1,
             "amount": 0,
             "payment-date": 946663200000
         }

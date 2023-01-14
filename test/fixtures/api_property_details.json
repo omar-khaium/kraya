@@ -4,8 +4,8 @@
     "result": {
         "owner-id": 0,
         "tenant-id": 0,
-        "type": "",
-        "sub-type": "",
+        "type": -1,
+        "sub-type": -1,
         "building-name": "",
         "flat-name": "",
         "address": "",
