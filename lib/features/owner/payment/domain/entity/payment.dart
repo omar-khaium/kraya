@@ -1,11 +1,9 @@
 import 'package:equatable/equatable.dart';
 
-import '../../../../../core/enum/enums.dart';
-
 class PaymentEntity extends Equatable {
   final int id;
   final int propertyId;
-  final PaymentStatus status;
+  final int status;
   final int amount;
   final DateTime? date;
 

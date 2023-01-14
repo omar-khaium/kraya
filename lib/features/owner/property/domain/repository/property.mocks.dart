@@ -7,7 +7,7 @@ import 'dart:async' as _i4;
 import 'dart:io' as _i8;
 
 import 'package:dartz/dartz.dart' as _i2;
-import 'package:kraya_backend/core/entity/availabiilty_entity.dart' as _i7;
+import 'package:kraya_backend/core/entity/availabiilty.dart' as _i7;
 import 'package:kraya_backend/core/error/failures.dart' as _i5;
 import 'package:kraya_backend/features/core/property/domain/entity/bills.dart'
     as _i6;

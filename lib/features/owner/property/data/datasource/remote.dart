@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:mockito/annotations.dart';
 
-import '../../../../../core/entity/availabiilty_entity.dart';
+import '../../../../../core/entity/availabiilty.dart';
 import '../../../../core/property/domain/entity/bills.dart';
 
 @GenerateNiceMocks([MockSpec<OwnerPropertyRemoteDataSource>()])

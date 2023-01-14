@@ -6,7 +6,7 @@
 import 'dart:async' as _i3;
 import 'dart:io' as _i6;
 
-import 'package:kraya_backend/core/entity/availabiilty_entity.dart' as _i5;
+import 'package:kraya_backend/core/entity/availabiilty.dart' as _i5;
 import 'package:kraya_backend/features/core/property/domain/entity/bills.dart'
     as _i4;
 import 'package:kraya_backend/features/owner/property/data/datasource/remote.dart'

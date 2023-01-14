@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:mockito/annotations.dart';
 
-import '../../../../../core/entity/availabiilty_entity.dart';
+import '../../../../../core/entity/availabiilty.dart';
 import '../../../../../core/error/failures.dart';
 import '../../../../../features/core/property/domain/entity/bills.dart';
 

@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:http/http.dart';
 
-import '../../../../../core/entity/availabiilty_entity.dart';
+import '../../../../../core/entity/availabiilty.dart';
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/network/api_response.dart';
 import '../../../../core/property/domain/entity/bills.dart';

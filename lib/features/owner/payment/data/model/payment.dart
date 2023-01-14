@@ -1,4 +1,3 @@
-import '../../../../../core/enum/parser.dart';
 import '../../domain/entity/payment.dart';
 
 class PaymentModel extends PaymentEntity {
@@ -15,7 +14,7 @@ class PaymentModel extends PaymentEntity {
       id: map["bill-id"] ?? 0,
       propertyId: map["property-id"] ?? 0,
       amount: map["amount"] ?? 0,
-      status: EnumParser.instance.toPaymentStatus(map["status"] ?? ""),
+      status: map["status"] ?? -1,
       date: DateTime.fromMillisecondsSinceEpoch(map["payment-date"] ?? 0),
     );
   }
