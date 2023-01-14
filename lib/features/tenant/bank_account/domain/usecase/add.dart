@@ -4,10 +4,10 @@ import '../../../../../core/error/failures.dart';
 import '../../../../../core/usecase/usecase.dart';
 import '../repository/bank_account.dart';
 
-class AddTenantBankAccountUsecase extends Usecase<bool, AddTenantBankAccountParams> {
+class TenantAddBankAccountUsecase extends Usecase<bool, TenantAddBankAccountParams> {
   final TenantBankAccountRepository _repository;
 
-  AddTenantBankAccountUsecase(this._repository);
+  TenantAddBankAccountUsecase(this._repository);
 
   @override
   Future<Either<Failure, bool>> call(param) async {
@@ -21,14 +21,14 @@ class AddTenantBankAccountUsecase extends Usecase<bool, AddTenantBankAccountPara
   }
 }
 
-class AddTenantBankAccountParams {
+class TenantAddBankAccountParams {
   final int tenantId;
   final int bankId;
   final String name;
   final String accountNumber;
   final String branch;
 
-  AddTenantBankAccountParams({
+  TenantAddBankAccountParams({
     required this.tenantId,
     required this.bankId,
     required this.name,

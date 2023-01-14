@@ -6,10 +6,10 @@ import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/network/api_response.dart';
 import 'remote.dart';
 
-class OwnerBankAccountRemoteDataSourceImpl extends TenantBankAccountRemoteDataSource {
+class TenantBankAccountRemoteDataSourceImpl extends TenantBankAccountRemoteDataSource {
   final MultipartRequest multipartRequest;
 
-  OwnerBankAccountRemoteDataSourceImpl({required this.multipartRequest});
+  TenantBankAccountRemoteDataSourceImpl({required this.multipartRequest});
   @override
   Future<bool> add({
     required int tenantId,
@@ -21,7 +21,7 @@ class OwnerBankAccountRemoteDataSourceImpl extends TenantBankAccountRemoteDataSo
     multipartRequest.headers.addAll({"Content-Type": "multipart/form-data"});
     multipartRequest.fields.addAll(
       {
-        "owner_id": tenantId.toString(),
+        "tenant_id": tenantId.toString(),
         "bank_id": bankId.toString(),
         "name": name,
         "number": accountNumber,
