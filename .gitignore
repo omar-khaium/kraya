@@ -48,3 +48,4 @@ app.*.map.json
 pubspec.lock
 pubspec.lock
 pubspec.lock
+coverage/lcov.info

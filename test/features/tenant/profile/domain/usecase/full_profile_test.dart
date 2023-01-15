@@ -59,7 +59,7 @@ void main() {
   test("should get this guid from the repository", () async {
     // arrange
     when(
-      mockRepository.fullProfile(id: tenantId),
+      mockRepository.fullProfile(tenantId: tenantId),
     ).thenAnswer((_) async => Right(result));
 
     // act
@@ -68,7 +68,7 @@ void main() {
     // assert
     expect(tResult, Right(result));
     verify(
-      mockRepository.fullProfile(id: tenantId),
+      mockRepository.fullProfile(tenantId: tenantId),
     );
     verifyNoMoreInteractions(mockRepository);
   });

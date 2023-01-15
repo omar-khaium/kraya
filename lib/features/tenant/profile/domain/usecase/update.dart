@@ -16,7 +16,7 @@ class TenantUpdateProfileUsecase implements Usecase<bool, TenantUpdateProfilePar
     return await _repository.update(
       tenantId: param.tenantId,
       nidNumber: param.nidNumber,
-      passportNumnber: param.passportNumnber,
+      passportNumber: param.passportNumnber,
       email: param.email,
       religion: param.religion,
       fatherName: param.fatherName,
@@ -29,16 +29,16 @@ class TenantUpdateProfileUsecase implements Usecase<bool, TenantUpdateProfilePar
 }
 
 class TenantUpdateProfileParam {
-    final int tenantId;
-    final String nidNumber;
-    final String passportNumnber;
-    final String email;
-    final int religion;
-    final String fatherName;
-    final String address;
-    final String occupation;
-    final String jobAddress;
-    final File? nidPhoto;
+  final int tenantId;
+  final String nidNumber;
+  final String passportNumnber;
+  final String email;
+  final int religion;
+  final String fatherName;
+  final String address;
+  final String occupation;
+  final String jobAddress;
+  final File? nidPhoto;
   TenantUpdateProfileParam({
     required this.tenantId,
     required this.nidNumber,

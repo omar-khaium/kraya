@@ -6,10 +6,8 @@
 import 'dart:async' as _i4;
 import 'dart:io' as _i5;
 
-import 'package:kraya_backend/features/tenant/profile/data/datasource/remote.dart'
-    as _i3;
-import 'package:kraya_backend/features/tenant/profile/data/model/profile.dart'
-    as _i2;
+import 'package:kraya_backend/features/tenant/profile/data/datasource/remote.dart' as _i3;
+import 'package:kraya_backend/features/tenant/profile/data/model/profile.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -23,8 +21,7 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeTenantFullProfileModel_0 extends _i1.SmartFake
-    implements _i2.TenantFullProfileModel {
+class _FakeTenantFullProfileModel_0 extends _i1.SmartFake implements _i2.TenantFullProfileModel {
   _FakeTenantFullProfileModel_0(
     Object parent,
     Invocation parentInvocation,
@@ -37,13 +34,12 @@ class _FakeTenantFullProfileModel_0 extends _i1.SmartFake
 /// A class which mocks [TenantProfileRemoteDataSource].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockTenantProfileRemoteDataSource extends _i1.Mock
-    implements _i3.TenantProfileRemoteDataSource {
+class MockTenantProfileRemoteDataSource extends _i1.Mock implements _i3.TenantProfileRemoteDataSource {
   @override
   _i4.Future<bool> update({
     required int? tenantId,
     required String? nidNumber,
-    required String? passportNumnber,
+    required String? passportNumber,
     required String? email,
     required int? religion,
     required String? fatherName,
@@ -59,7 +55,7 @@ class MockTenantProfileRemoteDataSource extends _i1.Mock
           {
             #tenantId: tenantId,
             #nidNumber: nidNumber,
-            #passportNumnber: passportNumnber,
+            #passportNumnber: passportNumber,
             #email: email,
             #religion: religion,
             #fatherName: fatherName,
@@ -73,29 +69,26 @@ class MockTenantProfileRemoteDataSource extends _i1.Mock
         returnValueForMissingStub: _i4.Future<bool>.value(false),
       ) as _i4.Future<bool>);
   @override
-  _i4.Future<_i2.TenantFullProfileModel> view({required int? id}) =>
-      (super.noSuchMethod(
+  _i4.Future<_i2.TenantFullProfileModel> fullProfile({required int? tenantId}) => (super.noSuchMethod(
         Invocation.method(
           #view,
           [],
-          {#id: id},
+          {#id: tenantId},
         ),
-        returnValue: _i4.Future<_i2.TenantFullProfileModel>.value(
-            _FakeTenantFullProfileModel_0(
+        returnValue: _i4.Future<_i2.TenantFullProfileModel>.value(_FakeTenantFullProfileModel_0(
           this,
           Invocation.method(
             #view,
             [],
-            {#id: id},
+            {#id: tenantId},
           ),
         )),
-        returnValueForMissingStub: _i4.Future<_i2.TenantFullProfileModel>.value(
-            _FakeTenantFullProfileModel_0(
+        returnValueForMissingStub: _i4.Future<_i2.TenantFullProfileModel>.value(_FakeTenantFullProfileModel_0(
           this,
           Invocation.method(
             #view,
             [],
-            {#id: id},
+            {#id: tenantId},
           ),
         )),
       ) as _i4.Future<_i2.TenantFullProfileModel>);

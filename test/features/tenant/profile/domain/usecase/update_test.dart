@@ -34,7 +34,7 @@ void main() {
       mockRepository.update(
           tenantId: tenantId,
           nidNumber: nidNumber,
-          passportNumnber: passportNumnber,
+          passportNumber: passportNumnber,
           email: email,
           religion: religion,
           fatherName: fatherName,
@@ -66,7 +66,7 @@ void main() {
       mockRepository.update(
         tenantId: tenantId,
         nidNumber: nidNumber,
-        passportNumnber: passportNumnber,
+        passportNumber: passportNumnber,
         email: email,
         religion: religion,
         fatherName: fatherName,

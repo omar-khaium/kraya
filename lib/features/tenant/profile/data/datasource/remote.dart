@@ -12,7 +12,7 @@ abstract class TenantProfileRemoteDataSource {
   Future<bool> update({
     required int tenantId,
     required String nidNumber,
-    required String passportNumnber,
+    required String passportNumber,
     required String email,
     required int religion,
     required String fatherName,
@@ -22,7 +22,7 @@ abstract class TenantProfileRemoteDataSource {
     required File? nidPhoto,
   });
 
-  Future<TenantFullProfileModel> view({required int id});
+  Future<TenantFullProfileModel> fullProfile({required int tenantId});
 }
 
 class TenantProfileRemoteDataSourceImpl implements TenantProfileRemoteDataSource {
@@ -35,15 +35,18 @@ class TenantProfileRemoteDataSourceImpl implements TenantProfileRemoteDataSource
   });
 
   @override
-  Future<TenantFullProfileModel> view({required int id}) async {
-    final Map<String, String> headers = {"id": id.toString()};
+  Future<TenantFullProfileModel> fullProfile({required int tenantId}) async {
+    final Map<String, String> headers = {"id": tenantId.toString()};
 
-    final response = await client.get(Uri.parse("https://kraya.succour.ltd/api/v1/core/profile"), headers: headers);
+    final response = await client.get(
+      Uri.parse("https://kraya.succour.ltd/api/v1/tenant/profile/full"),
+      headers: headers,
+    );
 
     if (response.statusCode == HttpStatus.ok) {
       final ApiResponse<Map<String, dynamic>> apiResponse = ApiResponse.fromJson(response.body);
       if (apiResponse.success && apiResponse.result != null && (apiResponse.result?.containsKey("user") ?? false)) {
-        return TenantFullProfileModel.fromJson(id, apiResponse.result ?? {});
+        return TenantFullProfileModel.fromJson(tenantId, apiResponse.result ?? {});
       } else {
         throw ProfileNotFoundException();
       }
@@ -56,7 +59,7 @@ class TenantProfileRemoteDataSourceImpl implements TenantProfileRemoteDataSource
   Future<bool> update({
     required int tenantId,
     required String nidNumber,
-    required String passportNumnber,
+    required String passportNumber,
     required String email,
     required int religion,
     required String fatherName,
@@ -70,7 +73,7 @@ class TenantProfileRemoteDataSourceImpl implements TenantProfileRemoteDataSource
       {
         "tenant_id": tenantId.toString(),
         "nid_number": nidNumber,
-        "passport_number": passportNumnber,
+        "passport_number": passportNumber,
         "email": email,
         "religion": religion.toString(),
         "father_name": fatherName,

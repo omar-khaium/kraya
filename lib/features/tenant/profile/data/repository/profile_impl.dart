@@ -19,10 +19,10 @@ class TenantProfileRepositoryImpl extends TenantProfileRepository {
   });
 
   @override
-  Future<Either<Failure, TenantFullProfileEntity>> fullProfile({required int id}) async {
+  Future<Either<Failure, TenantFullProfileEntity>> fullProfile({required int tenantId}) async {
     try {
       if (await networkInfo.online) {
-        final remoteProfile = await remoteDataSource.view(id: id);
+        final remoteProfile = await remoteDataSource.fullProfile(tenantId: tenantId);
         return Right(remoteProfile);
       } else {
         return Left(InteretDisconnectedFailure());
@@ -40,7 +40,7 @@ class TenantProfileRepositoryImpl extends TenantProfileRepository {
   Future<Either<Failure, bool>> update({
     required int tenantId,
     required String nidNumber,
-    required String passportNumnber,
+    required String passportNumber,
     required String email,
     required int religion,
     required String fatherName,
@@ -53,7 +53,7 @@ class TenantProfileRepositoryImpl extends TenantProfileRepository {
       final result = await remoteDataSource.update(
         tenantId: tenantId,
         nidNumber: nidNumber,
-        passportNumnber: passportNumnber,
+        passportNumber: passportNumber,
         email: email,
         religion: religion,
         fatherName: fatherName,

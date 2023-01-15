@@ -8,10 +8,8 @@ import 'dart:io' as _i6;
 
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:kraya_backend/core/error/failures.dart' as _i5;
-import 'package:kraya_backend/features/tenant/profile/domain/entity/full_profile.dart'
-    as _i7;
-import 'package:kraya_backend/features/tenant/profile/domain/repository/profile.dart'
-    as _i3;
+import 'package:kraya_backend/features/tenant/profile/domain/entity/full_profile.dart' as _i7;
+import 'package:kraya_backend/features/tenant/profile/domain/repository/profile.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -38,13 +36,12 @@ class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
 /// A class which mocks [TenantProfileRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockTenantProfileRepository extends _i1.Mock
-    implements _i3.TenantProfileRepository {
+class MockTenantProfileRepository extends _i1.Mock implements _i3.TenantProfileRepository {
   @override
   _i4.Future<_i2.Either<_i5.Failure, bool>> update({
     required int? tenantId,
     required String? nidNumber,
-    required String? passportNumnber,
+    required String? passportNumber,
     required String? email,
     required int? religion,
     required String? fatherName,
@@ -60,7 +57,7 @@ class MockTenantProfileRepository extends _i1.Mock
           {
             #tenantId: tenantId,
             #nidNumber: nidNumber,
-            #passportNumnber: passportNumnber,
+            #passportNumnber: passportNumber,
             #email: email,
             #religion: religion,
             #fatherName: fatherName,
@@ -70,8 +67,7 @@ class MockTenantProfileRepository extends _i1.Mock
             #nidPhoto: nidPhoto,
           },
         ),
-        returnValue: _i4.Future<_i2.Either<_i5.Failure, bool>>.value(
-            _FakeEither_0<_i5.Failure, bool>(
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, bool>>.value(_FakeEither_0<_i5.Failure, bool>(
           this,
           Invocation.method(
             #update,
@@ -79,7 +75,7 @@ class MockTenantProfileRepository extends _i1.Mock
             {
               #tenantId: tenantId,
               #nidNumber: nidNumber,
-              #passportNumnber: passportNumnber,
+              #passportNumnber: passportNumber,
               #email: email,
               #religion: religion,
               #fatherName: fatherName,
@@ -90,9 +86,7 @@ class MockTenantProfileRepository extends _i1.Mock
             },
           ),
         )),
-        returnValueForMissingStub:
-            _i4.Future<_i2.Either<_i5.Failure, bool>>.value(
-                _FakeEither_0<_i5.Failure, bool>(
+        returnValueForMissingStub: _i4.Future<_i2.Either<_i5.Failure, bool>>.value(_FakeEither_0<_i5.Failure, bool>(
           this,
           Invocation.method(
             #update,
@@ -100,7 +94,7 @@ class MockTenantProfileRepository extends _i1.Mock
             {
               #tenantId: tenantId,
               #nidNumber: nidNumber,
-              #passportNumnber: passportNumnber,
+              #passportNumnber: passportNumber,
               #email: email,
               #religion: religion,
               #fatherName: fatherName,
@@ -113,32 +107,28 @@ class MockTenantProfileRepository extends _i1.Mock
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, bool>>);
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i7.TenantFullProfileEntity>> fullProfile(
-          {required int? id}) =>
-      (super.noSuchMethod(
+  _i4.Future<_i2.Either<_i5.Failure, _i7.TenantFullProfileEntity>> fullProfile({required int? tenantId}) => (super.noSuchMethod(
         Invocation.method(
           #fullProfile,
           [],
-          {#id: id},
+          {#id: tenantId},
         ),
-        returnValue: _i4.Future<
-                _i2.Either<_i5.Failure, _i7.TenantFullProfileEntity>>.value(
-            _FakeEither_0<_i5.Failure, _i7.TenantFullProfileEntity>(
+        returnValue:
+            _i4.Future<_i2.Either<_i5.Failure, _i7.TenantFullProfileEntity>>.value(_FakeEither_0<_i5.Failure, _i7.TenantFullProfileEntity>(
           this,
           Invocation.method(
             #fullProfile,
             [],
-            {#id: id},
+            {#id: tenantId},
           ),
         )),
-        returnValueForMissingStub: _i4.Future<
-                _i2.Either<_i5.Failure, _i7.TenantFullProfileEntity>>.value(
-            _FakeEither_0<_i5.Failure, _i7.TenantFullProfileEntity>(
+        returnValueForMissingStub:
+            _i4.Future<_i2.Either<_i5.Failure, _i7.TenantFullProfileEntity>>.value(_FakeEither_0<_i5.Failure, _i7.TenantFullProfileEntity>(
           this,
           Invocation.method(
             #fullProfile,
             [],
-            {#id: id},
+            {#id: tenantId},
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, _i7.TenantFullProfileEntity>>);

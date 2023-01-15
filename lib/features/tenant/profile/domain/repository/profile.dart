@@ -11,7 +11,7 @@ abstract class TenantProfileRepository {
   Future<Either<Failure, bool>> update({
     required int tenantId,
     required String nidNumber,
-    required String passportNumnber,
+    required String passportNumber,
     required String email,
     required int religion,
     required String fatherName,
@@ -20,5 +20,5 @@ abstract class TenantProfileRepository {
     required String jobAddress,
     required File? nidPhoto,
   });
-  Future<Either<Failure, TenantFullProfileEntity>> fullProfile({required int id});
+  Future<Either<Failure, TenantFullProfileEntity>> fullProfile({required int tenantId});
 }

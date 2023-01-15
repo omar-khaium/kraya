@@ -12,6 +12,6 @@ class TenantFullProfileUsecase implements Usecase<TenantFullProfileEntity, int> 
 
   @override
   Future<Either<Failure, TenantFullProfileEntity>> call(int id) async {
-    return await _repository.fullProfile(id: id);
+    return await _repository.fullProfile(tenantId: id);
   }
 }
