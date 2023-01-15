@@ -9,14 +9,14 @@ import 'package:kraya/ui/widgets/dashboard/widget_dashboard_menu_card.dart';
 
 import '../dashboard/widget_dashboard_pay_bill_card.dart';
 
-class DashboardFragment extends StatefulWidget {
-  const DashboardFragment({Key? key}) : super(key: key);
+class FragmentDashboard extends StatefulWidget {
+  const FragmentDashboard({Key? key}) : super(key: key);
 
   @override
-  State<DashboardFragment> createState() => _DashboardFragmentState();
+  State<FragmentDashboard> createState() => _FragmentDashboardState();
 }
 
-class _DashboardFragmentState extends State<DashboardFragment> {
+class _FragmentDashboardState extends State<FragmentDashboard> {
   List<String> items = [
     "https://img.freepik.com/premium-vector/special-offer-sale-discount-banner_180786-46.jpg?w=2000",
     "https://www.crushpixel.com/big-static13/preview4/special-offer-sale-fire-burn-1250537.jpg"

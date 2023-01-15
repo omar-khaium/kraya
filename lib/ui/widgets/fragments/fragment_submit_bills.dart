@@ -100,7 +100,7 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
                               ),
                             )),
                       ),
-                      Expandable(
+                      /*Expandable(
                         collapsed: const Text(""),
                         expanded: SizedBox(
                           height: 200,
@@ -126,7 +126,16 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
                             },
                           ),
                         ),
-                      ),
+                      ),*/
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: IconButton(
+                          icon: const Icon(Icons.keyboard_arrow_down),
+                          onPressed: () {
+                            billsItem();
+                          },
+                        ),
+                      )
                     ],
                   ),
                 );
