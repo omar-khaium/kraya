@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/custom_app_bar.dart';
+import 'package:kraya/core/app_bar/custom_app_bar.dart';
 import 'package:kraya/ui/reusable_widgets/gradient_button.dart';
 import 'package:kraya/core/text_style.dart';
 import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
@@ -30,7 +30,7 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
       body: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const CustomAppBar(firstWord: "Confirm", lastWord: "Property"),
+          const CustomAppBar(firstWord: "Confirm", lastWord: "Property",isBackButtonVisible: true,),
           Expanded(
             child: ListView(
               scrollDirection: Axis.vertical,

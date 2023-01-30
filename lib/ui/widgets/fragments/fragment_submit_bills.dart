@@ -1,7 +1,7 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
+import 'package:kraya/core/app_bar/custom_app_bar.dart';
 import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/custom_app_bar.dart';
 import 'package:kraya/core/text_style.dart';
 import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -21,7 +21,7 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
       body: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const CustomAppBar(firstWord: "Submit", lastWord: "Bills"),
+          const CustomAppBar(firstWord: "Submit", lastWord: "Bills",isBackButtonVisible: false,),
           Expanded(
             child: ListView.separated(
               shrinkWrap: true,

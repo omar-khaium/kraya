@@ -1,11 +1,9 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
+import 'package:kraya/core/app_bar/custom_app_bar.dart';
 import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/custom_app_bar.dart';
 import 'package:kraya/core/text_style.dart';
 import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class FragmentProperty extends StatefulWidget {
   const FragmentProperty({Key? key}) : super(key: key);
@@ -22,7 +20,7 @@ class _FragmentPropertyState extends State<FragmentProperty> {
       body: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const CustomAppBar(firstWord: "Property", lastWord: "List"),
+          const CustomAppBar(firstWord: "Property", lastWord: "List",isBackButtonVisible: false,),
           Expanded(
             child: ListView.separated(
               shrinkWrap: true,
@@ -35,7 +33,7 @@ class _FragmentPropertyState extends State<FragmentProperty> {
                   color: ColorSystem.instance.card,
                   borderRadius: BorderRadius.circular(8),
                   child:  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -62,7 +60,7 @@ class _FragmentPropertyState extends State<FragmentProperty> {
                           ),
                           leading: CircleAvatar(
                             backgroundColor: ColorSystem.instance.primary,
-                            backgroundImage: NetworkImage('https://media.istockphoto.com/id/1291318636/photo/put-more-in-get-more-out.jpg?s=612x612&w=0&k=20&c=KRvn1x6r9x9GmYMLpW6AVZzkvOA0bmn14fKle-O6CVc='),
+                            backgroundImage: const NetworkImage('https://media.istockphoto.com/id/1291318636/photo/put-more-in-get-more-out.jpg?s=612x612&w=0&k=20&c=KRvn1x6r9x9GmYMLpW6AVZzkvOA0bmn14fKle-O6CVc='),
                           ),
                         ),
                         ListTile(
@@ -71,6 +69,7 @@ class _FragmentPropertyState extends State<FragmentProperty> {
                           leading: Padding(
                             padding: const EdgeInsets.only(top: 8.0),
                             child: Row(
+                              mainAxisSize: MainAxisSize.min,
                               children: [
                                 const Icon(Icons.location_on_outlined,size: 14,),
                                 const SizedBox(width: 8),
@@ -116,6 +115,8 @@ class _FragmentPropertyState extends State<FragmentProperty> {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(onPressed: () {  },
+      child: const Icon(Icons.add),),
     );
   }
 }

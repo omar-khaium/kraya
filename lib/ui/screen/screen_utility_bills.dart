@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/custom_app_bar.dart';
+import 'package:kraya/core/app_bar/custom_app_bar.dart';
 import 'package:kraya/ui/reusable_widgets/gradient_button.dart';
 import 'package:kraya/core/text_style.dart';
 import 'package:kraya/ui/reusable_widgets/widget_custom_menu_card.dart';
@@ -33,7 +33,7 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
       body: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const CustomAppBar(firstWord: "Add", lastWord: "Bills"),
+          const CustomAppBar(firstWord: "Add", lastWord: "Bills",isBackButtonVisible: true,),
           Expanded(
             child: bills.isEmpty
                 ? Center(

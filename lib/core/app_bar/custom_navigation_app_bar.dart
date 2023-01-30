@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/colors.dart';
 import 'package:kraya/core/text_style.dart';
 
-class CustomAppBar extends StatelessWidget {
+class CustomNavigationAppBar extends StatelessWidget {
   final String firstWord;
   final String lastWord;
-  const CustomAppBar({super.key, required this.firstWord, required this.lastWord});
+  const CustomNavigationAppBar({super.key, required this.firstWord, required this.lastWord});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ Widget backButton(BuildContext context) {
     iconSize: 48,
     splashRadius: 28,
     splashColor: ColorSystem.instance.cardDeep,
-    onPressed: () => Navigator.of(context).pop(),
+    onPressed: () => Navigator.of(context).pushNamed(AppRouter.dashboard),
     visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
     padding: EdgeInsets.zero,
     icon: CircleAvatar(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kraya/core/app_router.dart';
-import 'package:kraya/core/custom_app_bar.dart';
+import 'package:kraya/core/app_bar/custom_app_bar.dart';
 import 'package:kraya/core/enums.dart';
 import 'package:kraya/core/widget_counter.dart';
 import 'package:kraya/ui/reusable_widgets/widget_custom_menu_card.dart';
@@ -39,10 +39,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const CustomAppBar(
-            firstWord: "Add",
-            lastWord: "Property",
-          ),
+          const CustomAppBar(firstWord: "Add", lastWord: "Property",isBackButtonVisible: true,),
           const SizedBox(height: 16),
           Expanded(
             child: SingleChildScrollView(
@@ -147,17 +144,10 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                       icon: Icons.maps_home_work_outlined,
                       type: TextInputType.text),
                   const SizedBox(height: 16),
-                  WidgetInput(
-                      label: "Flat name",
-                      controller: flatController,
-                      icon: Icons.apartment,
-                      type: TextInputType.text),
+                  WidgetInput(label: "Flat name", controller: flatController, icon: Icons.apartment, type: TextInputType.text),
                   const SizedBox(height: 16),
                   WidgetInput(
-                      label: "Address",
-                      controller: flatController,
-                      icon: Icons.location_on_outlined,
-                      type: TextInputType.text),
+                      label: "Address", controller: flatController, icon: Icons.location_on_outlined, type: TextInputType.text),
                   const SizedBox(height: 16),
                   Row(
                     mainAxisSize: MainAxisSize.min,
@@ -218,8 +208,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  Text("Picture(optional)",
-                      style: TextSystem.instance.small(ColorSystem.instance.hint)),
+                  Text("Picture(optional)", style: TextSystem.instance.small(ColorSystem.instance.hint)),
                   const SizedBox(height: 4),
                   GradientButton(
                     onPressed: () {},
