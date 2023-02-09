@@ -5,14 +5,14 @@ import 'package:kraya/core/colors.dart';
 import 'package:kraya/core/text_style.dart';
 import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
 
-class FragmentProperty extends StatefulWidget {
-  const FragmentProperty({Key? key}) : super(key: key);
+class FragmentPayment extends StatefulWidget {
+  const FragmentPayment({Key? key}) : super(key: key);
 
   @override
-  State<FragmentProperty> createState() => _FragmentPropertyState();
+  State<FragmentPayment> createState() => _FragmentPaymentState();
 }
 
-class _FragmentPropertyState extends State<FragmentProperty> {
+class _FragmentPaymentState extends State<FragmentPayment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
