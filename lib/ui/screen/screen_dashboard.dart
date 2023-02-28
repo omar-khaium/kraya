@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kraya/business_logic/bottom_navigation/bottom_navigation_cubit.dart';
 import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/colors.dart';
+import 'package:kraya/ui/widgets/fragments/fragment_payment.dart';
 import 'package:kraya/ui/widgets/fragments/fragment_profile.dart';
 import 'package:kraya/ui/widgets/fragments/fragment_property.dart';
 import 'package:kraya/ui/widgets/fragments/fragment_submit_bills.dart';
@@ -48,7 +49,7 @@ class _ScreenDashboardState extends State<ScreenDashboard> with SingleTickerProv
                 FragmentDashboard(),
                 FragmentSubmitBills(),
                 FragmentProperty(),
-                FragmentProperty(),
+                FragmentPayment(),
                 FragmentProfile(),
               ],
             );
