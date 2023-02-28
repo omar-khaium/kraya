@@ -23,7 +23,7 @@ dependencies:
   material_design_icons_flutter: ^5.0.6295
   carousel_slider: ^4.2.1
   expandable: ^5.0.1
-  persistent_bottom_nav_bar: ^5.0.2
+  animated_bottom_navigation_bar: ^1.1.0+1
 
 dev_dependencies:
   flutter_test:
