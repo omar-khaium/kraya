@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-import '../../core/colors.dart';
-import '../../core/text_style.dart';
+import '../../../core/colors.dart';
+import '../../../core/text_style.dart';
 
 class PaymentInformation extends StatelessWidget {
   const PaymentInformation({Key? key}) : super(key: key);
@@ -10,7 +10,7 @@ class PaymentInformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 48.0,right: 48,top: 16,bottom: 16),
+      padding: const EdgeInsets.only(left: 48.0,right: 48,top: 8,bottom: 8),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

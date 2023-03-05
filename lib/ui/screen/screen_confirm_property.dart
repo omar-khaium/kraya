@@ -43,8 +43,9 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
                   height: 200,
                 ),
                 const SizedBox(height: 16),
-                const WidgetTitleText(
+                WidgetTitleText(
                   text: 'B3-302 Flat A1',
+                  colorSystem: ColorSystem.instance.text,
                 ),
                 const SizedBox(height: 4),
                 WidgetLabelText(
