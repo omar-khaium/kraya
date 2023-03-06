@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kraya/core/colors.dart';
 
+import '../../reusable_widgets/widget_lable_text.dart';
 import '../payment/finance_information.dart';
 import '../payment/payment_information.dart';
 import '../payment/payment_status.dart';
@@ -18,16 +19,11 @@ class _FragmentPaymentState extends State<FragmentPayment> {
     return Scaffold(
       backgroundColor: ColorSystem.instance.background,
       body: Stack(
+        fit: StackFit.loose,
         children: [
-          Positioned(
+          const Positioned(
             top: 0,
-            child: Container(
-              height: MediaQuery.of(context).size.height,
-              color: ColorSystem.instance.background,
-              child: const Center(
-                child: PaymentStatus(),
-              ),
-            ),
+            child: PaymentStatus(),
           ),
           Positioned(
               bottom: MediaQuery.of(context).size.height*.5,

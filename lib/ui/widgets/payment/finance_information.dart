@@ -39,14 +39,14 @@ class FinanceInformation extends StatelessWidget {
               dense: true,
               visualDensity: VisualDensity.compact,
               contentPadding: const EdgeInsets.all(0),
-              leading: const Icon(MdiIcons.currencyBdt),
+              leading:  Icon(MdiIcons.currencyBdt,color: ColorSystem.instance.background,),
               title: WidgetTitleText(text: '1,00,000',colorSystem: ColorSystem.instance.background,),
               subtitle: WidgetLabelText(text: 'Total amount', colorSystem: ColorSystem.instance.background,),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text("Month : June",style: TextSystem.instance.small(ColorSystem.instance.background),),
-                  Icon(MdiIcons.unfoldLessVertical,color: ColorSystem.instance.background,)
+                  Icon(MdiIcons.unfoldLessHorizontal,color: ColorSystem.instance.background,)
                 ],
               ),
             )
