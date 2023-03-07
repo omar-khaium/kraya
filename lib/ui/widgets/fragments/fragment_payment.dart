@@ -21,9 +21,12 @@ class _FragmentPaymentState extends State<FragmentPayment> {
       body: Stack(
         fit: StackFit.loose,
         children: [
-          const Positioned(
-            top: 0,
-            child: PaymentStatus(),
+           Positioned(
+            top: MediaQuery.of(context).size.height*.4+50,
+            bottom: 0,
+            left:16,
+            right: 16,
+            child: const PaymentStatus(),
           ),
           Positioned(
               bottom: MediaQuery.of(context).size.height*.5,
