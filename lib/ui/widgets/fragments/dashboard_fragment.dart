@@ -6,6 +6,7 @@ import 'package:kraya/core/text_style.dart';
 import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
 import 'package:kraya/ui/widgets/dashboard/dashboard_custom_app_bar.dart';
 import 'package:kraya/ui/widgets/dashboard/widget_dashboard_menu_card.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../dashboard/widget_dashboard_pay_bill_card.dart';
 
@@ -140,7 +141,7 @@ class _FragmentDashboardState extends State<FragmentDashboard> {
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.money,color: ColorSystem.instance.background,),
+                      Icon(MdiIcons.cashCheck,color: ColorSystem.instance.background,),
                       const SizedBox(height: 8),
                       WidgetLabelText(text: "Paid", colorSystem: ColorSystem.instance.background),
                       const SizedBox(height: 8),
