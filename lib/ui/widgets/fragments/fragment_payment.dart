@@ -20,7 +20,10 @@ class _FragmentPaymentState extends State<FragmentPayment> {
       body: Stack(
         children: [
           Positioned(
-            top: 0,
+            bottom: 0,
+            left: 16,
+            right: 16,
+            top: MediaQuery.of(context).size.height * .5,
             child: Container(
               height: MediaQuery.of(context).size.height,
               color: ColorSystem.instance.background,

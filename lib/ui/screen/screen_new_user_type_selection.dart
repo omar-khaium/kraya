@@ -80,7 +80,7 @@ class _NewUserTypeSelectionScreenState extends State<NewUserTypeSelectionScreen>
                                   selection = _UserTypeSelection.varatia;
                                 });
                                 Future.delayed(const Duration(milliseconds: 500), () {
-                                  Navigator.of(context).pushNamed(AppRouter.createAccount);
+                                  Navigator.of(context).pushNamed(AppRouter.createAccount,arguments: selection==_UserTypeSelection.varatia ? true:false);
                                 });
                               },
                             ),

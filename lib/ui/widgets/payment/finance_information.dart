@@ -21,32 +21,56 @@ class FinanceInformation extends StatelessWidget {
             Container(
               height: 48,
               decoration: BoxDecoration(
-                  color: ColorSystem.instance.background,
-                  borderRadius: BorderRadius.circular(24)),
+                  color: ColorSystem.instance.background, borderRadius: BorderRadius.circular(24)),
               child: ListTile(
                 dense: true,
                 visualDensity: VisualDensity.compact,
                 horizontalTitleGap: 0,
-                contentPadding: const EdgeInsets.symmetric(horizontal: 8,vertical: 4),
-                leading: Icon(Icons.search,color: ColorSystem.instance.text,),
-                title: Text("Search flat / varatia / area / phone no",style: TextSystem.instance.small(ColorSystem.instance.primary),),
-                trailing: Icon(Icons.filter_vintage_rounded,color: ColorSystem.instance.text,),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                leading: Icon(
+                  Icons.search,
+                  color: ColorSystem.instance.text,
+                ),
+                title: Text(
+                  "Search flat / varatia / area / phone no",
+                  style: TextSystem.instance.small(ColorSystem.instance.text),
+                ),
+                trailing: Icon(
+                  Icons.filter_vintage_rounded,
+                  color: ColorSystem.instance.text,
+                ),
               ),
             ),
-            const SizedBox(height:16),
-            WidgetLabelText(text: 'Finance', colorSystem: ColorSystem.instance.background,),
+            const SizedBox(height: 16),
+            WidgetLabelText(
+              text: 'Finance',
+              colorSystem: ColorSystem.instance.background,
+            ),
             ListTile(
               dense: true,
               visualDensity: VisualDensity.compact,
               contentPadding: const EdgeInsets.all(0),
-              leading: const Icon(MdiIcons.currencyBdt),
-              title: WidgetTitleText(text: '1,00,000',colorSystem: ColorSystem.instance.background,),
-              subtitle: WidgetLabelText(text: 'Total amount', colorSystem: ColorSystem.instance.background,),
+              horizontalTitleGap: 0,
+              leading:  Icon(MdiIcons.currencyBdt,color: ColorSystem.instance.background,),
+              title: WidgetTitleText(
+                text: '1,00,000',
+                colorSystem: ColorSystem.instance.background,
+              ),
+              subtitle: WidgetLabelText(
+                text: 'Total amount',
+                colorSystem: ColorSystem.instance.background,
+              ),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text("Month : June",style: TextSystem.instance.small(ColorSystem.instance.background),),
-                  Icon(MdiIcons.unfoldLessVertical,color: ColorSystem.instance.background,)
+                  Text(
+                    "Month : June",
+                    style: TextSystem.instance.small(ColorSystem.instance.background),
+                  ),
+                  Icon(
+                    MdiIcons.unfoldMoreHorizontal,
+                    color: ColorSystem.instance.background,
+                  )
                 ],
               ),
             )

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kraya/business_logic/bottom_navigation/bottom_navigation_cubit.dart';
 import 'package:kraya/model/bill.dart';
+import 'package:kraya/ui/screen/screen_add_bank_account.dart';
 import 'package:kraya/ui/screen/screen_add_property.dart';
 import 'package:kraya/ui/screen/screen_confirm_property.dart';
+import 'package:kraya/ui/screen/screen_contact_us.dart';
 import 'package:kraya/ui/screen/screen_dashboard.dart';
 import 'package:kraya/ui/screen/screen_new_user_type_selection.dart';
 import 'package:kraya/ui/screen/screen_utility_bills.dart';
@@ -21,6 +23,8 @@ class AppRouter {
   static const String utilityBills = "/utility_bills";
   static const String confirmProperty = "/confirm_property";
   static const String dashboard = "/dashboard";
+  static const String addBankAccount = "/profile/add_bank_account";
+  static const String contactUs = "/profile/contact_us";
 
   Route onGenerate(RouteSettings settings) {
     switch (settings.name) {
@@ -34,10 +38,15 @@ class AppRouter {
                 ));
       case otpVerification:
         return MaterialPageRoute(builder: (_) => const OtpVerificationScreen());
+        case contactUs:
+        return MaterialPageRoute(builder: (_) => const ContactUsScreen());
+      case addBankAccount:
+        return MaterialPageRoute(builder: (_) => AddBankAccountScreen());
       case newUserTypeSelectionScreen:
         return MaterialPageRoute(builder: (_) => const NewUserTypeSelectionScreen());
       case createAccount:
-        return MaterialPageRoute(builder: (_) => const CreateAccountScreen());
+        final bool isOwner=settings.arguments as bool;
+        return MaterialPageRoute(builder: (_) =>  CreateAccountScreen(fromVaratia: isOwner,));
       case addProperty:
         return MaterialPageRoute(builder: (_) => const AddPropertyScreen());
       case utilityBills:

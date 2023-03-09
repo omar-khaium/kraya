@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kraya/core/app_bar/custom_app_bar.dart';
+import 'package:kraya/core/search_property.dart';
 import 'package:kraya/ui/reusable_widgets/gradient_button.dart';
 import 'package:kraya/ui/screen/screen_add_property.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_create_acc_date_of_birth.dart';
@@ -7,12 +9,14 @@ import 'package:kraya/ui/widgets/login/create_account/widget_gender.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_input_text.dart';
 import 'package:kraya/ui/widgets/login/verify_otp/widget_back_button.dart';
 
+import '../../core/alert_property.dart';
 import '../../core/app_router.dart';
 import '../../core/colors.dart';
 import '../../core/text_style.dart';
 
 class CreateAccountScreen extends StatefulWidget {
-  const CreateAccountScreen({super.key});
+  late bool fromVaratia;
+   CreateAccountScreen({super.key,required this.fromVaratia});
 
   @override
   State<CreateAccountScreen> createState() => _CreateAccountScreenState();
@@ -29,27 +33,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
       backgroundColor: ColorSystem.instance.background,
       body: Column(
         children: [
-          Padding(
-            padding: EdgeInsets.only(left: 16, right: 16, top: MediaQuery.of(context).padding.top + 8),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const WidgetBackButton(route: AppRouter.newUserTypeSelectionScreen),
-                RichText(
-                  text: TextSpan(
-                    text: "Create ",
-                    style: TextSystem.instance.tooLarge(ColorSystem.instance.text),
-                    children: [
-                      TextSpan(text: "account", style: TextSystem.instance.tooLarge(ColorSystem.instance.primary)),
-                    ],
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(width: 48),
-              ],
-            ),
-          ),
+          const CustomAppBar(firstWord: "Create", lastWord: "Account", isBackButtonVisible: true),
           const SizedBox(height: 16),
           Expanded(
             child: SingleChildScrollView(
@@ -134,7 +118,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     ),
                   ),
                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                  builder: (_) => const AlertAskForAddProperty(),
+                  builder: (_) => widget.fromVaratia ? const AlertSearchProperty():const AlertAskForAddProperty(),
                 );
               },
               text: "Done",

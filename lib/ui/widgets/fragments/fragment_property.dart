@@ -20,7 +20,11 @@ class _FragmentPropertyState extends State<FragmentProperty> {
       body: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const CustomAppBar(firstWord: "Property", lastWord: "List",isBackButtonVisible: false,),
+          const CustomAppBar(
+            firstWord: "Property",
+            lastWord: "List",
+            isBackButtonVisible: false,
+          ),
           Expanded(
             child: ListView.separated(
               shrinkWrap: true,
@@ -32,7 +36,7 @@ class _FragmentPropertyState extends State<FragmentProperty> {
                 return PhysicalModel(
                   color: ColorSystem.instance.card,
                   borderRadius: BorderRadius.circular(8),
-                  child:  Padding(
+                  child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -45,10 +49,7 @@ class _FragmentPropertyState extends State<FragmentProperty> {
                             style: TextSystem.instance.normal(ColorSystem.instance.text),
                           ),
                           trailing: SizedBox(
-                            width: MediaQuery
-                                .of(context)
-                                .size
-                                .width / 2.5,
+                            width: MediaQuery.of(context).size.width / 2.5,
                             child: OutlinedButton(
                               onPressed: () {},
                               style: ButtonStyle(
@@ -60,7 +61,8 @@ class _FragmentPropertyState extends State<FragmentProperty> {
                           ),
                           leading: CircleAvatar(
                             backgroundColor: ColorSystem.instance.primary,
-                            backgroundImage: const NetworkImage('https://media.istockphoto.com/id/1291318636/photo/put-more-in-get-more-out.jpg?s=612x612&w=0&k=20&c=KRvn1x6r9x9GmYMLpW6AVZzkvOA0bmn14fKle-O6CVc='),
+                            backgroundImage: const NetworkImage(
+                                'https://media.istockphoto.com/id/1291318636/photo/put-more-in-get-more-out.jpg?s=612x612&w=0&k=20&c=KRvn1x6r9x9GmYMLpW6AVZzkvOA0bmn14fKle-O6CVc='),
                           ),
                         ),
                         ListTile(
@@ -71,10 +73,15 @@ class _FragmentPropertyState extends State<FragmentProperty> {
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                const Icon(Icons.location_on_outlined,size: 14,),
+                                const Icon(
+                                  Icons.location_on_outlined,
+                                  size: 14,
+                                ),
                                 const SizedBox(width: 8),
-                                Text('302-AE,Rupali tower,Mirpur',
-                                  style: TextSystem.instance.small(ColorSystem.instance.hint),),
+                                Text(
+                                  '302-AE,Rupali tower,Mirpur',
+                                  style: TextSystem.instance.small(ColorSystem.instance.hint),
+                                ),
                               ],
                             ),
                           ),
@@ -82,21 +89,25 @@ class _FragmentPropertyState extends State<FragmentProperty> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Container(
-                                padding:const EdgeInsets.all(6),
+                                padding: const EdgeInsets.all(6),
                                 decoration: BoxDecoration(
                                     color: ColorSystem.instance.primary,
-                                    borderRadius: BorderRadius.circular(48)
+                                    borderRadius: BorderRadius.circular(48)),
+                                child: Icon(
+                                  Icons.mark_email_unread_outlined,
+                                  color: ColorSystem.instance.background,
                                 ),
-                                child:Icon(Icons.mark_email_unread_outlined,color: ColorSystem.instance.background,),
                               ),
-                              const SizedBox(width:8),
+                              const SizedBox(width: 8),
                               Container(
-                                padding:const EdgeInsets.all(6),
+                                padding: const EdgeInsets.all(6),
                                 decoration: BoxDecoration(
                                     color: ColorSystem.instance.primary,
-                                    borderRadius: BorderRadius.circular(48)
+                                    borderRadius: BorderRadius.circular(48)),
+                                child: Icon(
+                                  Icons.call,
+                                  color: ColorSystem.instance.background,
                                 ),
-                                child:Icon(Icons.call,color: ColorSystem.instance.background,),
                               ),
                             ],
                           ),
@@ -115,9 +126,11 @@ class _FragmentPropertyState extends State<FragmentProperty> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {  },
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
         heroTag: null,
-      child: const Icon(Icons.add),),
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }

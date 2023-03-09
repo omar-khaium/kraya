@@ -1,6 +1,7 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:kraya/core/app_bar/custom_app_bar.dart';
+import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/colors.dart';
 import 'package:kraya/core/text_style.dart';
 import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
@@ -75,9 +76,13 @@ class _FragmentProfileState extends State<FragmentProfile> {
             Divider(thickness: 1,color: ColorSystem.instance.cardDeep,),
             WidgetProfileMenu(onTap: (){}, text: 'Messages', icon: Icons.chat_bubble_outline,),
             Divider(thickness: 1,color: ColorSystem.instance.cardDeep,),
-            WidgetProfileMenu(onTap: (){}, text: 'Add Bank Account', icon: Icons.food_bank_outlined,),
+            WidgetProfileMenu(onTap: (){
+              Navigator.of(context).pushNamed(AppRouter.addBankAccount);
+            }, text: 'Add Bank Account', icon: Icons.food_bank_outlined,),
             Divider(thickness: 1,color: ColorSystem.instance.cardDeep,),
-            WidgetProfileMenu(onTap: (){}, text: 'Contact Us', icon: Icons.call,),
+            WidgetProfileMenu(onTap: (){
+              Navigator.of(context).pushNamed(AppRouter.contactUs);
+            }, text: 'Contact Us', icon: Icons.call,),
             Divider(thickness: 1,color: ColorSystem.instance.cardDeep,),
             WidgetProfileMenu(onTap: (){}, text: 'Log Out', icon: Icons.logout,),
           ],
