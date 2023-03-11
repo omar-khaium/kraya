@@ -39,14 +39,7 @@ class AlertAddBills extends StatelessWidget {
           const SizedBox(
             height: 24,
           ),
-          GradientButton(
-              onPressed: () {
-                onTap(billName, amount) {
-                  billName = billNameController.text;
-                  amount = int.parse(billAmountController.text);
-                }
-              },
-              text: "Submit")
+          GradientButton(onPressed: () {}, text: "Submit")
         ],
       ),
     );

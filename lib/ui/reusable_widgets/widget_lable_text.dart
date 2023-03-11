@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/core/colors.dart';
 import 'package:kraya/core/text_style.dart';
 
 class WidgetLabelText extends StatelessWidget {

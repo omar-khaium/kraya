@@ -6,7 +6,7 @@ import 'package:kraya/core/text_style.dart';
 import 'package:pinput/pinput.dart';
 
 class WidgetVerifyOtpForm extends StatefulWidget {
-  WidgetVerifyOtpForm({Key? key}) : super(key: key);
+  const WidgetVerifyOtpForm({Key? key}) : super(key: key);
 
   @override
   State<WidgetVerifyOtpForm> createState() => _WidgetVerifyOtpFormState();

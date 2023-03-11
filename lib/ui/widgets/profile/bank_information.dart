@@ -31,7 +31,7 @@ class BankInformationCard extends StatelessWidget {
               Container(
                 height: MediaQuery.of(context).size.height/11,
                 width: MediaQuery.of(context).size.width/6,
-                margin: EdgeInsets.all(8),
+                margin: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   color: ColorSystem.instance.background,
                   borderRadius: BorderRadius.circular(8),

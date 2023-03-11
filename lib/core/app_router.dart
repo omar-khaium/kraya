@@ -13,6 +13,7 @@ import 'package:kraya/ui/screen/screen_utility_bills.dart';
 import '../ui/screen/screen_create_account.dart';
 import '../ui/screen/screen_login.dart';
 import '../ui/screen/screen_otp_verification.dart';
+import '../ui/screen/screen_search_property.dart';
 
 class AppRouter {
   static const String login = "/login";
@@ -25,6 +26,7 @@ class AppRouter {
   static const String dashboard = "/dashboard";
   static const String addBankAccount = "/profile/add_bank_account";
   static const String contactUs = "/profile/contact_us";
+  static const String searchProperty = "/search_property";
 
   Route onGenerate(RouteSettings settings) {
     switch (settings.name) {
@@ -38,10 +40,12 @@ class AppRouter {
                 ));
       case otpVerification:
         return MaterialPageRoute(builder: (_) => const OtpVerificationScreen());
+        case searchProperty:
+        return MaterialPageRoute(builder: (_) => SearchPropertyScreen());
         case contactUs:
         return MaterialPageRoute(builder: (_) => const ContactUsScreen());
       case addBankAccount:
-        return MaterialPageRoute(builder: (_) => AddBankAccountScreen());
+        return MaterialPageRoute(builder: (_) => const AddBankAccountScreen());
       case newUserTypeSelectionScreen:
         return MaterialPageRoute(builder: (_) => const NewUserTypeSelectionScreen());
       case createAccount:

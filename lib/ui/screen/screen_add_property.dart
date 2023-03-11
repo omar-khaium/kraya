@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/app_bar/custom_app_bar.dart';
+import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/enums.dart';
 import 'package:kraya/core/widget_counter.dart';
-import 'package:kraya/ui/reusable_widgets/widget_custom_menu_card.dart';
 import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
 import 'package:kraya/ui/reusable_widgets/widget_selection_card.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_input_text.dart';
 
 import '../../core/colors.dart';
-import '../reusable_widgets/gradient_button.dart';
-import '../../core/text_button.dart';
 import '../../core/text_style.dart';
+import '../reusable_widgets/gradient_button.dart';
 
 class AddPropertyScreen extends StatefulWidget {
   const AddPropertyScreen({super.key});

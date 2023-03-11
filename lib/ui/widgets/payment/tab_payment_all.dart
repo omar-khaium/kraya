@@ -14,7 +14,7 @@ class TabPaymentAll extends StatelessWidget {
       physics: const ScrollPhysics(),
       scrollDirection: Axis.vertical,
       itemCount: 5,
-      padding:EdgeInsets.symmetric(vertical: 8),
+      padding:const EdgeInsets.symmetric(vertical: 8),
       itemBuilder: (BuildContext context, int index) {
         return PhysicalModel(
           color: ColorSystem.instance.card,

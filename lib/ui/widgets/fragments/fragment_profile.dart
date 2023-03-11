@@ -1,4 +1,3 @@
-import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:kraya/core/app_bar/custom_app_bar.dart';
 import 'package:kraya/core/app_router.dart';

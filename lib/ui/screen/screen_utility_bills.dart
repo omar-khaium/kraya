@@ -107,7 +107,8 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
                         GradientButton(
                             onPressed: () {
                               setState(() {
-                                bills.add(Bill.name(
+                                bills.add(
+                                    Bill.name(
                                     billNameController.text, int.parse(billAmountController.text)));
                                 billNameController.text = "";
                                 billAmountController.text = "";

@@ -49,7 +49,7 @@ class AlertSearchProperty extends StatelessWidget {
                   flex: 2,
                   child: GradientButton(
                     onPressed: () {
-                      Navigator.of(context).pushReplacementNamed(AppRouter.addProperty);
+                      Navigator.of(context).pushReplacementNamed(AppRouter.searchProperty);
                     },
                     text: "Search property",
                     hideIcon: true,

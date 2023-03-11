@@ -9,7 +9,7 @@ class WidgetConfirmPropertyBillsCard extends StatelessWidget {
   final IconData iconData;
   final Function onTap;
 
-  WidgetConfirmPropertyBillsCard({Key? key, required this.text, required this.iconData, required this.onTap, required this.amount})
+  const WidgetConfirmPropertyBillsCard({Key? key, required this.text, required this.iconData, required this.onTap, required this.amount})
       : super(key: key);
 
   @override

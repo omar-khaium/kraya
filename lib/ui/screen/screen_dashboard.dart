@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kraya/business_logic/bottom_navigation/bottom_navigation_cubit.dart';
-import 'package:kraya/core/app_router.dart';
 import 'package:kraya/core/colors.dart';
+import 'package:kraya/ui/widgets/fragments/dashboard_fragment.dart';
 import 'package:kraya/ui/widgets/fragments/fragment_payment.dart';
 import 'package:kraya/ui/widgets/fragments/fragment_profile.dart';
 import 'package:kraya/ui/widgets/fragments/fragment_property.dart';
 import 'package:kraya/ui/widgets/fragments/fragment_submit_bills.dart';
-import 'package:kraya/ui/widgets/fragments/dashboard_fragment.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class ScreenDashboard extends StatefulWidget {
@@ -19,12 +18,13 @@ class ScreenDashboard extends StatefulWidget {
 
 class _ScreenDashboardState extends State<ScreenDashboard> with SingleTickerProviderStateMixin{
   late AnimationController _animationController;
-  late Animation _opacityTween, _colorTween;
+  late Animation opacityTween;
+  late Animation colorTween;
   @override
   void initState() {
     _animationController = AnimationController(vsync: this, duration: const Duration(seconds: 0));
-    _colorTween = ColorTween(begin: Colors.transparent, end: ColorSystem.instance.background).animate(_animationController);
-    _opacityTween = Tween<double>(begin: 0, end: 1).animate(_animationController);
+    colorTween = ColorTween(begin: Colors.transparent, end: ColorSystem.instance.background).animate(_animationController);
+    opacityTween = Tween<double>(begin: 0, end: 1).animate(_animationController);
     super.initState();
   }
   bool scrollListener(ScrollNotification scrollInfo) {

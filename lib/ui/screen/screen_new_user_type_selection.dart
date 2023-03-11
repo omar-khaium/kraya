@@ -64,7 +64,7 @@ class _NewUserTypeSelectionScreenState extends State<NewUserTypeSelectionScreen>
                                 });
 
                                 Future.delayed(const Duration(milliseconds: 500), () {
-                                  Navigator.of(context).pushNamed(AppRouter.createAccount);
+                                  Navigator.of(context).pushNamed(AppRouter.createAccount,arguments: false);
                                 });
                               },
                             ),

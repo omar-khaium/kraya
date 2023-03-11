@@ -7,7 +7,6 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 
 import '../../core/colors.dart';
 import '../widgets/login/create_account/widget_input_text.dart';
-import '../widgets/profile/bank_information.dart';
 
 class ContactUsScreen extends StatefulWidget {
   const ContactUsScreen({Key? key}) : super(key: key);

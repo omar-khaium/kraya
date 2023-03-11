@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kraya/core/colors.dart';
 import 'package:kraya/core/text_style.dart';

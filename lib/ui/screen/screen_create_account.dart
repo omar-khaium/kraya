@@ -1,16 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kraya/core/app_bar/custom_app_bar.dart';
 import 'package:kraya/core/search_property.dart';
 import 'package:kraya/ui/reusable_widgets/gradient_button.dart';
-import 'package:kraya/ui/screen/screen_add_property.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_create_acc_date_of_birth.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_gender.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_input_text.dart';
-import 'package:kraya/ui/widgets/login/verify_otp/widget_back_button.dart';
 
 import '../../core/alert_property.dart';
-import '../../core/app_router.dart';
 import '../../core/colors.dart';
 import '../../core/text_style.dart';
 

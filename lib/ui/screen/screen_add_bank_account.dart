@@ -8,7 +8,7 @@ import '../widgets/login/create_account/widget_input_text.dart';
 import '../widgets/profile/bank_information.dart';
 
 class AddBankAccountScreen extends StatefulWidget {
-  AddBankAccountScreen({Key? key}) : super(key: key);
+  const AddBankAccountScreen({Key? key}) : super(key: key);
 
   @override
   State<AddBankAccountScreen> createState() => _AddBankAccountScreenState();

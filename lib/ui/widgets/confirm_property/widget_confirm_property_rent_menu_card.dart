@@ -9,7 +9,7 @@ class WidgetConfirmPropertyRentMenuCard extends StatelessWidget {
   final IconData iconData;
   final Function onTap;
 
-  WidgetConfirmPropertyRentMenuCard({Key? key, required this.text, required this.iconData, required this.onTap, required this.amount})
+  const WidgetConfirmPropertyRentMenuCard({Key? key, required this.text, required this.iconData, required this.onTap, required this.amount})
       : super(key: key);
 
 
@@ -30,7 +30,7 @@ class WidgetConfirmPropertyRentMenuCard extends StatelessWidget {
             Container(
               height: 36,
               width: 36,
-              margin: EdgeInsets.all(16),
+              margin: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(48),
                 gradient: LinearGradient(
