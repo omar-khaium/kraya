@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
 import 'package:kraya/ui/widgets/payment/tab_payment_all.dart';
+import 'package:kraya/ui/widgets/payment/tab_payment_paid.dart';
+import 'package:kraya/ui/widgets/payment/tab_payment_unpaid.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../../../core/colors.dart';
@@ -99,12 +101,8 @@ class _PaymentStatusState extends State<PaymentStatus> with SingleTickerProvider
                   controller: tabController,
                   children: const [
                     TabPaymentAll(),
-                    Center(
-                      child: Text("Paid"),
-                    ),
-                    Center(
-                      child: Text("Unpaid"),
-                    ),
+                    TabPaymentPaid(),
+                    TabPaymentUnpaid(),
                   ],
                 ),
               )),

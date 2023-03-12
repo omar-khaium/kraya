@@ -6,6 +6,8 @@ import 'package:kraya/core/text_style.dart';
 import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
+import '../search_property/search_widget.dart';
+
 class FragmentSubmitBills extends StatefulWidget {
   const FragmentSubmitBills({Key? key}) : super(key: key);
 
@@ -22,6 +24,10 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
         mainAxisSize: MainAxisSize.min,
         children: [
           const CustomAppBar(firstWord: "Submit", lastWord: "Bills",isBackButtonVisible: false,),
+          const SizedBox(height: 16),
+          SearchWidget(
+            onTap: () {},
+          ),
           Expanded(
             child: ListView.separated(
               shrinkWrap: true,
