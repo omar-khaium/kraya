@@ -5,13 +5,11 @@ import 'package:kraya/core/colors.dart';
 import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
 import 'package:kraya/ui/reusable_widgets/widget_title_text.dart';
 import 'package:kraya/ui/widgets/search_property/search_widget.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import '../../core/text_style.dart';
 import '../../model/bill.dart';
 import '../widgets/widget_search_property_icon_text.dart';
 
 class SearchPropertyScreen extends StatelessWidget {
-  late List<Bill> billsList = [];
+  final  List<Bill> billsList = [];
 
   SearchPropertyScreen({Key? key}) : super(key: key);
 
@@ -67,12 +65,12 @@ class SearchPropertyScreen extends StatelessWidget {
                                     Row(
                                       mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                      children: [
+                                      children: const [
                                         WidgetSearchIconText(
                                           iconData: Icons.bed_outlined,
                                           text: '3',
                                         ),
-                                        const SizedBox(width: 8),
+                                        SizedBox(width: 8),
                                         WidgetSearchIconText(
                                           iconData: Icons.bathroom_outlined,
                                           text: '2',
@@ -82,12 +80,12 @@ class SearchPropertyScreen extends StatelessWidget {
                                     const SizedBox(height: 8),
                                     Row(
                                       mainAxisSize: MainAxisSize.min,
-                                      children: [
+                                      children: const [
                                         WidgetSearchIconText(
                                           iconData: Icons.apartment_outlined,
                                           text: '2',
                                         ),
-                                        const SizedBox(width: 8),
+                                        SizedBox(width: 8),
                                         WidgetSearchIconText(
                                           iconData: Icons.photo_size_select_small_rounded,
                                           text: '1300 sqft',

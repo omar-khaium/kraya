@@ -4,9 +4,9 @@ import '../../core/colors.dart';
 import '../reusable_widgets/widget_lable_text.dart';
 
 class WidgetSearchIconText extends StatelessWidget {
-  late IconData iconData;
-  late String text;
-  WidgetSearchIconText({Key? key,required this.iconData,required this.text}) : super(key: key);
+  final IconData iconData;
+  final String text;
+  const WidgetSearchIconText({Key? key,required this.iconData,required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

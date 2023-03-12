@@ -7,7 +7,8 @@ import '../../../core/text_style.dart';
 class SearchWidget extends StatelessWidget {
   final Function onTap;
   SearchWidget({Key? key,required this.onTap}) : super(key: key);
-  TextEditingController searchController = TextEditingController();
+
+  final TextEditingController searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

@@ -11,9 +11,9 @@ import 'package:kraya/ui/widgets/confirm_property/widget_confirm_property_bills_
 import 'package:kraya/ui/widgets/confirm_property/widget_confirm_property_rent_menu_card.dart';
 
 class ConfirmPropertyScreen extends StatefulWidget {
-  late List<Bill> billsList = [];
+  final List<Bill> billsList;
 
-  ConfirmPropertyScreen({super.key, required this.billsList});
+  const ConfirmPropertyScreen({super.key, required this.billsList});
 
   @override
   State<ConfirmPropertyScreen> createState() => _ConfirmPropertyScreenState();

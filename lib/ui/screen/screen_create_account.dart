@@ -11,8 +11,8 @@ import '../../core/colors.dart';
 import '../../core/text_style.dart';
 
 class CreateAccountScreen extends StatefulWidget {
-  late bool fromVaratia;
-   CreateAccountScreen({super.key,required this.fromVaratia});
+  final bool fromVaratia;
+   const CreateAccountScreen({super.key,required this.fromVaratia});
 
   @override
   State<CreateAccountScreen> createState() => _CreateAccountScreenState();
