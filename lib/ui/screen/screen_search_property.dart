@@ -15,7 +15,7 @@ class SearchPropertyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    billsList.add(Bill.name("Gas", 2000));
+    billsList.add(Bill(billName: "Gas", amount: 2000));
     return Scaffold(
       backgroundColor: ColorSystem.instance.background,
       body: Padding(
@@ -93,7 +93,7 @@ class SearchPropertyScreen extends StatelessWidget {
                                       ],
                                     ),
                                     const SizedBox(height: 8),
-                                    WidgetLabelText(text: "Zoo road,Mirpur-1", colorSystem: ColorSystem.instance.hint)
+                                    WidgetLabelText(text: "Zoo road, Mirpur-1", colorSystem: ColorSystem.instance.hint)
                                   ],
                                 )),
                             Expanded(

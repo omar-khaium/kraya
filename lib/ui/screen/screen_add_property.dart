@@ -235,7 +235,6 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                       ),
                     ],
                   ),
-
                   //TODO-----Image upload+date picker
                 ],
               ),

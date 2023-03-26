@@ -6,6 +6,7 @@ import 'package:kraya/core/text_style.dart';
 import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
+import '../../../model/bill.dart';
 import '../search_property/search_widget.dart';
 
 class FragmentSubmitBills extends StatefulWidget {
@@ -15,7 +16,14 @@ class FragmentSubmitBills extends StatefulWidget {
   State<FragmentSubmitBills> createState() => _FragmentSubmitBillsState();
 }
 
+
 class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
+  final List<Bill> bill=[
+    Bill(billName: "Monthly rent",amount: 2500),
+    Bill(billName: "Gas",amount: 1400),
+    Bill(billName: "Water",amount: 500),
+    Bill(billName: "Electricity",amount: 1000),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +31,11 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
       body: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const CustomAppBar(firstWord: "Submit", lastWord: "Bills",isBackButtonVisible: false,),
+          const CustomAppBar(
+            firstWord: "Submit",
+            lastWord: "Bills",
+            isBackButtonVisible: false,
+          ),
           const SizedBox(height: 16),
           SearchWidget(
             onTap: () {},
@@ -53,16 +65,13 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
                         trailing: SizedBox(
                             width: MediaQuery.of(context).size.width / 3,
                             child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  maximumSize: Size(MediaQuery.of(context).size.width / 5, 36)),
+                              style: ElevatedButton.styleFrom(maximumSize: Size(MediaQuery.of(context).size.width / 5, 36)),
                               onPressed: () {},
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  WidgetLabelText(
-                                      text: "Add bill",
-                                      colorSystem: ColorSystem.instance.background),
+                                  WidgetLabelText(text: "Add bill", colorSystem: ColorSystem.instance.background),
                                   const SizedBox(width: 8),
                                   const Icon(
                                     Icons.add,
@@ -76,27 +85,21 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
                       ListTile(
                         dense: true,
                         visualDensity: VisualDensity.compact,
-                        title: WidgetLabelText(
-                            text: "Total amount", colorSystem: ColorSystem.instance.hint),
+                        title: WidgetLabelText(text: "Total amount", colorSystem: ColorSystem.instance.hint),
                         subtitle: Text(
                           "৳ 32,000",
-                          style: TextSystem.instance
-                              .normal(ColorSystem.instance.text)
-                              .copyWith(fontWeight: FontWeight.w900),
+                          style: TextSystem.instance.normal(ColorSystem.instance.text).copyWith(fontWeight: FontWeight.w900),
                         ),
                         trailing: SizedBox(
                             width: MediaQuery.of(context).size.width / 3,
                             child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  maximumSize: Size(MediaQuery.of(context).size.width / 5, 36)),
+                              style: ElevatedButton.styleFrom(maximumSize: Size(MediaQuery.of(context).size.width / 5, 36)),
                               onPressed: () {},
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  WidgetLabelText(
-                                      text: "Send bill",
-                                      colorSystem: ColorSystem.instance.background),
+                                  WidgetLabelText(text: "Send bill", colorSystem: ColorSystem.instance.background),
                                   const SizedBox(width: 8),
                                   const Icon(
                                     MdiIcons.sendCircleOutline,
@@ -106,42 +109,33 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
                               ),
                             )),
                       ),
-                      /*Expandable(
-                        collapsed: const Text(""),
-                        expanded: SizedBox(
-                          height: 200,
-                          child: ListView.builder(
+                      ExpansionTile(
+                        initiallyExpanded: false,
+                        title: Text("Bills"),
+                        children: [
+                          ListView.builder(
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
-                            physics: const NeverScrollableScrollPhysics(),
                             padding: const EdgeInsets.all(8),
-                            itemCount: 5,
+                            itemCount: bill.length,
                             itemBuilder: (context, int index) {
+                              final Bill billModel=bill.elementAt(index);
                               return ListTile(
                                 dense: true,
                                 visualDensity: VisualDensity.compact,
                                 leading: WidgetLabelText(
-                                  text: "Bill",
+                                  text: billModel.billName,
                                   colorSystem: ColorSystem.instance.text,
                                 ),
                                 trailing: WidgetLabelText(
-                                  text: "Amount",
+                                  text: billModel.amount.toString(),
                                   colorSystem: ColorSystem.instance.text,
                                 ),
                               );
                             },
                           ),
-                        ),
-                      ),*/
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: IconButton(
-                          icon: const Icon(Icons.keyboard_arrow_down),
-                          onPressed: () {
-                            billsItem();
-                          },
-                        ),
-                      )
+                        ],
+                      ),
                     ],
                   ),
                 );
@@ -161,7 +155,7 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
 
 Widget billsItem() {
   return Expandable(
-    collapsed: const Text(""),
+    collapsed: const Text("Text"),
     expanded: ListView.builder(
       shrinkWrap: true,
       scrollDirection: Axis.vertical,

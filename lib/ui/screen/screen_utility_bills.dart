@@ -33,7 +33,11 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
       body: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const CustomAppBar(firstWord: "Add", lastWord: "Bills",isBackButtonVisible: true,),
+          const CustomAppBar(
+            firstWord: "Add",
+            lastWord: "Bills",
+            isBackButtonVisible: true,
+          ),
           Expanded(
             child: bills.isEmpty
                 ? Center(
@@ -107,9 +111,7 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
                         GradientButton(
                             onPressed: () {
                               setState(() {
-                                bills.add(
-                                    Bill.name(
-                                    billNameController.text, int.parse(billAmountController.text)));
+                                bills.add(Bill(billName: billNameController.text, amount: int.parse(billAmountController.text)));
                                 billNameController.text = "";
                                 billAmountController.text = "";
                                 Navigator.of(context).pop();
@@ -126,8 +128,7 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
               alignment: Alignment.bottomRight,
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                decoration: BoxDecoration(
-                    color: ColorSystem.instance.primary, borderRadius: BorderRadius.circular(48)),
+                decoration: BoxDecoration(color: ColorSystem.instance.primary, borderRadius: BorderRadius.circular(48)),
                 child: Icon(
                   Icons.add,
                   size: 64,
@@ -138,7 +139,7 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
           ),
           GradientButton(
             onPressed: () {
-              Navigator.of(context).pushReplacementNamed(AppRouter.confirmProperty,arguments: bills);
+              Navigator.of(context).pushReplacementNamed(AppRouter.confirmProperty, arguments: bills);
             },
             text: "Done",
           ),
