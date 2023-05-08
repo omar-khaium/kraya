@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/text_style.dart';
-import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
-import 'package:kraya/ui/widgets/dashboard/dashboard_custom_app_bar.dart';
-import 'package:kraya/ui/widgets/dashboard/widget_dashboard_menu_card.dart';
+import '../../../core/colors.dart';
+import '../../../core/text_style.dart';
+import '../../reusable_widgets/widget_lable_text.dart';
+import '../dashboard/dashboard_custom_app_bar.dart';
+import '../dashboard/widget_dashboard_menu_card.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../dashboard/widget_dashboard_pay_bill_card.dart';

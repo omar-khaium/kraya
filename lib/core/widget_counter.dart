@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/text_style.dart';
+import 'colors.dart';
+import 'text_style.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class WidgetCounter extends StatelessWidget {

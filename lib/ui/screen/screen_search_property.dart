@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/core/app_bar/custom_app_bar.dart';
-import 'package:kraya/core/app_router.dart';
-import 'package:kraya/core/colors.dart';
-import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
-import 'package:kraya/ui/reusable_widgets/widget_title_text.dart';
-import 'package:kraya/ui/widgets/search_property/search_widget.dart';
+import '../../core/app_bar/custom_app_bar.dart';
+import '../../core/app_router.dart';
+import '../../core/colors.dart';
+import '../reusable_widgets/widget_lable_text.dart';
+import '../reusable_widgets/widget_title_text.dart';
+import '../widgets/search_property/search_widget.dart';
 import '../../model/bill.dart';
 import '../widgets/widget_search_property_icon_text.dart';
 

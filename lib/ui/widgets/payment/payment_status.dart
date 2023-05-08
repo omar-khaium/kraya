@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
-import 'package:kraya/ui/widgets/payment/tab_payment_all.dart';
-import 'package:kraya/ui/widgets/payment/tab_payment_paid.dart';
-import 'package:kraya/ui/widgets/payment/tab_payment_unpaid.dart';
+import '../../reusable_widgets/widget_lable_text.dart';
+import 'tab_payment_all.dart';
+import 'tab_payment_paid.dart';
+import 'tab_payment_unpaid.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../../../core/colors.dart';

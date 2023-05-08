@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/core/app_bar/custom_app_bar.dart';
-import 'package:kraya/ui/reusable_widgets/gradient_button.dart';
-import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
-import 'package:kraya/ui/reusable_widgets/widget_title_text.dart';
+import '../../core/app_bar/custom_app_bar.dart';
+import '../reusable_widgets/gradient_button.dart';
+import '../reusable_widgets/widget_lable_text.dart';
+import '../reusable_widgets/widget_title_text.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../../core/colors.dart';

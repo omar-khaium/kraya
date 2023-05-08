@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
 
 import '../../../core/colors.dart';
 import '../../../core/text_style.dart';
+import '../../reusable_widgets/widget_lable_text.dart';
 
 class TabPaymentPaid extends StatelessWidget {
   const TabPaymentPaid({Key? key}) : super(key: key);

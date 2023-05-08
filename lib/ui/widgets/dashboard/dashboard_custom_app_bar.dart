@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/text_style.dart';
+import '../../../core/colors.dart';
+import '../../../core/text_style.dart';
 
 class DashboardCustomAppBar extends StatelessWidget {
   final String firstWord;

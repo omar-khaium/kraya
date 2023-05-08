@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/core/colors.dart';
+import '../../../core/colors.dart';
 
 class WidgetGradient extends StatelessWidget {
   final Size size;

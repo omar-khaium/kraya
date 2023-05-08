@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/enums.dart';
-import 'package:kraya/core/text_style.dart';
+import '../../../../core/colors.dart';
+import '../../../../core/enums.dart';
+import '../../../../core/text_style.dart';
 
 class WidgetGender extends StatefulWidget {
   const WidgetGender({Key? key}) : super(key: key);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/core/app_router.dart';
-import 'package:kraya/core/colors.dart';
-import 'package:kraya/ui/reusable_widgets/gradient_button.dart';
-import 'package:kraya/core/text_style.dart';
+import '../../../core/app_router.dart';
+import '../../../core/colors.dart';
+import '../../reusable_widgets/gradient_button.dart';
+import '../../../core/text_style.dart';
 
 class WidgetLoginForm extends StatelessWidget {
   const WidgetLoginForm({Key? key}) : super(key: key);

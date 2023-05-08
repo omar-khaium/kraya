@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/text_style.dart';
+import 'colors.dart';
+import 'text_style.dart';
 
 class AlternateButton extends StatelessWidget {
   final VoidCallback onPressed;

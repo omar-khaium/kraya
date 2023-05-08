@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/core/app_router.dart';
-import 'package:kraya/core/colors.dart';
-import 'package:kraya/ui/widgets/login/verify_otp/widget_back_button.dart';
-import 'package:kraya/ui/widgets/login/verify_otp/widget_verift_otp_greetings.dart';
-import 'package:kraya/ui/widgets/login/verify_otp/widget_verify_otp_form.dart';
+import '../../core/app_router.dart';
+import '../../core/colors.dart';
+import '../widgets/login/verify_otp/widget_back_button.dart';
+import '../widgets/login/verify_otp/widget_verift_otp_greetings.dart';
+import '../widgets/login/verify_otp/widget_verify_otp_form.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
   const OtpVerificationScreen({super.key});

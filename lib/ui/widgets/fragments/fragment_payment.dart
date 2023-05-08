@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/core/colors.dart';
+import '../../../core/colors.dart';
 
 import '../payment/finance_information.dart';
 import '../payment/payment_information.dart';

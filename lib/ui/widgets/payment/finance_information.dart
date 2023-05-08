@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/ui/widgets/search_property/search_widget.dart';
+import '../search_property/search_widget.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../../../core/colors.dart';

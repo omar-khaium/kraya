@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:kraya/core/app_router.dart';
-import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/text_button.dart';
-import 'package:kraya/core/text_style.dart';
+import 'app_router.dart';
+import 'colors.dart';
+import 'text_button.dart';
+import 'text_style.dart';
 
 import '../ui/reusable_widgets/gradient_button.dart';
 

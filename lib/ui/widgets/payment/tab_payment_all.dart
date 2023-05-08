@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
+import '../../reusable_widgets/widget_lable_text.dart';
 
 import '../../../core/colors.dart';
 import '../../../core/text_style.dart';

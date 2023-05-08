@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/core/colors.dart';
-import 'package:kraya/ui/widgets/login/widget_language_toggle.dart';
-import 'package:kraya/ui/widgets/login/widget_login_form.dart';
-import 'package:kraya/ui/widgets/login/widget_login_gradient.dart';
-import 'package:kraya/ui/widgets/login/widget_login_greetings.dart';
+import '../../core/colors.dart';
+import '../widgets/login/widget_language_toggle.dart';
+import '../widgets/login/widget_login_form.dart';
+import '../widgets/login/widget_login_gradient.dart';
+import '../widgets/login/widget_login_greetings.dart';
 
 
 class LoginScreen extends StatefulWidget {

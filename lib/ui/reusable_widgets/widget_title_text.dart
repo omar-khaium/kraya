@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/core/text_style.dart';
+import '../../core/text_style.dart';
 
 class WidgetTitleText extends StatelessWidget {
   final String text;

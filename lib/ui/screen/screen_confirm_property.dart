@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/core/app_router.dart';
-import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/app_bar/custom_app_bar.dart';
-import 'package:kraya/ui/reusable_widgets/gradient_button.dart';
-import 'package:kraya/core/text_style.dart';
-import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
-import 'package:kraya/ui/reusable_widgets/widget_title_text.dart';
-import 'package:kraya/model/bill.dart';
-import 'package:kraya/ui/widgets/confirm_property/widget_confirm_property_bills_card.dart';
-import 'package:kraya/ui/widgets/confirm_property/widget_confirm_property_rent_menu_card.dart';
+import '../../core/app_router.dart';
+import '../../core/colors.dart';
+import '../../core/app_bar/custom_app_bar.dart';
+import '../reusable_widgets/gradient_button.dart';
+import '../../core/text_style.dart';
+import '../reusable_widgets/widget_lable_text.dart';
+import '../reusable_widgets/widget_title_text.dart';
+import '../../model/bill.dart';
+import '../widgets/confirm_property/widget_confirm_property_bills_card.dart';
+import '../widgets/confirm_property/widget_confirm_property_rent_menu_card.dart';
 
 class ConfirmPropertyScreen extends StatefulWidget {
   final List<Bill> billsList;

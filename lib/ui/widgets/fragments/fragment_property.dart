@@ -1,9 +1,9 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
-import 'package:kraya/core/app_bar/custom_app_bar.dart';
-import 'package:kraya/core/colors.dart';
-import 'package:kraya/core/text_style.dart';
-import 'package:kraya/ui/reusable_widgets/widget_lable_text.dart';
+import '../../../core/app_bar/custom_app_bar.dart';
+import '../../../core/colors.dart';
+import '../../../core/text_style.dart';
+import '../../reusable_widgets/widget_lable_text.dart';
 
 class FragmentProperty extends StatefulWidget {
   const FragmentProperty({Key? key}) : super(key: key);

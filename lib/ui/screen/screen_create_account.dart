@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:kraya/core/app_bar/custom_app_bar.dart';
-import 'package:kraya/core/search_property.dart';
-import 'package:kraya/ui/reusable_widgets/gradient_button.dart';
-import 'package:kraya/ui/widgets/login/create_account/widget_create_acc_date_of_birth.dart';
-import 'package:kraya/ui/widgets/login/create_account/widget_gender.dart';
-import 'package:kraya/ui/widgets/login/create_account/widget_input_text.dart';
+import '../../core/app_bar/custom_app_bar.dart';
+import '../../core/search_property.dart';
+import '../reusable_widgets/gradient_button.dart';
+import '../widgets/login/create_account/widget_create_acc_date_of_birth.dart';
+import '../widgets/login/create_account/widget_gender.dart';
+import '../widgets/login/create_account/widget_input_text.dart';
 
 import '../../core/alert_property.dart';
 import '../../core/colors.dart';

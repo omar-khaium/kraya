@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kraya/business_logic/bottom_navigation/bottom_navigation_cubit.dart';
-import 'package:kraya/core/colors.dart';
-import 'package:kraya/ui/widgets/fragments/dashboard_fragment.dart';
-import 'package:kraya/ui/widgets/fragments/fragment_payment.dart';
-import 'package:kraya/ui/widgets/fragments/fragment_profile.dart';
-import 'package:kraya/ui/widgets/fragments/fragment_property.dart';
-import 'package:kraya/ui/widgets/fragments/fragment_submit_bills.dart';
+import '../../business_logic/bottom_navigation/bottom_navigation_cubit.dart';
+import '../../core/colors.dart';
+import '../widgets/fragments/dashboard_fragment.dart';
+import '../widgets/fragments/fragment_payment.dart';
+import '../widgets/fragments/fragment_profile.dart';
+import '../widgets/fragments/fragment_property.dart';
+import '../widgets/fragments/fragment_submit_bills.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class ScreenDashboard extends StatefulWidget {
