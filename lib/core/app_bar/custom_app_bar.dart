@@ -6,7 +6,7 @@ class CustomAppBar extends StatelessWidget {
   final String firstWord;
   final String lastWord;
   final bool isBackButtonVisible;
-  const CustomAppBar({super.key, required this.firstWord, required this.lastWord,required this.isBackButtonVisible});
+  const CustomAppBar({super.key, required this.firstWord, required this.lastWord, required this.isBackButtonVisible});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          backButton(context,isBackButtonVisible),
+          backButton(context, isBackButtonVisible),
           RichText(
             text: TextSpan(
               text: "$firstWord ",
@@ -34,12 +34,12 @@ class CustomAppBar extends StatelessWidget {
   }
 }
 
-Widget backButton(BuildContext context,bool isVisible) {
+Widget backButton(BuildContext context, bool isVisible) {
   return Visibility(
-    visible: isVisible==true,
+    visible: isVisible == true,
     child: IconButton(
-      iconSize: 48,
-      splashRadius: 28,
+      iconSize: 36,
+      splashRadius: 36,
       splashColor: ColorSystem.instance.cardDeep,
       onPressed: () => Navigator.of(context).pop(),
       visualDensity: const VisualDensity(horizontal: -4, vertical: -4),

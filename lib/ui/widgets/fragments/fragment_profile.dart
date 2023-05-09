@@ -58,6 +58,17 @@ class _FragmentProfileState extends State<FragmentProfile> {
             ),
             const SizedBox(height: 24),
             WidgetProfileMenu(
+              onTap: () {
+                Navigator.of(context).pushNamed(AppRouter.varatiaProfile);
+              },
+              text: 'Police verification',
+              icon: Icons.health_and_safety,
+            ),
+            Divider(
+              thickness: 1,
+              color: ColorSystem.instance.cardDeep,
+            ),
+            WidgetProfileMenu(
               onTap: () {},
               text: 'Get Subscription',
               icon: Icons.calendar_month,

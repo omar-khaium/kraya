@@ -14,6 +14,7 @@ class ColorSystem {
   Color get gradientStart => const Color.fromARGB(255, 65, 114, 227);
   Color get gradientEnd => const Color.fromARGB(255, 96, 166, 250);
   Color get text => Colors.grey.shade900;
+  Color get error => Colors.red;
   Color get secondaryText => Colors.grey;
   Color get alternateText => Colors.grey.shade50;
   Color get hint => Colors.grey.shade400;

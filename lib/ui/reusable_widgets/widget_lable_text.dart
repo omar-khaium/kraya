@@ -11,6 +11,7 @@ class WidgetLabelText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
+      overflow: TextOverflow.ellipsis,
       style: TextSystem.instance.small(colorSystem),
     );
   }

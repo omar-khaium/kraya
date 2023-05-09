@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kraya/ui/screen/screen_varatia_profile.dart';
 import 'core/app_router.dart';
 import 'core/colors.dart';
 import 'ui/screen/screen_login.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginScreen(),
+      home: const VaratiaProfileScreen(),
       onGenerateRoute: (settings) => router.onGenerate(settings),
     );
   }
