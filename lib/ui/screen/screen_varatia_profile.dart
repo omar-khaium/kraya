@@ -140,6 +140,7 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                     colorSystem: ColorSystem.instance.text,
                   ),
                   const SizedBox(height: 8),
+                  
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: PhysicalModel(
