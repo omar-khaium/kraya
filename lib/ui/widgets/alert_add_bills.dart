@@ -26,16 +26,8 @@ class AlertAddBills extends StatelessWidget {
               style: TextSystem.instance.large(ColorSystem.instance.text),
             ),
           ),
-          WidgetInput(
-              label: "Bill name",
-              controller: billNameController,
-              icon: Icons.badge_outlined,
-              type: TextInputType.text),
-          WidgetInput(
-              label: "Amount",
-              controller: billAmountController,
-              icon: MdiIcons.currencyBdt,
-              type: TextInputType.text),
+          Input(label: "Bill name", controller: billNameController, icon: Icons.badge_outlined, type: TextInputType.text),
+          Input(label: "Amount", controller: billAmountController, icon: MdiIcons.currencyBdt, type: TextInputType.text),
           const SizedBox(
             height: 24,
           ),

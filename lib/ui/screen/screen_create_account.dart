@@ -12,7 +12,7 @@ import '../../core/text_style.dart';
 
 class CreateAccountScreen extends StatefulWidget {
   final bool fromVaratia;
-   const CreateAccountScreen({super.key,required this.fromVaratia});
+  const CreateAccountScreen({super.key, required this.fromVaratia});
 
   @override
   State<CreateAccountScreen> createState() => _CreateAccountScreenState();
@@ -41,7 +41,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   Row(
                     children: [
                       Expanded(
-                        child: WidgetInput(
+                        child: Input(
                           label: "First name",
                           controller: firstName,
                           icon: Icons.person_outline_rounded,
@@ -50,7 +50,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       ),
                       const SizedBox(width: 16),
                       Expanded(
-                        child: WidgetInput(
+                        child: Input(
                           label: "Last name",
                           controller: lastName,
                           icon: Icons.person_outline_rounded,
@@ -60,7 +60,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     ],
                   ),
                   const SizedBox(height: 24),
-                  WidgetInput(
+                  Input(
                     label: "Email",
                     controller: email,
                     icon: Icons.email_outlined,
@@ -83,7 +83,10 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                         CircleAvatar(
                           radius: 72,
                           backgroundColor: ColorSystem.instance.cardDeep,
-                          child: const Icon(Icons.person,size: 64,),
+                          child: const Icon(
+                            Icons.person,
+                            size: 64,
+                          ),
                         ),
                         Positioned(
                             bottom: 8,
@@ -100,7 +103,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12),
             child: GradientButton(
               hideIcon: false,
               onPressed: () {
@@ -114,7 +117,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     ),
                   ),
                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                  builder: (_) => widget.fromVaratia ? const AlertSearchProperty():const AlertAskForAddProperty(),
+                  builder: (_) => widget.fromVaratia ? const AlertSearchProperty() : const AlertAskForAddProperty(),
                 );
               },
               text: "Done",

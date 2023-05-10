@@ -10,7 +10,6 @@ import '../widgets/profile/bank_information.dart';
 class AddBankAccountScreen extends StatefulWidget {
   const AddBankAccountScreen({Key? key}) : super(key: key);
 
-
   @override
   State<AddBankAccountScreen> createState() => _AddBankAccountScreenState();
 }
@@ -32,42 +31,39 @@ class _AddBankAccountScreenState extends State<AddBankAccountScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const CustomAppBar(
-                firstWord: "Add Bank", lastWord: "Account", isBackButtonVisible: true),
+            const CustomAppBar(firstWord: "Add Bank", lastWord: "Account", isBackButtonVisible: true),
             const SizedBox(height: 24),
             const BankInformationCard(),
             const SizedBox(height: 24),
-            WidgetInput(
+            Input(
               label: "Card holder name",
               controller: cardHolderNameController,
               icon: Icons.person_outline_rounded,
               type: TextInputType.name,
             ),
             const SizedBox(height: 16),
-            WidgetInput(
+            Input(
               label: "Bank name",
               controller: bankNameController,
               icon: MdiIcons.bank,
               type: TextInputType.name,
             ),
             const SizedBox(height: 16),
-            WidgetInput(
+            Input(
               label: "Account number",
               controller: accountNumberController,
               icon: Icons.confirmation_number_outlined,
               type: TextInputType.number,
             ),
             const SizedBox(height: 16),
-            WidgetInput(
+            Input(
               label: "Branch name",
               controller: branchNumberController,
               icon: MdiIcons.officeBuilding,
               type: TextInputType.name,
             ),
             const SizedBox(height: 64),
-            Align(
-                alignment: Alignment.bottomCenter,
-                child: GradientButton(onPressed: () {}, text: "Add account".toUpperCase()))
+            Align(alignment: Alignment.bottomCenter, child: GradientButton(onPressed: () {}, text: "Add account".toUpperCase()))
           ],
         ),
       ),

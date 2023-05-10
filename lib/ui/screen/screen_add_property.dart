@@ -37,7 +37,11 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const CustomAppBar(firstWord: "Add", lastWord: "Property",isBackButtonVisible: true,),
+          const CustomAppBar(
+            firstWord: "Add",
+            lastWord: "Property",
+            isBackButtonVisible: true,
+          ),
           const SizedBox(height: 16),
           Expanded(
             child: SingleChildScrollView(
@@ -136,23 +140,18 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  WidgetInput(
-                      label: "Building name",
-                      controller: buildingController,
-                      icon: Icons.maps_home_work_outlined,
-                      type: TextInputType.text),
+                  Input(label: "Building name", controller: buildingController, icon: Icons.maps_home_work_outlined, type: TextInputType.text),
                   const SizedBox(height: 16),
-                  WidgetInput(label: "Flat name", controller: flatController, icon: Icons.apartment, type: TextInputType.text),
+                  Input(label: "Flat name", controller: flatController, icon: Icons.apartment, type: TextInputType.text),
                   const SizedBox(height: 16),
-                  WidgetInput(
-                      label: "Address", controller: flatController, icon: Icons.location_on_outlined, type: TextInputType.text),
+                  Input(label: "Address", controller: flatController, icon: Icons.location_on_outlined, type: TextInputType.text),
                   const SizedBox(height: 16),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Expanded(
                         flex: 2,
-                        child: WidgetInput(
+                        child: Input(
                           label: "Property size",
                           controller: propertySizeController,
                           icon: Icons.numbers,
@@ -218,20 +217,12 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                     children: [
                       Expanded(
                         flex: 2,
-                        child: WidgetInput(
-                            label: "Advance amount",
-                            controller: advanceRentController,
-                            icon: Icons.money,
-                            type: TextInputType.text),
+                        child: Input(label: "Advance amount", controller: advanceRentController, icon: Icons.money, type: TextInputType.text),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
                         flex: 2,
-                        child: WidgetInput(
-                            label: "Monthly amount",
-                            controller: monthlyRentController,
-                            icon: Icons.casino_sharp,
-                            type: TextInputType.text),
+                        child: Input(label: "Monthly amount", controller: monthlyRentController, icon: Icons.casino_sharp, type: TextInputType.text),
                       ),
                     ],
                   ),
@@ -254,4 +245,3 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
     );
   }
 }
-

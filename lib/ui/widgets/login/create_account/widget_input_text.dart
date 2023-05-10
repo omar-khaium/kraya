@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import '../../../../core/colors.dart';
 import '../../../../core/text_style.dart';
 
-class WidgetInput extends StatefulWidget {
+class Input extends StatefulWidget {
   final String label;
   final TextEditingController controller;
   final IconData icon;
   final TextInputType type;
 
-
   @override
-  State<WidgetInput> createState() => _WidgetInputState();
+  State<Input> createState() => _InputState();
 
-  const WidgetInput({super.key,
+  const Input({
+    super.key,
     required this.label,
     required this.controller,
     required this.icon,
@@ -20,7 +20,7 @@ class WidgetInput extends StatefulWidget {
   });
 }
 
-class _WidgetInputState extends State<WidgetInput> {
+class _InputState extends State<Input> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,9 +35,10 @@ class _WidgetInputState extends State<WidgetInput> {
           shadowColor: ColorSystem.instance.cardDeep,
           borderRadius: BorderRadius.circular(8),
           clipBehavior: Clip.antiAliasWithSaveLayer,
-          child: TextField(
+          child: TextFormField(
             controller: widget.controller,
             keyboardType: widget.type,
+            validator: (val) => (val?.isNotEmpty ?? false) ? null : "",
             decoration: InputDecoration(
               prefixIcon: Icon(widget.icon, color: ColorSystem.instance.primary),
               border: InputBorder.none,

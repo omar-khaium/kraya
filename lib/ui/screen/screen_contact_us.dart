@@ -32,38 +32,37 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const CustomAppBar(
-                firstWord: "Add Bank", lastWord: "Account", isBackButtonVisible: true),
+            const CustomAppBar(firstWord: "Add Bank", lastWord: "Account", isBackButtonVisible: true),
             const SizedBox(height: 24),
-            WidgetInput(
+            Input(
               label: "Name",
               controller: nameController,
               icon: Icons.person_outline_rounded,
               type: TextInputType.name,
             ),
             const SizedBox(height: 16),
-            WidgetInput(
+            Input(
               label: "Phone",
               controller: phoneController,
               icon: MdiIcons.phone,
               type: TextInputType.phone,
             ),
             const SizedBox(height: 16),
-            WidgetInput(
+            Input(
               label: "Address",
               controller: addressController,
               icon: Icons.location_on_outlined,
               type: TextInputType.name,
             ),
             const SizedBox(height: 16),
-            WidgetInput(
+            Input(
               label: "Optional phone",
               controller: optionalPhoneController,
               icon: MdiIcons.phone,
               type: TextInputType.phone,
             ),
             const SizedBox(height: 16),
-            WidgetInput(
+            Input(
               label: "Appointment date and time",
               controller: optionalPhoneController,
               icon: MdiIcons.calendar,
@@ -71,13 +70,10 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
             ),
             const SizedBox(height: 16),
             Container(
-              padding:const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                              color: ColorSystem.instance.card,
-                borderRadius: BorderRadius.circular(8)
-                            ),
-              child:Column(
+              decoration: BoxDecoration(color: ColorSystem.instance.card, borderRadius: BorderRadius.circular(8)),
+              child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -90,9 +86,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
               ),
             ),
             const SizedBox(height: 64),
-            Align(
-                alignment: Alignment.bottomCenter,
-                child: GradientButton(onPressed: () {}, text: "Done".toUpperCase()))
+            Align(alignment: Alignment.bottomCenter, child: GradientButton(onPressed: () {}, text: "Done".toUpperCase()))
           ],
         ),
       ),

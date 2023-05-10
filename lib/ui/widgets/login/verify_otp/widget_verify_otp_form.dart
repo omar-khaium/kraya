@@ -46,6 +46,7 @@ class _WidgetVerifyOtpFormState extends State<WidgetVerifyOtpForm> {
           listenForMultipleSmsOnAndroid: true,
           defaultPinTheme: defaultPinTheme,
           length: 6,
+          pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
           validator: (value) {
             return value?.length == 6 ? null : 'Pin is incorrect';
           },
@@ -101,7 +102,9 @@ class _WidgetVerifyOtpFormState extends State<WidgetVerifyOtpForm> {
         const SizedBox(height: 16),
         GradientButton(
           onPressed: () {
-            Navigator.of(context).pushReplacementNamed(AppRouter.newUserTypeSelectionScreen);
+            
+              Navigator.of(context).pushReplacementNamed(AppRouter.newUserTypeSelectionScreen);
+            
           },
           text: "Verify",
         ),

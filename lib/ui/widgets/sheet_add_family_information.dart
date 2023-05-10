@@ -47,9 +47,9 @@ class _SheetFamilyInformationState extends State<SheetFamilyInformation> {
               style: TextSystem.instance.large(ColorSystem.instance.text),
             ),
           ),
-          WidgetInput(label: "Name", controller: nameController, icon: Icons.person_2_outlined, type: TextInputType.text),
-          WidgetInput(label: "Age", controller: ageController, icon: MdiIcons.numeric0Box, type: TextInputType.text),
-          WidgetInput(label: "Occupation", controller: occupationController, icon: Icons.work, type: TextInputType.text),
+          Input(label: "Name", controller: nameController, icon: Icons.person_2_outlined, type: TextInputType.text),
+          Input(label: "Age", controller: ageController, icon: MdiIcons.numeric0Box, type: TextInputType.text),
+          Input(label: "Occupation", controller: occupationController, icon: Icons.work, type: TextInputType.text),
           DropDownMenu(
               shouldValidate: true,
               items: items.map((company) => DropDownItem(text: company.text, value: company.value.toString())).toList(),
@@ -68,7 +68,7 @@ class _SheetFamilyInformationState extends State<SheetFamilyInformation> {
           ),
           GradientButton(
               onPressed: () {
-                widget.onTap(nameController.text,ageController.text,occupationController.text,selectDropdown);
+                widget.onTap(nameController.text, ageController.text, occupationController.text, selectDropdown);
                 Navigator.of(context).pop();
               },
               text: "Submit")
