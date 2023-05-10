@@ -41,7 +41,11 @@ class AppRouter {
                   child: const ScreenDashboard(),
                 ));
       case otpVerification:
-        return MaterialPageRoute(builder: (_) => const OtpVerificationScreen());
+        final String phone = settings.arguments as String;
+        return MaterialPageRoute(
+            builder: (_) => OtpVerificationScreen(
+                  phone: phone,
+                ));
       case searchProperty:
         return MaterialPageRoute(builder: (_) => SearchPropertyScreen());
       case contactUs:

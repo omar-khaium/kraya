@@ -51,7 +51,7 @@ class WidgetLoginForm extends StatelessWidget {
                   );
                 } else {
                   if (controller.text.contains("01")) {
-                    Navigator.of(context).pushReplacementNamed(AppRouter.otpVerification);
+                    Navigator.of(context).pushReplacementNamed(AppRouter.otpVerification,arguments: controller.text);
                   } else {
                     TaskNotifier.instance.warning(
                     context,

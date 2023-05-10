@@ -6,7 +6,8 @@ import '../widgets/login/verify_otp/widget_verift_otp_greetings.dart';
 import '../widgets/login/verify_otp/widget_verify_otp_form.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
-  const OtpVerificationScreen({super.key});
+  final String phone;
+  const OtpVerificationScreen({super.key, required this.phone});
 
   @override
   State<OtpVerificationScreen> createState() => _OtpVerificationScreenState();
@@ -25,11 +26,11 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
             child: const WidgetBackButton(route: AppRouter.login),
           ),
           const Center(child: WidgetVerifyOtpGreetings()),
-          const Positioned(
+           Positioned(
             bottom: 16,
             left: 16,
             right: 16,
-            child: WidgetVerifyOtpForm(),
+            child: WidgetVerifyOtpForm(phone: widget.phone,),
           ),
         ],
       ),
