@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import '../../core/app_bar/custom_app_bar.dart';
 import '../../core/search_property.dart';
@@ -9,6 +11,7 @@ import '../widgets/login/create_account/widget_input_text.dart';
 import '../../core/alert_property.dart';
 import '../../core/colors.dart';
 import '../../core/text_style.dart';
+import '../widgets/widget_upload_options.dart';
 
 class CreateAccountScreen extends StatefulWidget {
   final bool fromVaratia;
@@ -22,6 +25,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
   final TextEditingController firstName = TextEditingController();
   final TextEditingController lastName = TextEditingController();
   final TextEditingController email = TextEditingController();
+  late String? file = "";
 
   @override
   Widget build(BuildContext context) {
@@ -77,25 +81,46 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   const SizedBox(height: 16),
                   Text("Profile picture", style: TextSystem.instance.small(ColorSystem.instance.hint)),
                   const SizedBox(height: 36),
-                  Center(
-                    child: Stack(
-                      children: [
-                        CircleAvatar(
-                          radius: 72,
-                          backgroundColor: ColorSystem.instance.cardDeep,
-                          child: const Icon(
-                            Icons.person,
-                            size: 64,
-                          ),
+                  InkWell(
+                    onTap: () {
+                      showModalBottomSheet(
+                        context: context,
+                        barrierColor: ColorSystem.instance.secondaryText,
+                        backgroundColor: ColorSystem.instance.background,
+                        builder: (builderContext) => UploadOptionChooser(
+                          guid: "",
+                          onTap: (path) {
+                            setState(() {
+                              file = path;
+                            });
+                          },
                         ),
-                        Positioned(
-                            bottom: 8,
-                            right: 0,
-                            child: CircleAvatar(
-                              backgroundColor: ColorSystem.instance.primary,
-                              child: const Icon(Icons.add),
-                            )),
-                      ],
+                      );
+                    },
+                    child: Center(
+                      child: Stack(
+                        children: [
+                          file != null
+                              ? ClipOval(
+                                  child: SizedBox.fromSize(
+                                      size: const Size.fromRadius(72),
+                                      child: Image.file(
+                                        File(file ?? ""),
+                                        fit: BoxFit.cover,
+                                      )))
+                              : const Icon(
+                                  Icons.person,
+                                  size: 64,
+                                ),
+                          Positioned(
+                              bottom: 8,
+                              right: 0,
+                              child: CircleAvatar(
+                                backgroundColor: ColorSystem.instance.primary,
+                                child: const Icon(Icons.add),
+                              )),
+                        ],
+                      ),
                     ),
                   ),
                 ],

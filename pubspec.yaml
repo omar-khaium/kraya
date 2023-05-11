@@ -26,6 +26,8 @@ dependencies:
   animated_bottom_navigation_bar: ^1.1.0+1
   flutter_rating_bar: ^4.0.1
   collection: ^1.15.0
+  image_picker: ^0.8.7+4
+  permission_handler: ^10.0.0
 
 dev_dependencies:
   flutter_test:
