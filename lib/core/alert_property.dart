@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../ui/reusable_widgets/gradient_button.dart';
@@ -39,7 +38,9 @@ class AlertAskForAddProperty extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: AlternateButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushReplacementNamed(AppRouter.dashboard);
+                    },
                     text: "Skip",
                     hideIcon: true,
                   ),

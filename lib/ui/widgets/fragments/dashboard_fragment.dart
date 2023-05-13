@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import '../../../core/app_router.dart';
 import '../../../core/colors.dart';
 import '../../../core/text_style.dart';
 import '../../reusable_widgets/widget_lable_text.dart';
@@ -52,17 +53,23 @@ class _FragmentDashboardState extends State<FragmentDashboard> {
                 WidgetDashboardMenuCard(
                   text: 'Add property',
                   iconData: Icons.add_business_rounded,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).pushReplacementNamed(AppRouter.addProperty);
+                  },
                 ),
                 WidgetDashboardMenuCard(
                   text: 'Edit property',
                   iconData: Icons.edit_location_alt_outlined,
-                  onTap: () {},
+                  onTap: () {
+
+                  },
                 ),
                 WidgetDashboardMenuCard(
                   text: 'Appointment',
                   iconData: Icons.calendar_month,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).pushReplacementNamed(AppRouter.contactUs);
+                  },
                 ),
                 WidgetDashboardMenuCard(
                   text: 'Subscription',
@@ -77,7 +84,9 @@ class _FragmentDashboardState extends State<FragmentDashboard> {
                 WidgetDashboardMenuCard(
                   text: 'Bank',
                   iconData: Icons.food_bank,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).pushReplacementNamed(AppRouter.addBankAccount);
+                  },
                 ),
               ],
             ),
