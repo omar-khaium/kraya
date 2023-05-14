@@ -12,7 +12,7 @@ void main() {
 
   setUp(() {
     mockRepository = MockBankRepository();
-    usecase = GetAllBanksUsecase(mockRepository);
+    usecase = GetAllBanksUsecase(repository: mockRepository);
   });
 
   final result = <BankEntity>[];

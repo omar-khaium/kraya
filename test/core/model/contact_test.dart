@@ -1,8 +1,6 @@
 import 'dart:convert';
 
-import 'package:kraya_backend/core/entity/availabiilty.dart';
 import 'package:kraya_backend/core/entity/contact.dart';
-import 'package:kraya_backend/core/model/availability.dart';
 import 'package:kraya_backend/core/model/contact.dart';
 import 'package:test/test.dart';
 

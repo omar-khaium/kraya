@@ -20,7 +20,8 @@ class TenantFullProfileModel extends TenantFullProfileEntity {
       profile: TenantProfileModel.fromJson(id, Map<String, dynamic>.from(map["profile"])),
       additional: TenantAdditionalProfileModel.fromJson(Map<String, dynamic>.from(map["additional"])),
       emergencyContact: EmergencyContactModel.fromJson(map),
-      familyMembers: List<Map<String, dynamic>>.from(map["family-members"] ?? []).map((e) => FamilyMemeberModel.fromJson(e)).toList(),
+      familyMembers:
+          List<Map<String, dynamic>>.from(map["family-members"] ?? []).map((e) => FamilyMemberModel.fromJson(e)).toList(),
     );
   }
 }
@@ -53,7 +54,11 @@ class TenantProfileModel extends TenantProfileEntity {
 
 class TenantAdditionalProfileModel extends TenantAdditionalProfileEntity {
   TenantAdditionalProfileModel(
-      {required super.nid, required super.passport, required super.religion, required super.father, required super.permanentAddress});
+      {required super.nid,
+      required super.passport,
+      required super.religion,
+      required super.father,
+      required super.permanentAddress});
 
   factory TenantAdditionalProfileModel.fromJson(Map<String, dynamic> map) {
     return TenantAdditionalProfileModel(

@@ -11,7 +11,7 @@ class TenantFullProfileEntity extends Equatable {
   final TenantProfileEntity profile;
   final TenantAdditionalProfileEntity additional;
   final EmergencyContactEntity emergencyContact;
-  final List<FamilyMemeberEntity> familyMembers;
+  final List<FamilyMemberEntity> familyMembers;
 
   TenantFullProfileEntity({
     required this.profile,

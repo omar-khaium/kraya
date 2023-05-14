@@ -1,0 +1,38 @@
+{
+    "profile": {
+        "id": 0,
+        "tenant-id": 0,
+        "first-name": "",
+        "last-name": "",
+        "email": "",
+        "phone": "",
+        "gender": -1,
+        "role": -1,
+        "date-of-birth": 946663200000,
+        "profile-picture": ""
+    },
+    "additional": {
+        "nid-number": "",
+        "nid-photo": "",
+        "passport-number": "",
+        "religion": -1,
+        "father-name": "",
+        "permanent-address": ""
+    },
+    "emergency-contact": {
+        "name": "",
+        "address": "",
+        "relation": -1,
+        "contact-number": ""
+    },
+    "family-members": [
+        {
+            "name": "",
+            "date-of-birth": 946663200000,
+            "relation": -1,
+            "occupation": "",
+            "nid-photo": "",
+            "contact-number": ""
+        }
+    ]
+}

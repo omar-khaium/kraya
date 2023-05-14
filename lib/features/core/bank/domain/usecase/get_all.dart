@@ -7,12 +7,12 @@ import '../entity/bank.dart';
 import '../repository/bank.dart';
 
 class GetAllBanksUsecase extends Usecase<List<BankEntity>, NoParam> {
-  final BankRepository _repository;
+  final BankRepository repository;
 
-  GetAllBanksUsecase(this._repository);
+  GetAllBanksUsecase({required this.repository});
 
   @override
   Future<Either<Failure, List<BankEntity>>> call(NoParam param) async {
-    return _repository.getAllBanks();
+    return repository.getAllBanks();
   }
 }

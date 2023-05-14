@@ -3,7 +3,7 @@ import 'package:kraya_backend/core/entity/contact.dart';
 import 'package:kraya_backend/core/entity/nid.dart';
 import 'package:kraya_backend/core/entity/occupation.dart';
 
-class FamilyMemeberEntity extends Equatable {
+class FamilyMemberEntity extends Equatable {
   final String name;
   final DateTime dateOfBirth;
   final int relation;
@@ -11,7 +11,7 @@ class FamilyMemeberEntity extends Equatable {
   final NIDEntity? nid;
   final ContactEntity contact;
 
-  FamilyMemeberEntity({
+  FamilyMemberEntity({
     required this.name,
     required this.dateOfBirth,
     required this.relation,
