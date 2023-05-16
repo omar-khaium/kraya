@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../core/app_router.dart';
 import '../../../core/colors.dart';
+import '../../../core/regex_validator.dart';
 import '../../reusable_widgets/gradient_button.dart';
 import '../../../core/text_style.dart';
 import '../singleton_task_notifier.dart';
@@ -25,7 +26,13 @@ class WidgetLoginForm extends StatelessWidget {
             keyboardAppearance: Brightness.dark,
             focusNode: FocusNode(canRequestFocus: true),
             autofocus: true,
-            validator: (val) => (val?.isNotEmpty ?? false) ? null : "",
+            validator: (val) {
+              return (val ?? "").isNotEmpty
+                  ? RegexValidator.phone(val ?? "")
+                      ? null
+                      : ""
+                  : "* required";
+            },
             maxLength: 11,
             decoration: InputDecoration(
                 labelText: "Enter mobile number",
@@ -51,12 +58,12 @@ class WidgetLoginForm extends StatelessWidget {
                   );
                 } else {
                   if (controller.text.contains("01")) {
-                    Navigator.of(context).pushReplacementNamed(AppRouter.otpVerification,arguments: controller.text);
+                    Navigator.of(context).pushReplacementNamed(AppRouter.otpVerification, arguments: controller.text);
                   } else {
                     TaskNotifier.instance.warning(
-                    context,
-                    message: "Please use a valid phone number",
-                  );
+                      context,
+                      message: "Please use a valid phone number",
+                    );
                   }
                 }
               }
