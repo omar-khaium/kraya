@@ -2,27 +2,29 @@ import 'package:flutter/material.dart';
 import '../../../../core/colors.dart';
 import '../../../../core/text_style.dart';
 
-class Input extends StatefulWidget {
+class InputCopy extends StatefulWidget {
   final String label;
   final TextEditingController controller;
   final IconData icon;
   final TextInputType type;
+  final Function(String) onTap;
 
   @override
-  State<Input> createState() => _InputState();
+  State<InputCopy> createState() => _InputCopyState();
 
-  const Input({
+  const InputCopy({
     super.key,
     required this.label,
     required this.controller,
     required this.icon,
     required this.type,
+    required this.onTap,
   });
 }
 
-class _InputState extends State<Input> {
+class _InputCopyState extends State<InputCopy> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  late String? formFieldValue = "";
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -42,12 +44,9 @@ class _InputState extends State<Input> {
             child: TextFormField(
               controller: widget.controller,
               keyboardType: widget.type,
-              validator: (val) => (val?.isNotEmpty ?? false) ? null : "",
-              onSaved: (val) {
-                formFieldValue = val;
-              },
-              onChanged: (value){
-
+              validator: (val) {
+                (val?.isNotEmpty ?? false) ? null : "";
+                return widget.onTap(val ?? "");
               },
               decoration: InputDecoration(
                 prefixIcon: Icon(widget.icon, color: ColorSystem.instance.primary),

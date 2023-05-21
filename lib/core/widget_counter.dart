@@ -3,9 +3,18 @@ import 'colors.dart';
 import 'text_style.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-class WidgetCounter extends StatelessWidget {
+class WidgetCounter extends StatefulWidget {
   final String text;
-  const WidgetCounter({Key? key,required this.text}) : super(key: key);
+  final Function(int?) onTap;
+
+  const WidgetCounter({Key? key, required this.text,required this.onTap}) : super(key: key);
+
+  @override
+  State<WidgetCounter> createState() => _WidgetCounterState();
+}
+
+class _WidgetCounterState extends State<WidgetCounter> {
+  int count = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +22,10 @@ class WidgetCounter extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(text,style: TextSystem.instance.small(ColorSystem.instance.hint),),
+        Text(
+          widget.text,
+          style: TextSystem.instance.small(ColorSystem.instance.hint),
+        ),
         const SizedBox(height: 6),
         PhysicalModel(
           color: ColorSystem.instance.card,
@@ -26,24 +38,52 @@ class WidgetCounter extends StatelessWidget {
               children: [
                 Expanded(
                   flex: 1,
-                  child: CircleAvatar(
-                    backgroundColor: ColorSystem.instance.primary,
-                    child:  Icon(MdiIcons.minus,color:ColorSystem.instance.background),
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        if (count < 0) {
+                          count = 0;
+                        }
+                        else {
+                          count--;
+                        }
+                      });
+                      widget.onTap(count);
+                    },
+                    child: CircleAvatar(
+                      backgroundColor: ColorSystem.instance.primary,
+                      child: Icon(MdiIcons.minus, color: ColorSystem.instance.background),
+                    ),
                   ),
                 ),
                 Expanded(
                   flex: 1,
                   child: Text(
-                    "3",
+                    count.toString(),
                     style: TextSystem.instance.normal(ColorSystem.instance.primary),
                     textAlign: TextAlign.center,
                   ),
                 ),
                 Expanded(
                   flex: 1,
-                  child: CircleAvatar(
-                    backgroundColor: ColorSystem.instance.primary,
-                    child:  Icon(Icons.add,color: ColorSystem.instance.background,),
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        if (count < 0) {
+                          count = 0;
+                        }else {
+                          count++;
+                        }
+                      });
+                      widget.onTap(count);
+                    },
+                    child: CircleAvatar(
+                      backgroundColor: ColorSystem.instance.primary,
+                      child: Icon(
+                        Icons.add,
+                        color: ColorSystem.instance.background,
+                      ),
+                    ),
                   ),
                 )
               ],

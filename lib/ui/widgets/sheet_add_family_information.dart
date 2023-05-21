@@ -42,14 +42,19 @@ class _SheetFamilyInformationState extends State<SheetFamilyInformation> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Align(
+            alignment: Alignment.topLeft,
             child: Text(
               "Add Family Information",
               style: TextSystem.instance.large(ColorSystem.instance.text),
             ),
           ),
+          const SizedBox(height:16),
           Input(label: "Name", controller: nameController, icon: Icons.person_2_outlined, type: TextInputType.text),
+          const SizedBox(height:8),
           Input(label: "Age", controller: ageController, icon: MdiIcons.numeric0Box, type: TextInputType.text),
+          const SizedBox(height:8),
           Input(label: "Occupation", controller: occupationController, icon: Icons.work, type: TextInputType.text),
+          const SizedBox(height:16),
           DropDownMenu(
               shouldValidate: true,
               items: items.map((company) => DropDownItem(text: company.text, value: company.value.toString())).toList(),

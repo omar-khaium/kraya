@@ -24,7 +24,6 @@ class WidgetLoginForm extends StatelessWidget {
             showCursor: true,
             controller: controller,
             keyboardAppearance: Brightness.dark,
-            focusNode: FocusNode(canRequestFocus: true),
             autofocus: true,
             validator: (val) {
               return (val ?? "").isNotEmpty

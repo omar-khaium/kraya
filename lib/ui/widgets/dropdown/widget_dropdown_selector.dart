@@ -40,6 +40,7 @@ class _DropDownSelectorState extends State<DropDownSelector> {
             title: Text(widget.title, style: TextSystem.instance.normal(ColorSystem.instance.text),),
             backgroundColor: ColorSystem.instance.background,
             centerTitle: false,
+            iconTheme: IconThemeData(color: ColorSystem.instance.primary),
             elevation: 0,
           ),
           body: Column(

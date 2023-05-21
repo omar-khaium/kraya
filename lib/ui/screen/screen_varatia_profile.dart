@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:kraya/model/family_information.dart';
 import 'package:kraya/ui/widgets/sheet_add_family_information.dart';
+import 'package:kraya/ui/widgets/sheet_emergency_contact.dart';
 import '../../core/app_bar/custom_app_bar.dart';
 import '../../core/colors.dart';
 import '../../core/text_style.dart';
 import '../reusable_widgets/widget_family_info_items.dart';
 import '../reusable_widgets/widget_lable_text.dart';
 import '../widgets/profile/varatia_information_card.dart';
+import '../widgets/sheet_varatia_information.dart';
 
 class VaratiaProfileScreen extends StatefulWidget {
   const VaratiaProfileScreen({
@@ -20,6 +22,7 @@ class VaratiaProfileScreen extends StatefulWidget {
 
 class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
   final List<FamilyInformation> familyInfos = [];
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -29,7 +32,8 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
       backgroundColor: ColorSystem.instance.background,
       body: Column(
         children: [
-          const CustomAppBar(firstWord: "Police", lastWord: "Verification", isBackButtonVisible: true),
+          const CustomAppBar(
+              firstWord: "Police", lastWord: "Verification", isBackButtonVisible: true),
           const SizedBox(height: 16),
           Expanded(
             child: SingleChildScrollView(
@@ -113,7 +117,8 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                                     child: OutlinedButton(
                                       onPressed: () {},
                                       style: ButtonStyle(
-                                        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
+                                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(16.0))),
                                       ),
                                       child: const Text("24,Rupali tower"),
                                     ),
@@ -135,9 +140,39 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  WidgetLabelText(
-                    text: "Varatia information",
-                    colorSystem: ColorSystem.instance.text,
+                  ListTile(
+                    dense: true,
+                    visualDensity: VisualDensity.compact,
+                    contentPadding: EdgeInsets.zero,
+                    leading: WidgetLabelText(
+                      text: "varatia information",
+                      colorSystem: ColorSystem.instance.text,
+                    ),
+                    trailing: OutlinedButton(
+                      onPressed: () {
+                        showModalBottomSheet(
+                            context: context,
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            isScrollControlled: true,
+                            builder: (context) => SheetVaratiaInformation(onTap: (
+                                  nid,
+                                  passport,
+                                  email,
+                                  religion,
+                                  fatherName,
+                                  permanentAddress,
+                                  occupation,
+                                  job,
+                                ) {
+                                  setState(() {});
+                                }));
+                      },
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
+                      ),
+                      child: const Text("Add"),
+                    ),
                   ),
                   const SizedBox(height: 8),
                   SizedBox(
@@ -201,9 +236,19 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                       colorSystem: ColorSystem.instance.text,
                     ),
                     trailing: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showModalBottomSheet(
+                            context: context,
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            isScrollControlled: true,
+                            builder: (context) =>
+                                SheetEmergencyContact(onTap: (name, address, religion, phone) {
+                                  setState(() {});
+                                }));
+                      },
                       style: ButtonStyle(
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
+                        shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
                       ),
                       child: const Text("Add"),
                     ),
@@ -260,7 +305,8 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                             context: context,
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             isScrollControlled: true,
-                            builder: (context) => SheetFamilyInformation(onTap: (name, age, occupation, relation) {
+                            builder: (context) =>
+                                SheetFamilyInformation(onTap: (name, age, occupation, relation) {
                                   setState(() {
                                     familyInfos.add(FamilyInformation(
                                       name: name,
@@ -272,7 +318,8 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                                 }));
                       },
                       style: ButtonStyle(
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
+                        shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
                       ),
                       child: const Text("Add"),
                     ),

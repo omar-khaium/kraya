@@ -26,9 +26,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
   final TextEditingController firstName = TextEditingController();
   final TextEditingController lastName = TextEditingController();
   final TextEditingController email = TextEditingController();
-  late String? file = "";
+  late String file = "";
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,10 +75,10 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     ),
                     const SizedBox(height: 24),
                     Row(
-                      children: const [
+                      children: [
                         Expanded(child: WidgetDateOfBirth()),
-                        SizedBox(width: 16),
-                        Expanded(child: WidgetGender()),
+                        const SizedBox(width: 16),
+                        const Expanded(child: WidgetGender()),
                       ],
                     ),
                     const SizedBox(height: 16),
@@ -104,7 +103,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       child: Center(
                         child: Stack(
                           children: [
-                            file != null
+                            file.isNotEmpty && file != ""
                                 ? ClipOval(
                                     child: SizedBox.fromSize(
                                         size: const Size.fromRadius(72),
@@ -112,10 +111,14 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                           File(file ?? ""),
                                           fit: BoxFit.cover,
                                         )))
-                                : const Icon(
-                                    Icons.person,
-                                    size: 64,
-                                  ),
+                                : CircleAvatar(
+                              backgroundColor: ColorSystem.instance.card,
+                                  radius: 72,
+                                  child:  const Icon(
+                                      Icons.person,
+                                      size: 64,
+                                    ),
+                                ),
                             Positioned(
                                 bottom: 8,
                                 right: 0,
@@ -164,4 +167,5 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
       ),
     );
   }
+
 }

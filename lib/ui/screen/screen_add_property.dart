@@ -103,7 +103,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                           flex: 2,
                           child: WidgetCardSelection(
                             label: "Flat",
-                            icon: Icons.home_filled,
+                            icon: Icons.other_houses_outlined,
                             selected: buildingTypeSelection == BuildingTypeSelection.flat,
                             onTap: () {
                               setState(() {
@@ -117,7 +117,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                           flex: 2,
                           child: WidgetCardSelection(
                             label: "Apartment",
-                            icon: Icons.home_filled,
+                            icon: Icons.home_work_outlined,
                             selected: buildingTypeSelection == BuildingTypeSelection.apartment,
                             onTap: () {
                               setState(() {
@@ -131,7 +131,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                           flex: 2,
                           child: WidgetCardSelection(
                             label: "Building",
-                            icon: Icons.warehouse_outlined,
+                            icon: Icons.apartment_outlined,
                             selected: buildingTypeSelection == BuildingTypeSelection.building,
                             onTap: () {
                               setState(() {
@@ -162,10 +162,11 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                           ),
                         ),
                         const SizedBox(width: 12),
-                        const Expanded(
+                         Expanded(
                           flex: 2,
                           child: WidgetCounter(
                             text: "Room",
+                            onTap: (value){},
                           ),
                         ),
                       ],
@@ -173,18 +174,20 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                     const SizedBox(height: 16),
                     Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
+                      children:  [
                         Expanded(
                           flex: 2,
                           child: WidgetCounter(
                             text: "Bathroom",
+                            onTap: (value){},
                           ),
                         ),
-                        SizedBox(width: 12),
-                        Expanded(
+                        const SizedBox(width: 12),
+                         Expanded(
                           flex: 2,
                           child: WidgetCounter(
                             text: "Bedroom",
+                            onTap: (value){},
                           ),
                         ),
                       ],
@@ -208,7 +211,14 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    Text("Picture(optional)", style: TextSystem.instance.small(ColorSystem.instance.hint)),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Picture(optional)", style: TextSystem.instance.small(ColorSystem.instance.hint)),
+
+                      ],
+                    ),
                     const SizedBox(height: 4),
                     GradientButton(
                       onPressed: () {},
