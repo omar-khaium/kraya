@@ -2,17 +2,18 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:kraya/core/helper.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import '../../core/colors.dart';
 import '../../core/text_style.dart';
 
-class UploadOptionChooser extends StatelessWidget {
+class UploadAddPropertyOptionChooser extends StatelessWidget {
   final String guid;
-  final Function(String) onTap;
+  final Function(File) onTap;
   final ImagePicker pickedFile = ImagePicker();
 
-  UploadOptionChooser({Key? key, required this.guid, required this.onTap}) : super(key: key);
+  UploadAddPropertyOptionChooser({Key? key, required this.guid, required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +39,10 @@ class UploadOptionChooser extends StatelessWidget {
                 style: TextSystem.instance.normal(ColorSystem.instance.text),
               ),
               onTap: () async {
-                if (await askForPermission(ImageSource.camera)) {
+                if (await Helper().askForPermission(ImageSource.camera)) {
                   final XFile? path = await pickedFile.pickImage(source: ImageSource.camera);
                   if (path != null) {
-                    onTap(path.path);
+                    onTap(File(path.path));
                   }
                   if (context.mounted) {
                     Navigator.of(context).pop();
@@ -56,10 +57,10 @@ class UploadOptionChooser extends StatelessWidget {
                 style: TextSystem.instance.normal(ColorSystem.instance.gradientStart),
               ),
               onTap: () async {
-                if (await askForPermission(ImageSource.gallery)) {
+                if (await Helper().askForPermission(ImageSource.gallery)) {
                   final XFile? path = await pickedFile.pickImage(source: ImageSource.gallery);
                   if (path != null) {
-                    onTap(path.path);
+                    onTap(File(path.path));
                   }
                   if (context.mounted) {
                     Navigator.of(context).pop();
@@ -83,24 +84,5 @@ class UploadOptionChooser extends StatelessWidget {
     return file?.path;
   }
 
-  Future<bool> askForPermission(ImageSource source) async {
-    PermissionStatus status;
-    if (source == ImageSource.camera) {
-      status = await (source == ImageSource.camera
-              ? Permission.camera
-              : Platform.isIOS
-                  ? Permission.photos
-                  : Permission.storage)
-          .request();
-    } else {
-      status = await (source == ImageSource.gallery
-              ? Permission.storage
-              : Platform.isIOS
-                  ? Permission.photos
-                  : Permission.storage)
-          .request();
-    }
 
-    return status.isGranted || status.isLimited;
-  }
 }

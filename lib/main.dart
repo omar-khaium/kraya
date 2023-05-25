@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kraya/ui/screen/screen_varatia_profile.dart';
+import 'package:kraya/ui/screen/screen_add_bank_account.dart';
+import 'package:kraya/ui/screen/screen_add_property.dart';
 import 'core/app_router.dart';
 import 'core/colors.dart';
-import 'ui/screen/screen_login.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const VaratiaProfileScreen(),
+      home: const AddPropertyScreen(),
       onGenerateRoute: (settings) => router.onGenerate(settings),
     );
   }

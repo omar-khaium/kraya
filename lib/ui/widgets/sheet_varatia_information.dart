@@ -41,72 +41,48 @@ class _SheetVaratiaInformationState extends State<SheetVaratiaInformation> {
               style: TextSystem.instance.large(ColorSystem.instance.text),
             ),
           ),
-          const SizedBox(height:16),
+          const SizedBox(height: 16),
           InputCopy(
-              label: "Nid number",
-              controller: nidController,
-              icon: Icons.perm_identity,
-              type: TextInputType.number,
-            onTap: (value){
-
-          },),
-          const SizedBox(height:8),
-          Input(
-              label: "Passport number",
-              controller: passportController,
-              icon: Icons.paste_sharp,
-              type: TextInputType.text),
-          const SizedBox(height:8),
-          Input(
-              label: "Email",
-              controller: emailController,
-              icon: Icons.email_outlined,
-              type: TextInputType.emailAddress),
-          const SizedBox(height:8),
-          Input(
-              label: "Religion",
-              controller: religionController,
-              icon: Icons.menu_book,
-              type: TextInputType.text),
-          const SizedBox(height:8),
-          Input(
-              label: "Father's name",
-              controller: fathersNameController,
-              icon: Icons.person,
-              type: TextInputType.text),
-          const SizedBox(height:8),
+            label: "Nid number",
+            controller: nidController,
+            icon: Icons.perm_identity,
+            type: TextInputType.number,
+            validator: (value) {
+              nidController.text=value ?? "Invalid nid";
+              return value;
+            },
+          ),
+          const SizedBox(height: 8),
+          Input(label: "Passport number", controller: passportController, icon: Icons.paste_sharp, type: TextInputType.text),
+          const SizedBox(height: 8),
+          Input(label: "Email", controller: emailController, icon: Icons.email_outlined, type: TextInputType.emailAddress),
+          const SizedBox(height: 8),
+          Input(label: "Religion", controller: religionController, icon: Icons.menu_book, type: TextInputType.text),
+          const SizedBox(height: 8),
+          Input(label: "Father's name", controller: fathersNameController, icon: Icons.person, type: TextInputType.text),
+          const SizedBox(height: 8),
           Input(
               label: "Permanent address",
               controller: permanentController,
               icon: MdiIcons.locationEnter,
               type: TextInputType.text),
-          const SizedBox(height:8),
-          Input(
-              label: "Occupation",
-              controller: occupationController,
-              icon: Icons.work,
-              type: TextInputType.text),
-          const SizedBox(height:8),
-          Input(
-              label: "Job address",
-              controller: jobController,
-              icon: Icons.tapas_sharp,
-              type: TextInputType.text),
+          const SizedBox(height: 8),
+          Input(label: "Occupation", controller: occupationController, icon: Icons.work, type: TextInputType.text),
+          const SizedBox(height: 8),
+          Input(label: "Job address", controller: jobController, icon: Icons.tapas_sharp, type: TextInputType.text),
           const SizedBox(
             height: 24,
           ),
           GradientButton(
               onPressed: () {
-                widget.onTap(
-                    nidController.text,
-                    passportController.text,
-                    emailController.text,
-                    religionController.text,
-                    fathersNameController.text,
-                    permanentController.text,
-                    occupationController.text,
-                    jobController.text);
-                Navigator.of(context).pop();
+                widget.onTap(nidController.text, passportController.text, emailController.text, religionController.text,
+                    fathersNameController.text, permanentController.text, occupationController.text, jobController.text);
+                if(nidController.text.isNotEmpty){
+                  Navigator.of(context).pop();
+                }
+                else{
+                  print("error-----------");
+                }
               },
               text: "Submit")
         ],
