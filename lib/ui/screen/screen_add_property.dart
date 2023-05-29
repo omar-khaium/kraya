@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_input_text_copy.dart';
 import '../../core/app_bar/custom_app_bar.dart';
 import '../../core/app_router.dart';
@@ -40,6 +41,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
   List<File> files = [];
   final ImagePicker pickedFile = ImagePicker();
   bool isLoading = true;
+  DateTime selectedMonth = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
@@ -484,14 +486,64 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                           "Available from",
                           style: TextSystem.instance.small(ColorSystem.instance.hint),
                         ),
-                        CupertinoSwitch(value: true, onChanged: (v){})
+                        CupertinoSwitch(value: true, onChanged: (v) {})
                       ],
                     ),
-                    const SizedBox(height: 16),
-                    Row(mainAxisSize: MainAxisSize.max,
+                    const SizedBox(height: 8),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-
+                        Expanded(
+                          flex: 1,
+                          child: InkWell(
+                            onTap: () async {
+                              final DateTime? picked = await showDatePicker(
+                                  context: context,
+                                  initialDate: selectedMonth,
+                                  firstDate: DateTime(2015, 8),
+                                  lastDate: DateTime(2101));
+                              if (picked != null && picked != selectedMonth) {
+                                setState(() {
+                                  selectedMonth = picked;
+                                });
+                              }
+                            },
+                            child: Container(
+                              alignment: Alignment.center,
+                              height: 48,
+                              decoration: BoxDecoration(
+                                color: ColorSystem.instance.card,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              padding: const EdgeInsets.all(8),
+                              child: Text(
+                                DateFormat("MMMM").format(selectedMonth),
+                                style: TextSystem.instance.small(ColorSystem.instance.text),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          flex: 1,
+                          child: InkWell(
+                            onTap: (){},
+                            child: Container(
+                              alignment: Alignment.center,
+                              height: 48,
+                              decoration: BoxDecoration(
+                                color: ColorSystem.instance.card,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              padding: const EdgeInsets.all(8),
+                              child: Text(
+                                DateFormat("yyyy").format(selectedMonth),
+                                style: TextSystem.instance.small(ColorSystem.instance.text),
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     )
                   ],

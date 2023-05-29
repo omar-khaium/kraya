@@ -30,7 +30,7 @@ class _WidgetCounterState extends State<WidgetCounter> {
         PhysicalModel(
           color: ColorSystem.instance.card,
           elevation: 2,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(16),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 4.0),
             child: Row(
@@ -41,7 +41,7 @@ class _WidgetCounterState extends State<WidgetCounter> {
                   child: InkWell(
                     onTap: () {
                       setState(() {
-                        if (count < 0) {
+                        if (count <= 0) {
                           count = 0;
                         }
                         else {
@@ -51,7 +51,8 @@ class _WidgetCounterState extends State<WidgetCounter> {
                       widget.onTap(count);
                     },
                     child: CircleAvatar(
-                      backgroundColor: ColorSystem.instance.primary,
+                      radius: 16,
+                      backgroundColor: ColorSystem.instance.secondaryText,
                       child: Icon(MdiIcons.minus, color: ColorSystem.instance.background),
                     ),
                   ),
@@ -78,7 +79,8 @@ class _WidgetCounterState extends State<WidgetCounter> {
                       widget.onTap(count);
                     },
                     child: CircleAvatar(
-                      backgroundColor: ColorSystem.instance.primary,
+                      radius: 16,
+                      backgroundColor: ColorSystem.instance.secondaryText,
                       child: Icon(
                         Icons.add,
                         color: ColorSystem.instance.background,

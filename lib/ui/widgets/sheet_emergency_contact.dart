@@ -1,6 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:kraya/model/drop_down_item.dart';
+import 'package:kraya/ui/widgets/login/create_account/widget_input_text_copy.dart';
 import '../../core/colors.dart';
 import '../../core/text_style.dart';
 import '../reusable_widgets/gradient_button.dart';
@@ -39,9 +40,21 @@ class _SheetEmergencyContactState extends State<SheetEmergencyContact> {
             ),
           ),
           const SizedBox(height:16),
-          Input(label: "Name", controller: nameController, icon: Icons.person_2_outlined, type: TextInputType.text),
+          InputCopy(label: "Name", controller: nameController, icon: Icons.person_2_outlined, type: TextInputType.text,
+            validator: (name) {
+              if (name == null) {
+                return "Invalid name";
+              }
+              return name.isEmpty ? " *Name is Required" : null;
+            },),
           const SizedBox(height:8),
-          Input(label: "Address", controller: addressController, icon: MdiIcons.locationEnter, type: TextInputType.text),
+          InputCopy(label: "Address", controller: addressController, icon: MdiIcons.locationEnter, type: TextInputType.text,
+              validator: (address) {
+                if (address == null) {
+                  return "Invalid address";
+                }
+                return address.isEmpty ? " *Address is Required" : null;
+              }),
           const SizedBox(height:8),
           Input(label: "Religion", controller: religionController, icon: Icons.family_restroom, type: TextInputType.text),
           const SizedBox(height:8),
