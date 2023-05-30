@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../../core/colors.dart';
 import '../../core/text_style.dart';
 import '../reusable_widgets/gradient_button.dart';
-import 'login/create_account/widget_input_text.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import 'login/create_account/widget_input_text_copy.dart';
@@ -25,67 +24,111 @@ class _SheetVaratiaInformationState extends State<SheetVaratiaInformation> {
   final TextEditingController permanentController = TextEditingController();
   final TextEditingController occupationController = TextEditingController();
   final TextEditingController jobController = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Align(
-            alignment: Alignment.topLeft,
-            child: Text(
-              "Add Varatia Information",
-              style: TextSystem.instance.large(ColorSystem.instance.text),
+      child: Form(
+        key: formKey,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                "Add Varatia Information",
+                style: TextSystem.instance.large(ColorSystem.instance.text),
+              ),
             ),
-          ),
-          const SizedBox(height: 16),
-          InputCopy(
-            label: "Nid number",
-            controller: nidController,
-            icon: Icons.perm_identity,
-            type: TextInputType.number,
-            validator: (value) {
-              nidController.text=value ?? "Invalid nid";
-              return value;
-            },
-          ),
-          const SizedBox(height: 8),
-          Input(label: "Passport number", controller: passportController, icon: Icons.paste_sharp, type: TextInputType.text),
-          const SizedBox(height: 8),
-          Input(label: "Email", controller: emailController, icon: Icons.email_outlined, type: TextInputType.emailAddress),
-          const SizedBox(height: 8),
-          Input(label: "Religion", controller: religionController, icon: Icons.menu_book, type: TextInputType.text),
-          const SizedBox(height: 8),
-          Input(label: "Father's name", controller: fathersNameController, icon: Icons.person, type: TextInputType.text),
-          const SizedBox(height: 8),
-          Input(
-              label: "Permanent address",
-              controller: permanentController,
-              icon: MdiIcons.locationEnter,
-              type: TextInputType.text),
-          const SizedBox(height: 8),
-          Input(label: "Occupation", controller: occupationController, icon: Icons.work, type: TextInputType.text),
-          const SizedBox(height: 8),
-          Input(label: "Job address", controller: jobController, icon: Icons.tapas_sharp, type: TextInputType.text),
-          const SizedBox(
-            height: 24,
-          ),
-          GradientButton(
-              onPressed: () {
-                widget.onTap(nidController.text, passportController.text, emailController.text, religionController.text,
-                    fathersNameController.text, permanentController.text, occupationController.text, jobController.text);
-                if(nidController.text.isNotEmpty){
-                  Navigator.of(context).pop();
+            const SizedBox(height: 16),
+            InputCopy(
+              label: "Nid number",
+              controller: nidController,
+              icon: Icons.perm_identity,
+              type: TextInputType.number,
+              validator: (nid) {
+                if (nid == null) {
+                  return "Invalid name";
                 }
-                else{
-                  print("error-----------");
-                }
+                return nid.isEmpty ? " *Nid is Required" : null;
               },
-              text: "Submit")
-        ],
+            ),
+            const SizedBox(height: 8),
+            InputCopy(label: "Passport number", controller: passportController, icon: Icons.paste_sharp, type: TextInputType.text,
+              validator: (passport) {
+                if (passport == null) {
+                  return "Invalid passport";
+                }
+                return passport.isEmpty ? " *Passport is Required" : null;
+              },),
+            const SizedBox(height: 8),
+            InputCopy(label: "Email", controller: emailController, icon: Icons.email_outlined, type: TextInputType.emailAddress,
+              validator: (email) {
+                if (email == null) {
+                  return "Invalid email";
+                }
+                return email.isEmpty ? " *Email is Required" : null;
+              },),
+            const SizedBox(height: 8),
+            InputCopy(label: "Religion", controller: religionController, icon: Icons.menu_book, type: TextInputType.text,
+              validator: (religion) {
+                if (religion == null) {
+                  return "Invalid religion";
+                }
+                return religion.isEmpty ? " *Religion is Required" : null;
+              },),
+            const SizedBox(height: 8),
+            InputCopy(label: "Father's name", controller: fathersNameController, icon: Icons.person, type: TextInputType.text,
+              validator: (fName) {
+                if (fName == null) {
+                  return "Invalid Father's name";
+                }
+                return fName.isEmpty ? " *Father's name is Required" : null;
+              },),
+            const SizedBox(height: 8),
+            InputCopy(
+                label: "Permanent address",
+                controller: permanentController,
+                icon: MdiIcons.locationEnter,
+                type: TextInputType.text,
+                validator: (permanentAddress) {
+                  if (permanentAddress == null) {
+                    return "Invalid Permanent address";
+                  }
+                  return permanentAddress.isEmpty ? " *Father's name is Required" : null;
+                }
+            ),
+            const SizedBox(height: 8),
+            InputCopy(label: "Occupation", controller: occupationController, icon: Icons.work, type: TextInputType.text,
+                validator: (occupation) {
+                  if (occupation == null) {
+                    return "Invalid occupation";
+                  }
+                  return occupation.isEmpty ? " *Occupation is Required" : null;
+                }),
+            const SizedBox(height: 8),
+            InputCopy(label: "Job address", controller: jobController, icon: Icons.tapas_sharp, type: TextInputType.text,
+                validator: (jobAddress) {
+                  if (jobAddress == null) {
+                    return "Invalid job address";
+                  }
+                  return jobAddress.isEmpty ? " *Job address is Required" : null;
+                }),
+            const SizedBox(
+              height: 24,
+            ),
+            GradientButton(
+                onPressed: () {
+                  if(formKey.currentState?.validate() ?? false){
+                    Navigator.of(context).pop();
+                  }
+                },
+                text: "Submit")
+          ],
+        ),
       ),
     );
   }

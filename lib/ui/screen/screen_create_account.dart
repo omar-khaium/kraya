@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:kraya/ui/widgets/login/create_account/widget_input_text_copy.dart';
 import '../../core/app_bar/custom_app_bar.dart';
 import '../../core/search_property.dart';
 import '../reusable_widgets/gradient_button.dart';
@@ -48,30 +49,48 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     Row(
                       children: [
                         Expanded(
-                          child: Input(
+                          child: InputCopy(
                             label: "First name",
                             controller: firstName,
                             icon: Icons.person_outline_rounded,
                             type: TextInputType.name,
+                              validator: (firstName) {
+                                if (firstName == null) {
+                                  return "Invalid first name";
+                                }
+                                return firstName.isEmpty ? " *First name address is Required" : null;
+                              }
                           ),
                         ),
                         const SizedBox(width: 16),
                         Expanded(
-                          child: Input(
+                          child: InputCopy(
                             label: "Last name",
                             controller: lastName,
                             icon: Icons.person_outline_rounded,
                             type: TextInputType.name,
+                              validator: (lastName) {
+                                if (lastName == null) {
+                                  return "Invalid last name";
+                                }
+                                return lastName.isEmpty ? " *Last name is Required" : null;
+                              }
                           ),
                         ),
                       ],
                     ),
                     const SizedBox(height: 24),
-                    Input(
+                    InputCopy(
                       label: "Email",
                       controller: email,
                       icon: Icons.email_outlined,
                       type: TextInputType.emailAddress,
+                        validator: (email) {
+                          if (email == null) {
+                            return "Invalid email";
+                          }
+                          return email.isEmpty ? " *Email address is Required" : null;
+                        }
                     ),
                     const SizedBox(height: 24),
                     Row(

@@ -9,6 +9,8 @@ import '../../model/bill.dart';
 import '../widgets/login/create_account/widget_input_text.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
+import '../widgets/login/create_account/widget_input_text_copy.dart';
+
 class UtilityBillsScreen extends StatefulWidget {
   const UtilityBillsScreen({super.key});
 
@@ -22,6 +24,7 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
   final List<Bill> bills = [];
   String billName = '';
   int billAmount = 0;
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -85,32 +88,57 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
                   padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Align(
-                          child: Text(
-                            "Add Bill",
-                            style: TextSystem.instance.large(ColorSystem.instance.text),
+                    child: Form(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Align(
+                            child: Text(
+                              "Add Bill",
+                              style: TextSystem.instance.large(ColorSystem.instance.text),
+                            ),
                           ),
-                        ),
-                        Input(label: "Bill name", controller: billNameController, icon: Icons.badge_outlined, type: TextInputType.text),
-                        Input(label: "Amount", controller: billAmountController, icon: MdiIcons.currencyBdt, type: TextInputType.text),
-                        const SizedBox(
-                          height: 24,
-                        ),
-                        GradientButton(
-                            onPressed: () {
-                              setState(() {
-                                bills.add(Bill(billName: billNameController.text, amount: int.parse(billAmountController.text)));
-                                billNameController.text = "";
-                                billAmountController.text = "";
-                                Navigator.of(context).pop();
-                              });
-                            },
-                            text: "Submit")
-                      ],
+                          InputCopy(
+                              label: "Bill name",
+                              controller: billNameController,
+                              icon: Icons.badge_outlined,
+                              type: TextInputType.text,
+                              validator: (billName) {
+                                if (billName == null) {
+                                  return "Invalid bill name";
+                                }
+                                return billName.isEmpty ? " *Bill name is Required" : null;
+                              }),
+                          InputCopy(
+                              label: "Amount",
+                              controller: billAmountController,
+                              icon: MdiIcons.currencyBdt,
+                              type: TextInputType.text,
+                              validator: (amount) {
+                                if (amount == null) {
+                                  return "Invalid amount";
+                                }
+                                return amount.isEmpty ? " *Amount is Required" : null;
+                              }),
+                          const SizedBox(
+                            height: 24,
+                          ),
+                          GradientButton(
+                              onPressed: () {
+                                if (formKey.currentState?.validate() ?? false) {
+                                  setState(() {
+                                    bills.add(
+                                        Bill(billName: billNameController.text, amount: int.parse(billAmountController.text)));
+                                    billNameController.text = "";
+                                    billAmountController.text = "";
+                                    Navigator.of(context).pop();
+                                  });
+                                }
+                              },
+                              text: "Submit")
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -131,7 +159,9 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
           ),
           GradientButton(
             onPressed: () {
-              Navigator.of(context).pushReplacementNamed(AppRouter.confirmProperty, arguments: bills);
+              if (formKey.currentState?.validate() ?? false) {
+                Navigator.of(context).pushReplacementNamed(AppRouter.confirmProperty, arguments: bills);
+              }
             },
             text: "Done",
           ),
