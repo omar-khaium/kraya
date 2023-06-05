@@ -6,7 +6,6 @@ import '../reusable_widgets/gradient_button.dart';
 import '../../core/text_style.dart';
 import '../reusable_widgets/widget_custom_menu_card.dart';
 import '../../model/bill.dart';
-import '../widgets/login/create_account/widget_input_text.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../widgets/login/create_account/widget_input_text_copy.dart';

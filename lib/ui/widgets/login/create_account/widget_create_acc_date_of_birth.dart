@@ -3,7 +3,7 @@ import '../../../../core/colors.dart';
 import '../../../../core/text_style.dart';
 
 class WidgetDateOfBirth extends StatefulWidget {
-  WidgetDateOfBirth({Key? key}) : super(key: key);
+  const WidgetDateOfBirth({Key? key}) : super(key: key);
 
   @override
   State<WidgetDateOfBirth> createState() => _WidgetDateOfBirthState();

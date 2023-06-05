@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:kraya/core/helper.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 import '../../core/colors.dart';
 import '../../core/text_style.dart';

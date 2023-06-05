@@ -461,7 +461,9 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                             controller: advanceRentController,
                             icon: Icons.money,
                             type: TextInputType.number,
-                            validator: (advance) {},
+                            validator: (advance) {
+                              return null;
+                            },
                           ),
                         ),
                         const SizedBox(width: 12),
@@ -472,7 +474,9 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                             controller: monthlyRentController,
                             icon: Icons.casino_sharp,
                             type: TextInputType.number,
-                            validator: (monthly) {},
+                            validator: (monthly) {
+                              return null;
+                            },
                           ),
                         ),
                       ],

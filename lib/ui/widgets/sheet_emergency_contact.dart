@@ -1,12 +1,9 @@
-import 'package:collection/collection.dart';
+
 import 'package:flutter/material.dart';
-import 'package:kraya/model/drop_down_item.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_input_text_copy.dart';
 import '../../core/colors.dart';
 import '../../core/text_style.dart';
 import '../reusable_widgets/gradient_button.dart';
-import 'dropdown/widget_dropdown.dart';
-import 'login/create_account/widget_input_text.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class SheetEmergencyContact extends StatefulWidget {

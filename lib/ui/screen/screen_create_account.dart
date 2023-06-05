@@ -7,7 +7,6 @@ import '../../core/search_property.dart';
 import '../reusable_widgets/gradient_button.dart';
 import '../widgets/login/create_account/widget_create_acc_date_of_birth.dart';
 import '../widgets/login/create_account/widget_gender.dart';
-import '../widgets/login/create_account/widget_input_text.dart';
 
 import '../../core/alert_property.dart';
 import '../../core/colors.dart';
@@ -94,10 +93,10 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     ),
                     const SizedBox(height: 24),
                     Row(
-                      children: [
+                      children: const [
                         Expanded(child: WidgetDateOfBirth()),
-                        const SizedBox(width: 16),
-                        const Expanded(child: WidgetGender()),
+                        SizedBox(width: 16),
+                        Expanded(child: WidgetGender()),
                       ],
                     ),
                     const SizedBox(height: 16),
@@ -127,7 +126,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                     child: SizedBox.fromSize(
                                         size: const Size.fromRadius(72),
                                         child: Image.file(
-                                          File(file ?? ""),
+                                          File(file),
                                           fit: BoxFit.cover,
                                         )))
                                 : CircleAvatar(

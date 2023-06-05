@@ -6,7 +6,6 @@ import '../../core/colors.dart';
 import '../../core/text_style.dart';
 import '../reusable_widgets/gradient_button.dart';
 import 'dropdown/widget_dropdown.dart';
-import 'login/create_account/widget_input_text.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class SheetFamilyInformation extends StatefulWidget {
@@ -112,7 +111,7 @@ class _SheetFamilyInformationState extends State<SheetFamilyInformation> {
             ),
             GradientButton(
                 onPressed: () {
-                  if(formKey.currentState?.validate() ??false && selectDropdown.isNotEmpty){
+                  if(formKey.currentState?.validate() ??false){
                     Navigator.of(context).pop();
                   }
                 },
