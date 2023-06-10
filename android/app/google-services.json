@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "327342605683",
+    "project_id": "kraya-70d11",
+    "storage_bucket": "kraya-70d11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327342605683:android:44b3e275f2a78a5c8b3106",
+        "android_client_info": {
+          "package_name": "com.example.kraya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327342605683-pd2k2kehgm6fg3h2je87r573c5ikou2m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kraya",
+            "certificate_hash": "2479072beb1d1ef108793c2ed275858d8b152777"
+          }
+        },
+        {
+          "client_id": "327342605683-8kteu3f9touflqckppqviajro5tsj9p5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdsgKYF5H1fc1nBWF0YmxYgXYUt0j65Ws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "327342605683-8kteu3f9touflqckppqviajro5tsj9p5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "327342605683-mvgua776ga7tsenovo05dq52l1p0rr7q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.kraya"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
