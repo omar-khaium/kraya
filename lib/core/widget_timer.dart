@@ -1,14 +1,14 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:kraya/core/colors.dart';
 import 'package:kraya/core/text_style.dart';
 
 class OtpTimer extends StatefulWidget {
   final int timerMaxSeconds;
+  final Function(int) onFinish;
 
-  const OtpTimer({super.key, required this.timerMaxSeconds});
+  const OtpTimer({super.key, this.timerMaxSeconds=60,required this.onFinish});
 
   @override
   _OtpTimerState createState() => _OtpTimerState();
@@ -26,11 +26,11 @@ class _OtpTimerState extends State<OtpTimer> {
     var duration = interval;
     Timer.periodic(duration, (timer) {
       setState(() {
-        if (kDebugMode) {
-          print(timer.tick);
-        }
         currentSeconds = timer.tick;
-        if (timer.tick >= widget.timerMaxSeconds) timer.cancel();
+        if (timer.tick >= widget.timerMaxSeconds) {
+          timer.cancel();
+          widget.onFinish(timer.tick);
+        }
       });
     });
   }
@@ -45,7 +45,7 @@ class _OtpTimerState extends State<OtpTimer> {
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
+      children: [
         Icon(
           Icons.timer_outlined,
           color: ColorSystem.instance.hint,

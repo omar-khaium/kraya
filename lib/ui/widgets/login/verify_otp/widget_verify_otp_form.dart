@@ -21,7 +21,7 @@ class _WidgetVerifyOtpFormState extends State<WidgetVerifyOtpForm> {
 
   final focusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
-  int sec = 90;
+  late int time=0;
 
   final defaultPinTheme = PinTheme(
     width: 54,
@@ -105,18 +105,27 @@ class _WidgetVerifyOtpFormState extends State<WidgetVerifyOtpForm> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              RichText(
-                text: TextSpan(
+              Visibility(
+                visible: time==60,
+                child: RichText(
+                  text: TextSpan(
                     text: "Didn't receive OTP? ",
                     style: TextSystem.instance.small(ColorSystem.instance.hint),
                     children: [
                       TextSpan(
                           text: "Resend OTP",
                           style: TextSystem.instance.small(ColorSystem.instance.primary))
-                    ]),
+                    ],
+                  ),
+                ),
               ),
-              const OtpTimer(
-                timerMaxSeconds: 90,
+              OtpTimer(
+                timerMaxSeconds: 60,
+                onFinish: (timer) {
+                  setState(() {
+                    time = timer;
+                  });
+                },
               ),
             ],
           ),
