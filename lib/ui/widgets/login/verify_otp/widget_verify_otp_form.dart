@@ -1,6 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/app_router.dart';
 import '../../../../core/colors.dart';
+import '../../../../core/widget_timer.dart';
 import '../../../reusable_widgets/gradient_button.dart';
 import '../../../../core/text_style.dart';
 import 'package:pinput/pinput.dart';
@@ -19,6 +21,7 @@ class _WidgetVerifyOtpFormState extends State<WidgetVerifyOtpForm> {
 
   final focusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
+  int sec = 90;
 
   final defaultPinTheme = PinTheme(
     width: 54,
@@ -98,15 +101,24 @@ class _WidgetVerifyOtpFormState extends State<WidgetVerifyOtpForm> {
           const SizedBox(height: 8),
           Divider(height: 1, thickness: .5, color: ColorSystem.instance.text),
           const SizedBox(height: 8),
-          RichText(
-            text: TextSpan(
-                text: "Didn't receive OTP? ",
-                style: TextSystem.instance.small(ColorSystem.instance.hint),
-                children: [
-                  TextSpan(
-                      text: "Resend OTP",
-                      style: TextSystem.instance.small(ColorSystem.instance.primary))
-                ]),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              RichText(
+                text: TextSpan(
+                    text: "Didn't receive OTP? ",
+                    style: TextSystem.instance.small(ColorSystem.instance.hint),
+                    children: [
+                      TextSpan(
+                          text: "Resend OTP",
+                          style: TextSystem.instance.small(ColorSystem.instance.primary))
+                    ]),
+              ),
+              const OtpTimer(
+                timerMaxSeconds: 90,
+              ),
+            ],
           ),
           const SizedBox(height: 16),
           GradientButton(

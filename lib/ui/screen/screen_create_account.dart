@@ -92,8 +92,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                         }
                     ),
                     const SizedBox(height: 24),
-                    const Row(
-                      children: [
+                    Row(
+                      children: const [
                         Expanded(child: WidgetDateOfBirth()),
                         SizedBox(width: 16),
                         Expanded(child: WidgetGender()),

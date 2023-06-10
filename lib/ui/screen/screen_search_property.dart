@@ -62,10 +62,10 @@ class SearchPropertyScreen extends StatelessWidget {
                                   children: [
                                     WidgetTitleText(text: "John doe", colorSystem: ColorSystem.instance.text),
                                     const SizedBox(height: 8),
-                                    const Row(
+                                     Row(
                                       mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                      children: [
+                                      children: const [
                                         WidgetSearchIconText(
                                           iconData: Icons.bed_outlined,
                                           text: '3',
@@ -78,9 +78,9 @@ class SearchPropertyScreen extends StatelessWidget {
                                       ],
                                     ),
                                     const SizedBox(height: 8),
-                                    const Row(
+                                     Row(
                                       mainAxisSize: MainAxisSize.min,
-                                      children: [
+                                      children: const [
                                         WidgetSearchIconText(
                                           iconData: Icons.apartment_outlined,
                                           text: '2',

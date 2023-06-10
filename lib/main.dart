@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kraya/ui/screen/screen_add_property.dart';
+import 'package:kraya/ui/screen/screen_login.dart';
 import 'core/app_router.dart';
 import 'core/colors.dart';
 
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const AddPropertyScreen(),
+      home: const LoginScreen(),
       onGenerateRoute: (settings) => router.onGenerate(settings),
     );
   }
