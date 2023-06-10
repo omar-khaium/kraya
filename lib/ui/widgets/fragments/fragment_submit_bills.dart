@@ -101,7 +101,7 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
                                 children: [
                                   WidgetLabelText(text: "Send bill", colorSystem: ColorSystem.instance.background),
                                   const SizedBox(width: 8),
-                                  const Icon(
+                                  Icon(
                                     MdiIcons.sendCircleOutline,
                                     size: 14,
                                   ),

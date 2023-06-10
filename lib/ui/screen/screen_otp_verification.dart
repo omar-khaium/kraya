@@ -26,11 +26,13 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
             child: const WidgetBackButton(route: AppRouter.login),
           ),
           const Center(child: WidgetVerifyOtpGreetings()),
-           Positioned(
+          Positioned(
             bottom: 16,
             left: 16,
             right: 16,
-            child: WidgetVerifyOtpForm(phone: widget.phone,),
+            child: WidgetVerifyOtpForm(
+              phone: widget.phone,
+            ),
           ),
         ],
       ),

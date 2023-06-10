@@ -60,7 +60,7 @@ class _PaymentStatusState extends State<PaymentStatus> with SingleTickerProvider
                               padding: const EdgeInsets.symmetric(horizontal: 16),
                               child: Row(
                                 children: [
-                                  const Icon(MdiIcons.formatListBulletedSquare),
+                                  Icon(MdiIcons.formatListBulletedSquare),
                                   const SizedBox(width: 4),
                                   Text(
                                     "All",
@@ -86,7 +86,7 @@ class _PaymentStatusState extends State<PaymentStatus> with SingleTickerProvider
                               padding: const EdgeInsets.symmetric(horizontal: 16),
                               child: Row(
                                 children: [
-                                  const Icon(MdiIcons.clockAlertOutline),
+                                  Icon(MdiIcons.clockAlertOutline),
                                   const SizedBox(width: 4),
                                   Text(
                                     "Unpaid",
@@ -97,7 +97,7 @@ class _PaymentStatusState extends State<PaymentStatus> with SingleTickerProvider
                     ],
                   ),
                 ),
-                body:  TabBarView(
+                body: TabBarView(
                   controller: tabController,
                   children: const [
                     TabPaymentAll(),

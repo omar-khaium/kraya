@@ -65,12 +65,12 @@ class _ScreenDashboardState extends State<ScreenDashboard> with SingleTickerProv
             onTap: (int index) {
               BlocProvider.of<BottomNavigationCubit>(context).changePage(index);
             },
-            items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            items: [
+              const BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
               BottomNavigationBarItem(icon: Icon(MdiIcons.ticketPercent), label: "Bill"),
-              BottomNavigationBarItem(icon: Icon(Icons.apartment), label: "Property"),
-              BottomNavigationBarItem(icon: Icon(Icons.payments), label: "Payment"),
-              BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+              const BottomNavigationBarItem(icon: Icon(Icons.apartment), label: "Property"),
+              const BottomNavigationBarItem(icon: Icon(Icons.payments), label: "Payment"),
+              const BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
             ],
           );
         }),
