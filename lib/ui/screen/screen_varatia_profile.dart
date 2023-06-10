@@ -181,12 +181,12 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                       color: ColorSystem.instance.card,
                       elevation: 3,
                       borderRadius: const BorderRadius.all(Radius.circular(8)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
+                          children: [
                             VaratiaInformationWidget(
                               titleText: 'Nid number',
                               titleTextValue: '1243 434566 566',
@@ -260,12 +260,12 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                       color: ColorSystem.instance.card,
                       elevation: 3,
                       borderRadius: const BorderRadius.all(Radius.circular(8)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
+                          children: [
                             VaratiaInformationWidget(
                               titleText: 'Name',
                               titleTextValue: 'Tanvir',
