@@ -1,8 +1,21 @@
 # API Documentation:
 
 ```dart
-BASE_URL = "api.kraya.com/v1/stable";
+//BASE_URL = "api.kraya.com/v1/stable";
 ```
+### page-1: ui/screen/screen_login.dart
+        WidgetLanguageToggle(),
+        WidgetLoginForm(),
+        WidgetGradient(),
+        WidgetLoginGreetings()
+### page-2: ui/screen/screen_otp_verification.dart
+        WidgetBackButton(),
+        WidgetVerifyOtpGreetings(),
+        WidgetVerifyOtpForm()
+
+
+### ৳
+
 
 ---
 

@@ -4,8 +4,8 @@ method = Http.GET
 url = "BASE_URL/owner/property/bills"
 
 headers = {
-    "owner-id" : String,
-    "property-id" : int
+    "owner-id" : String*,
+    "property-id" : int*
 }
 
 response = {
@@ -20,3 +20,4 @@ response = {
   }
 }
 ```
+* means required

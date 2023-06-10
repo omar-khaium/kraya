@@ -4,9 +4,9 @@ method = Http.GET
 url = "BASE_URL/tenant/registration/add-property/get-available-property"
 
 headers = {
-  "keyword" : String,
-  "property-type": Enum, // residential, commercial
-  "property-sub-type": Enum, // shop, office, building
+  "keyword" : String*,
+  "property-type": PropertyType
+  "property-sub-type": PropertySubType
 }
 
 response = {
@@ -15,3 +15,5 @@ response = {
   "result" : [ int, ...]
 }
 ```
+
+* means required

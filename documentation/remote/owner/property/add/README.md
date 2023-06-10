@@ -4,18 +4,18 @@ method = Http.POST (MULTI-PART/form-data)
 url = "BASE_URL/owner/property/add"
 
 headers = {
-  "user-id" : String,
-  "type" : PropertyType,
-  "sub-type" : PropertySubType,
-  "building-name" : String,
-  "flat-name" : String,
-  "address" : String,
+  "user-id" : String*,
+  "type" : PropertyType*,
+  "sub-type" : PropertySubType*,
+  "building-name" : String*,
+  "flat-name" : String*,
+  "address" : String*,
   "size" : int,
   "room" : int,
   "bathroom" : int,
   "balcony" : int,
   "advance" : int,
-  "rent" : int,
+  "rent" : int*,
   "description": String
 }
 
@@ -44,3 +44,5 @@ response = {
   "result" : null
 }
 ```
+
+* means required

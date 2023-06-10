@@ -4,7 +4,7 @@ method = Http.GET
 url = "BASE_URL/tenant/payment/overview"
 
 header = {
-    "tenant-id" : String
+    "tenant-id" : String*
 }
 
 response = {
@@ -21,3 +21,5 @@ response = {
     ]
 }
 ```
+
+* means required

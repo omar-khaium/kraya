@@ -4,8 +4,8 @@ method = Http.GET
 url = "BASE_URL/tenant/registration/add-property/submit"
 
 headers = {
-  "tenant-id" : String,
-  "property-id": int, // residential, commercial
+  "tenant-id" : String*,
+  "property-id": int*
 }
 
 response = {
@@ -14,3 +14,5 @@ response = {
   "result" : null
 }
 ```
+
+* means required

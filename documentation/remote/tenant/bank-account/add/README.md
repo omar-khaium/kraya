@@ -4,10 +4,10 @@ method = Http.POST
 url = "BASE_URL/tenant/bank-account/add"
 
 header = {
-    "tenant-id": String,
-    "bank-id": int,
-    "name": String,
-    "number": String,
+    "tenant-id": String*,
+    "bank-id": int*,
+    "name": String*,
+    "number": String*,
     "branch": String,
 }
 
@@ -17,3 +17,5 @@ response = {
   "result" : null
 }
 ```
+
+* means required

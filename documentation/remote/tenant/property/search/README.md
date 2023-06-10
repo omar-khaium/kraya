@@ -4,7 +4,7 @@ method = Http.GET
 url = "BASE_URL/tenant/property/search"
 
 headers = {
-    "keyword" : String,
+    "keyword" : String*,
     "property-type" : PropertyType,
     "property-sub-type" : PropertySubType
 }
@@ -15,3 +15,5 @@ response = {
   "result" : [ int, ...]
 }
 ```
+
+* means required
