@@ -1,5 +1,7 @@
 {
-    "appName": "Moumaachi",
+    "appName": "Kraya",
+    "welcomeText": "Welcome to",
+    "getOtp": "Get OTP",
     "login": "Login",
     "hello": "Hello",
     "please": "Please",

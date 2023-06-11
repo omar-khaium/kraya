@@ -32,3 +32,6 @@
 ### [user](https://github.com/Omar-Khaium/kraya/blob/main/data/remote/user)
 
 ###### [profile](https://github.com/Omar-Khaium/kraya/blob/main/data/remote/user/profile/README.md)
+
+
+clear && flutter clean && clear && flutter gen-l10n && flutter pub get&& clear && flutter build appbundle && clear && open build/app/outputs/bundle/release
