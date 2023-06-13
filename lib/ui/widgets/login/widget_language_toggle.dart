@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kraya/business_logic/language/language_cubit.dart';
 import '../../../core/colors.dart';
 import '../../../core/enums.dart';
 import '../../../core/text_style.dart';
@@ -18,13 +20,11 @@ class _WidgetLanguageToggleState extends State<WidgetLanguageToggle> {
       children: {
         LanguageEnum.english: Text(
           "English",
-          style: TextSystem.instance
-              .small(languageSelection == LanguageEnum.english ? ColorSystem.instance.alternateText : ColorSystem.instance.text),
+          style: TextSystem.instance.small(languageSelection == LanguageEnum.english ? ColorSystem.instance.alternateText : ColorSystem.instance.text),
         ),
         LanguageEnum.bangla: Text(
           "বাংলা",
-          style: TextSystem.instance
-              .small(languageSelection == LanguageEnum.bangla ? ColorSystem.instance.alternateText : ColorSystem.instance.text),
+          style: TextSystem.instance.small(languageSelection == LanguageEnum.bangla ? ColorSystem.instance.alternateText : ColorSystem.instance.text),
         ),
       },
       groupValue: languageSelection,
@@ -34,6 +34,7 @@ class _WidgetLanguageToggleState extends State<WidgetLanguageToggle> {
       onValueChanged: (selection) {
         setState(() {
           languageSelection = selection ?? LanguageEnum.english;
+          BlocProvider.of<LanguageCubit>(context).saveLanguageSelection(selection.toString());
         });
       },
     );

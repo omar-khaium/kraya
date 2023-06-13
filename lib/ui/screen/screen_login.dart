@@ -34,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: const WidgetLanguageToggle(),
           ),
           const Center(child: WidgetLoginGreetings()),
-          Positioned(
+          const Positioned(
             bottom: 16,
             left: 16,
             right: 16,

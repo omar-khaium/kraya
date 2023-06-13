@@ -1,6 +1,18 @@
 part of 'language_cubit.dart';
 
-@immutable
-abstract class LanguageState {}
+class LanguageState {
+  late String languageSelection;
+  LanguageState({required this.languageSelection});
 
-class LanguageInitial extends LanguageState {}
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'language': languageSelection,
+    };
+  }
+  factory LanguageState.fromMap(Map<String, dynamic> map) {
+    return LanguageState(
+      languageSelection: map['language'] as String,
+     
+    );
+  }
+}

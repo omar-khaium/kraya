@@ -11,7 +11,7 @@ class OtpTimer extends StatefulWidget {
   const OtpTimer({super.key, this.timerMaxSeconds=60,required this.onFinish});
 
   @override
-  _OtpTimerState createState() => _OtpTimerState();
+  State<OtpTimer> createState() => _OtpTimerState();
 }
 
 class _OtpTimerState extends State<OtpTimer> {
