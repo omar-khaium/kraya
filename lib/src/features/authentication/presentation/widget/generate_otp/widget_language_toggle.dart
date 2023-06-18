@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/colors.dart';
 import '../../../../../core/enums.dart';
 import '../../../../../core/text_style.dart';
+import '../../logic/language/language_cubit.dart';
 
 class WidgetLanguageToggle extends StatefulWidget {
   const WidgetLanguageToggle({Key? key}) : super(key: key);
@@ -34,6 +36,7 @@ class _WidgetLanguageToggleState extends State<WidgetLanguageToggle> {
       onValueChanged: (selection) {
         setState(() {
           languageSelection = selection ?? LanguageEnum.english;
+          BlocProvider.of<LanguageCubit>(context).saveLanguageSelection(selection ?? LanguageEnum.english);
         });
       },
     );

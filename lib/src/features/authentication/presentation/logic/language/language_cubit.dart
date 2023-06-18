@@ -1,9 +1,11 @@
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
+import '../../../../../core/enums.dart';
+
 part 'language_state.dart';
 
 class LanguageCubit extends Cubit<LanguageState> with HydratedMixin {
-  LanguageCubit() : super(LanguageState(languageSelection: "english"));
+  LanguageCubit() : super(LanguageState(languageSelection: LanguageEnum.english));
 
   @override
   LanguageState? fromJson(Map<String, dynamic> json) {
@@ -15,7 +17,7 @@ class LanguageCubit extends Cubit<LanguageState> with HydratedMixin {
     return state.toMap();
   }
 
-  void saveLanguageSelection(String languageEnum) {
+  void saveLanguageSelection(LanguageEnum languageEnum) {
     try {
       emit(LanguageState(languageSelection: languageEnum));
     } catch (error) {

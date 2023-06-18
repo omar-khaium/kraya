@@ -7,7 +7,9 @@ import '../../../../../core/colors.dart';
 import '../../../../../core/router.dart';
 import '../../../../../core/text_style.dart';
 import '../../../../../core/widget/gradient_button.dart';
+import '../../logic/generate_otp_bloc.dart';
 import '../../logic/verify_otp_bloc.dart';
+import '../widget_otp_timer.dart';
 
 class WidgetVerifyOtpForm extends StatefulWidget {
   final String phone;
@@ -30,6 +32,7 @@ class _WidgetVerifyOtpFormState extends State<WidgetVerifyOtpForm> {
 
   final focusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
+  late int time = 0;
 
   final defaultPinTheme = PinTheme(
     width: 54,
@@ -109,11 +112,38 @@ class _WidgetVerifyOtpFormState extends State<WidgetVerifyOtpForm> {
           const SizedBox(height: 8),
           Divider(height: 1, thickness: .5, color: ColorSystem.instance.text),
           const SizedBox(height: 8),
-          RichText(
-            text: TextSpan(
-                text: "Didn't receive OTP? ",
-                style: TextSystem.instance.small(ColorSystem.instance.hint),
-                children: [TextSpan(text: "Resend OTP", style: TextSystem.instance.small(ColorSystem.instance.primary))]),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Visibility(
+                visible: time == 60,
+                child: InkWell(
+                  onTap: () {
+                    context.read<GenerateOtpBloc>().add(
+                          GenerateOtp(
+                            phone: widget.phone,
+                          ),
+                        );
+                  },
+                  child: RichText(
+                    text: TextSpan(
+                      text: "Didn't receive OTP? ",
+                      style: TextSystem.instance.small(ColorSystem.instance.hint),
+                      children: [TextSpan(text: "Resend OTP", style: TextSystem.instance.small(ColorSystem.instance.primary))],
+                    ),
+                  ),
+                ),
+              ),
+              OtpTimer(
+                timerMaxSeconds: 60,
+                onFinish: (timer) {
+                  setState(() {
+                    time = timer;
+                  });
+                },
+              ),
+            ],
           ),
           const SizedBox(height: 16),
           BlocConsumer<VerifyOtpBloc, VerifyOtpState>(
