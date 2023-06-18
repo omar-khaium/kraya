@@ -1,0 +1,17 @@
+{
+    "appName": "Kraya",
+    "welcomeText": "Welcome to",
+    "getOtp": "Get OTP",
+    "login": "Login",
+    "hello": "Hello",
+    "please": "Please",
+    "back": "Back",
+    "verifyAccount": "Verify account",
+    "forgotPassword": "Forgot password",
+    "dashboardGreetingTitle": "Welcome to Moumaachi",
+    "dashboardGreetingSubTitle": "Explore Moumaachi and have a nice day.",
+    "dashboardNotLoggedInYet": "You are not logged in yet.",
+    "dashboardToAccessYourAccount": "to access your account",
+    "loginGreetingTitle": "Welcome back!",
+    "loginGreetingSubTitle": "Sign in to your account"
+}

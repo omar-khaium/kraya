@@ -1,0 +1,17 @@
+{
+    "appName": "কিরায়া",
+    "welcomeText": "আপনাকে স্বাগতম",
+    "getOtp": "কোড পাঠান",
+    "login": "লগইন",
+    "hello": "হ্যালো",
+    "please": "অনুগ্রহ করে",
+    "back": "ফিরে যান",
+    "verifyAccount": "এ্যাকাউন্ট নিশ্চিতকরণ",
+    "forgotPassword": "পাসওয়ার্ড ভুলে গেছেন",
+    "dashboardGreetingTitle": "মৌমাছিতে স্বাগতম",
+    "dashboardGreetingSubTitle": "মৌমাছি ঘুরে দেখুন এবং আপনার দিনটি ভালো কাটুক।",
+    "dashboardNotLoggedInYet": "আপনি এখনও লগ ইন করেননি।",
+    "dashboardToAccessYourAccount": "করুন, আপনার অ্যাকাউন্ট অ্যাক্সেস করতে।",
+    "loginGreetingTitle": "ফিরে আসার জন্য স্বাগতম!",
+    "loginGreetingSubTitle": "আপনার অ্যাকাউন্টে সাইন ইন করুন"
+}
