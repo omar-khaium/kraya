@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import '../../core/colors.dart';
-import '../widgets/login/widget_language_toggle.dart';
-import '../widgets/login/widget_login_form.dart';
-import '../widgets/login/widget_login_gradient.dart';
-import '../widgets/login/widget_login_greetings.dart';
+import '../../../../core/colors.dart';
+import '../../../../ui/widgets/login/widget_language_toggle.dart';
+import '../../../../ui/widgets/login/widget_login_form.dart';
+import '../../../../ui/widgets/login/widget_login_gradient.dart';
+import '../../../../ui/widgets/login/widget_login_greetings.dart';
 
-
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -26,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
             top: -size.width * 3.25,
             left: -size.width,
             right: -size.width,
-            child: WidgetGradient(size:size),
+            child: WidgetGradient(size: size),
           ),
           Positioned(
             top: MediaQuery.of(context).padding.top + 16,

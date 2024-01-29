@@ -6,6 +6,8 @@
         "dartz",
         "kraya",
         "usecase",
-        "usecases"
-    ]
+        "usecases",
+        "Varatia"
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic"
 }

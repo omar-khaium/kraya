@@ -11,8 +11,8 @@ import '../ui/screen/screen_dashboard.dart';
 import '../ui/screen/screen_new_user_type_selection.dart';
 import '../ui/screen/screen_utility_bills.dart';
 
-import '../ui/screen/screen_create_account.dart';
-import '../ui/screen/screen_login.dart';
+import '../features/signup/presentation/pages/signup_page.dart';
+import '../features/login/presentation/pages/login_page.dart';
 import '../ui/screen/screen_otp_verification.dart';
 import '../ui/screen/screen_search_property.dart';
 
@@ -33,7 +33,7 @@ class AppRouter {
   Route onGenerate(RouteSettings settings) {
     switch (settings.name) {
       case login:
-        return MaterialPageRoute(builder: (_) => const LoginScreen());
+        return MaterialPageRoute(builder: (_) => const LoginPage());
       case dashboard:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
@@ -74,7 +74,7 @@ class AppRouter {
                   billsList: bills,
                 ));
       default:
-        return MaterialPageRoute(builder: (_) => const LoginScreen());
+        return MaterialPageRoute(builder: (_) => const LoginPage());
     }
   }
 }

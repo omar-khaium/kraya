@@ -2,17 +2,17 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:kraya/ui/widgets/login/create_account/widget_input_text_copy.dart';
-import '../../core/app_bar/custom_app_bar.dart';
-import '../../core/search_property.dart';
-import '../reusable_widgets/gradient_button.dart';
-import '../widgets/login/create_account/widget_create_acc_date_of_birth.dart';
-import '../widgets/login/create_account/widget_gender.dart';
+import '../../../../core/app_bar/custom_app_bar.dart';
+import '../../../../core/search_property.dart';
+import '../../../../ui/reusable_widgets/gradient_button.dart';
+import '../../../../ui/widgets/login/create_account/widget_create_acc_date_of_birth.dart';
+import '../../../../ui/widgets/login/create_account/widget_gender.dart';
 
-import '../../core/alert_property.dart';
-import '../../core/colors.dart';
-import '../../core/text_style.dart';
-import '../widgets/singleton_task_notifier.dart';
-import '../widgets/widget_upload_options.dart';
+import '../../../../core/alert_property.dart';
+import '../../../../core/colors.dart';
+import '../../../../core/text_style.dart';
+import '../../../../ui/widgets/singleton_task_notifier.dart';
+import '../../../../ui/widgets/widget_upload_options.dart';
 
 class CreateAccountScreen extends StatefulWidget {
   final bool fromVaratia;
@@ -53,47 +53,45 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                             controller: firstName,
                             icon: Icons.person_outline_rounded,
                             type: TextInputType.name,
-                              validator: (firstName) {
-                                if (firstName == null) {
-                                  return "Invalid first name";
-                                }
-                                return firstName.isEmpty ? " *First name address is Required" : null;
+                            validator: (firstName) {
+                              if (firstName == null) {
+                                return "Invalid first name";
                               }
+                              return firstName.isEmpty ? " *First name is Required" : null;
+                            },
                           ),
                         ),
                         const SizedBox(width: 16),
                         Expanded(
                           child: InputCopy(
-                            label: "Last name",
-                            controller: lastName,
-                            icon: Icons.person_outline_rounded,
-                            type: TextInputType.name,
+                              label: "Last name",
+                              controller: lastName,
+                              icon: Icons.person_outline_rounded,
+                              type: TextInputType.name,
                               validator: (lastName) {
                                 if (lastName == null) {
                                   return "Invalid last name";
                                 }
                                 return lastName.isEmpty ? " *Last name is Required" : null;
-                              }
-                          ),
+                              }),
                         ),
                       ],
                     ),
                     const SizedBox(height: 24),
                     InputCopy(
-                      label: "Email",
-                      controller: email,
-                      icon: Icons.email_outlined,
-                      type: TextInputType.emailAddress,
+                        label: "Email",
+                        controller: email,
+                        icon: Icons.email_outlined,
+                        type: TextInputType.emailAddress,
                         validator: (email) {
                           if (email == null) {
                             return "Invalid email";
                           }
                           return email.isEmpty ? " *Email address is Required" : null;
-                        }
-                    ),
+                        }),
                     const SizedBox(height: 24),
-                    Row(
-                      children: const [
+                    const Row(
+                      children: [
                         Expanded(child: WidgetDateOfBirth()),
                         SizedBox(width: 16),
                         Expanded(child: WidgetGender()),
@@ -130,13 +128,13 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                           fit: BoxFit.cover,
                                         )))
                                 : CircleAvatar(
-                              backgroundColor: ColorSystem.instance.card,
-                                  radius: 72,
-                                  child:  const Icon(
+                                    backgroundColor: ColorSystem.instance.card,
+                                    radius: 72,
+                                    child: const Icon(
                                       Icons.person,
                                       size: 64,
                                     ),
-                                ),
+                                  ),
                             Positioned(
                                 bottom: 8,
                                 right: 0,
@@ -185,5 +183,4 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
       ),
     );
   }
-
 }

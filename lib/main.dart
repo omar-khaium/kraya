@@ -5,12 +5,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:kraya/business_logic/language/language_cubit.dart';
-import 'package:kraya/ui/screen/screen_login.dart';
+import 'package:kraya/generated/l10n.dart';
+import 'package:kraya/features/login/presentation/pages/login_page.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'core/app_router.dart';
 import 'core/colors.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
   HttpOverrides.global = MyHttpOverrides();
@@ -35,6 +35,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   final AppRouter router;
+
   const MyApp(this.router, {Key? key}) : super(key: key);
 
   // This widget is the root of your application.
@@ -51,15 +52,15 @@ class MyApp extends StatelessWidget {
         }
         return MaterialApp(
           title: 'Kraya',
-          onGenerateTitle: (context) => AppLocalizations.of(context).appName,
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: const [
+            AppLocalizationDelegate(),
+          ],
           locale: Locale(selection),
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: const LoginScreen(),
+          home: const LoginPage(),
           onGenerateRoute: (settings) => router.onGenerate(settings),
         );
       },
