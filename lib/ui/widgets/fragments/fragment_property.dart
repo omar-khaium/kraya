@@ -53,8 +53,7 @@ class _FragmentPropertyState extends State<FragmentProperty> {
                             child: OutlinedButton(
                               onPressed: () {},
                               style: ButtonStyle(
-                                shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(16.0))),
+                                shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
                               ),
                               child: const Text("24,Rupali tower"),
                             ),
@@ -90,9 +89,7 @@ class _FragmentPropertyState extends State<FragmentProperty> {
                             children: [
                               Container(
                                 padding: const EdgeInsets.all(6),
-                                decoration: BoxDecoration(
-                                    color: ColorSystem.instance.primary,
-                                    borderRadius: BorderRadius.circular(48)),
+                                decoration: BoxDecoration(color: ColorSystem.instance.primary, borderRadius: BorderRadius.circular(48)),
                                 child: Icon(
                                   Icons.mark_email_unread_outlined,
                                   color: ColorSystem.instance.background,
@@ -101,9 +98,7 @@ class _FragmentPropertyState extends State<FragmentProperty> {
                               const SizedBox(width: 8),
                               Container(
                                 padding: const EdgeInsets.all(6),
-                                decoration: BoxDecoration(
-                                    color: ColorSystem.instance.primary,
-                                    borderRadius: BorderRadius.circular(48)),
+                                decoration: BoxDecoration(color: ColorSystem.instance.primary, borderRadius: BorderRadius.circular(48)),
                                 child: Icon(
                                   Icons.call,
                                   color: ColorSystem.instance.background,
@@ -147,11 +142,11 @@ Widget billsItem() {
         return ListTile(
           dense: true,
           visualDensity: VisualDensity.compact,
-          leading: WidgetLabelText(
+          leading: CustomText(
             text: "Bill",
             colorSystem: ColorSystem.instance.text,
           ),
-          trailing: WidgetLabelText(
+          trailing: CustomText(
             text: "Amount",
             colorSystem: ColorSystem.instance.text,
           ),

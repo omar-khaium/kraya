@@ -49,7 +49,7 @@ class _FragmentProfileState extends State<FragmentProfile> {
                 ),
                 trailing: ActionChip(
                   disabledColor: ColorSystem.instance.background,
-                  label: WidgetLabelText(
+                  label: CustomText(
                     text: 'Edit',
                     colorSystem: ColorSystem.instance.text,
                   ),

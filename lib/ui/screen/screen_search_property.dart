@@ -9,7 +9,7 @@ import '../../model/bill.dart';
 import '../widgets/widget_search_property_icon_text.dart';
 
 class SearchPropertyScreen extends StatelessWidget {
-  final  List<Bill> billsList = [];
+  final List<Bill> billsList = [];
 
   SearchPropertyScreen({Key? key}) : super(key: key);
 
@@ -62,7 +62,7 @@ class SearchPropertyScreen extends StatelessWidget {
                                   children: [
                                     WidgetTitleText(text: "John doe", colorSystem: ColorSystem.instance.text),
                                     const SizedBox(height: 8),
-                                     Row(
+                                    Row(
                                       mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                                       children: const [
@@ -78,7 +78,7 @@ class SearchPropertyScreen extends StatelessWidget {
                                       ],
                                     ),
                                     const SizedBox(height: 8),
-                                     Row(
+                                    Row(
                                       mainAxisSize: MainAxisSize.min,
                                       children: const [
                                         WidgetSearchIconText(
@@ -93,7 +93,7 @@ class SearchPropertyScreen extends StatelessWidget {
                                       ],
                                     ),
                                     const SizedBox(height: 8),
-                                    WidgetLabelText(text: "Zoo road, Mirpur-1", colorSystem: ColorSystem.instance.hint)
+                                    CustomText(text: "Zoo road, Mirpur-1", colorSystem: ColorSystem.instance.hint)
                                   ],
                                 )),
                             Expanded(
@@ -102,15 +102,14 @@ class SearchPropertyScreen extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  WidgetLabelText(text: "2B,Rupali tower", colorSystem: ColorSystem.instance.primary),
+                                  CustomText(text: "2B,Rupali tower", colorSystem: ColorSystem.instance.primary),
                                   const SizedBox(height: 16),
                                   Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Container(
                                         padding: const EdgeInsets.all(6),
-                                        decoration: BoxDecoration(
-                                            color: ColorSystem.instance.primary, borderRadius: BorderRadius.circular(48)),
+                                        decoration: BoxDecoration(color: ColorSystem.instance.primary, borderRadius: BorderRadius.circular(48)),
                                         child: Icon(
                                           Icons.mark_email_unread_outlined,
                                           color: ColorSystem.instance.background,
@@ -119,8 +118,7 @@ class SearchPropertyScreen extends StatelessWidget {
                                       const SizedBox(width: 8),
                                       Container(
                                         padding: const EdgeInsets.all(6),
-                                        decoration: BoxDecoration(
-                                            color: ColorSystem.instance.primary, borderRadius: BorderRadius.circular(48)),
+                                        decoration: BoxDecoration(color: ColorSystem.instance.primary, borderRadius: BorderRadius.circular(48)),
                                         child: Icon(
                                           Icons.call,
                                           color: ColorSystem.instance.background,

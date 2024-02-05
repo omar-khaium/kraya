@@ -60,9 +60,7 @@ class _FragmentDashboardState extends State<FragmentDashboard> {
                 WidgetDashboardMenuCard(
                   text: 'Edit property',
                   iconData: Icons.edit_location_alt_outlined,
-                  onTap: () {
-
-                  },
+                  onTap: () {},
                 ),
                 WidgetDashboardMenuCard(
                   text: 'Appointment',
@@ -119,18 +117,24 @@ class _FragmentDashboardState extends State<FragmentDashboard> {
             ),
             const SizedBox(height: 16),
             const Divider(),
-            WidgetLabelText(text: "Finance", colorSystem: ColorSystem.instance.text),
+            CustomText(text: "Finance", colorSystem: ColorSystem.instance.text),
             const SizedBox(height: 8),
             ListTile(
               dense: true,
               contentPadding: const EdgeInsets.all(0),
               visualDensity: VisualDensity.compact,
-              leading: Text("৳ 1,00,500",style: TextSystem.instance.veryLarge(ColorSystem.instance.text).copyWith(fontWeight: FontWeight.w900),),
-              trailing: Text("Month : June",style: TextSystem.instance.small(ColorSystem.instance.text),),
+              leading: Text(
+                "৳ 1,00,500",
+                style: TextSystem.instance.veryLarge(ColorSystem.instance.text).copyWith(fontWeight: FontWeight.w900),
+              ),
+              trailing: Text(
+                "Month : June",
+                style: TextSystem.instance.small(ColorSystem.instance.text),
+              ),
             ),
             const Divider(),
             const SizedBox(height: 8),
-            WidgetLabelText(text: "Total amount", colorSystem: ColorSystem.instance.text),
+            CustomText(text: "Total amount", colorSystem: ColorSystem.instance.text),
             const SizedBox(height: 8),
             Container(
               width: MediaQuery.of(context).size.width,
@@ -150,37 +154,40 @@ class _FragmentDashboardState extends State<FragmentDashboard> {
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(MdiIcons.cashCheck,color: ColorSystem.instance.background,),
+                      Icon(
+                        MdiIcons.cashCheck,
+                        color: ColorSystem.instance.background,
+                      ),
                       const SizedBox(height: 8),
-                      WidgetLabelText(text: "Paid", colorSystem: ColorSystem.instance.background),
+                      CustomText(text: "Paid", colorSystem: ColorSystem.instance.background),
                       const SizedBox(height: 8),
-                      WidgetLabelText(text: "৳ 90,000", colorSystem: ColorSystem.instance.background),
+                      CustomText(text: "৳ 90,000", colorSystem: ColorSystem.instance.background),
                     ],
                   ),
                   Container(
                     width: 2,
                     margin: const EdgeInsets.symmetric(vertical: 8),
                     height: MediaQuery.of(context).size.height,
-                    decoration: BoxDecoration(
-                      color: ColorSystem.instance.background
-                    ),
+                    decoration: BoxDecoration(color: ColorSystem.instance.background),
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.access_time_rounded,color: ColorSystem.instance.background,),
+                      Icon(
+                        Icons.access_time_rounded,
+                        color: ColorSystem.instance.background,
+                      ),
                       const SizedBox(height: 8),
-                      WidgetLabelText(text: "Due", colorSystem: ColorSystem.instance.background),
+                      CustomText(text: "Due", colorSystem: ColorSystem.instance.background),
                       const SizedBox(height: 8),
-                      WidgetLabelText(text: "৳ 10,000", colorSystem: ColorSystem.instance.background),
+                      CustomText(text: "৳ 10,000", colorSystem: ColorSystem.instance.background),
                     ],
                   ),
                 ],
-
               ),
             ),
             const SizedBox(height: 16),
-            WidgetLabelText(text: "Pay bill", colorSystem: ColorSystem.instance.text),
+            CustomText(text: "Pay bill", colorSystem: ColorSystem.instance.text),
             const SizedBox(height: 8),
             GridView(
               physics: const NeverScrollableScrollPhysics(),
@@ -192,10 +199,22 @@ class _FragmentDashboardState extends State<FragmentDashboard> {
                 childAspectRatio: (itemWidth / itemHeight),
               ),
               children: const [
-                WidgetDashboardPayBillCard(text: 'Gas', iconData: Icons.local_fire_department,),
-                WidgetDashboardPayBillCard(text: 'Electricity', iconData: Icons.electric_bolt,),
-                WidgetDashboardPayBillCard(text: 'Phone', iconData: Icons.call,),
-                WidgetDashboardPayBillCard(text: 'Water', iconData: Icons.water,),
+                WidgetDashboardPayBillCard(
+                  text: 'Gas',
+                  iconData: Icons.local_fire_department,
+                ),
+                WidgetDashboardPayBillCard(
+                  text: 'Electricity',
+                  iconData: Icons.electric_bolt,
+                ),
+                WidgetDashboardPayBillCard(
+                  text: 'Phone',
+                  iconData: Icons.call,
+                ),
+                WidgetDashboardPayBillCard(
+                  text: 'Water',
+                  iconData: Icons.water,
+                ),
               ],
             ),
           ],

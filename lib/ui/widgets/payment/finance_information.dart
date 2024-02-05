@@ -21,7 +21,7 @@ class FinanceInformation extends StatelessWidget {
           children: [
             SearchWidget(onTap: () {}),
             const SizedBox(height: 16),
-            WidgetLabelText(
+            CustomText(
               text: 'Finance',
               colorSystem: ColorSystem.instance.background,
             ),
@@ -38,7 +38,7 @@ class FinanceInformation extends StatelessWidget {
                 text: '1,00,000',
                 colorSystem: ColorSystem.instance.background,
               ),
-              subtitle: WidgetLabelText(
+              subtitle: CustomText(
                 text: 'Total amount',
                 colorSystem: ColorSystem.instance.background,
               ),

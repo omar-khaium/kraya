@@ -30,7 +30,11 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
       body: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const CustomAppBar(firstWord: "Confirm", lastWord: "Property",isBackButtonVisible: true,),
+          const CustomAppBar(
+            firstWord: "Confirm",
+            lastWord: "Property",
+            isBackButtonVisible: true,
+          ),
           Expanded(
             child: ListView(
               scrollDirection: Axis.vertical,
@@ -48,7 +52,7 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
                   colorSystem: ColorSystem.instance.text,
                 ),
                 const SizedBox(height: 4),
-                WidgetLabelText(
+                CustomText(
                   text: "340 E main St.Hazard,KY",
                   colorSystem: ColorSystem.instance.hint,
                 ),
@@ -59,7 +63,7 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
                     Chip(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       backgroundColor: ColorSystem.instance.primary,
-                      label: WidgetLabelText(
+                      label: CustomText(
                         text: "3 bedroom",
                         colorSystem: ColorSystem.instance.background,
                       ),
@@ -71,7 +75,7 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
                     Chip(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       backgroundColor: ColorSystem.instance.primary,
-                      label: WidgetLabelText(
+                      label: CustomText(
                         text: "2 bathroom",
                         colorSystem: ColorSystem.instance.background,
                       ),
@@ -83,7 +87,7 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
                     Chip(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       backgroundColor: ColorSystem.instance.primary,
-                      label: WidgetLabelText(
+                      label: CustomText(
                         text: "2 balcony",
                         colorSystem: ColorSystem.instance.background,
                       ),
@@ -95,7 +99,7 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
                     Chip(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       backgroundColor: ColorSystem.instance.primary,
-                      label: WidgetLabelText(
+                      label: CustomText(
                         text: "2500 sq.ft",
                         colorSystem: ColorSystem.instance.background,
                       ),
@@ -107,7 +111,7 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
                   ],
                 ),
                 const SizedBox(height: 16),
-                WidgetLabelText(text: "Rent", colorSystem: ColorSystem.instance.text),
+                CustomText(text: "Rent", colorSystem: ColorSystem.instance.text),
                 const SizedBox(height: 16),
                 Row(
                   mainAxisSize: MainAxisSize.min,
@@ -132,12 +136,12 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
                   ],
                 ),
                 const SizedBox(height: 16),
-                WidgetLabelText(text: "Bills", colorSystem: ColorSystem.instance.text),
+                CustomText(text: "Bills", colorSystem: ColorSystem.instance.text),
                 const SizedBox(height: 8),
                 Expanded(
                   child: widget.billsList.isEmpty
                       ? Center(
-                          child: WidgetLabelText(
+                          child: CustomText(
                             text: "No bills added",
                             colorSystem: ColorSystem.instance.text,
                           ),
@@ -176,7 +180,10 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
               child: ListTile(
                 dense: true,
                 visualDensity: VisualDensity.comfortable,
-                leading:  Icon(Icons.person,color: ColorSystem.instance.primary,),
+                leading: Icon(
+                  Icons.person,
+                  color: ColorSystem.instance.primary,
+                ),
                 title: Text(
                   "Add varatia profile",
                   style: TextSystem.instance.normal(ColorSystem.instance.primary),
@@ -184,7 +191,7 @@ class _ConfirmPropertyScreenState extends State<ConfirmPropertyScreen> {
               ),
             ),
           ),
-          const SizedBox(height:16),
+          const SizedBox(height: 16),
           GradientButton(
             onPressed: () {
               Navigator.of(context).pushReplacementNamed(AppRouter.dashboard);

@@ -31,19 +31,19 @@ class WidgetFamilyInformationItems extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                WidgetLabelText(
+                CustomText(
                   text: "👤 : ${familyInformation.name}",
                   colorSystem: ColorSystem.instance.text,
                 ),
-                WidgetLabelText(
+                CustomText(
                   text: "㊁ : ${familyInformation.age}",
                   colorSystem: ColorSystem.instance.text,
                 ),
-                WidgetLabelText(
+                CustomText(
                   text: "💼 : ${familyInformation.occupation}",
                   colorSystem: ColorSystem.instance.text,
                 ),
-                WidgetLabelText(
+                CustomText(
                   text: "👨‍👨‍👧‍👧: ${familyInformation.relation}",
                   colorSystem: ColorSystem.instance.text,
                 ),

@@ -66,7 +66,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    WidgetLabelText(
+                    CustomText(
                       text: "Property type",
                       colorSystem: ColorSystem.instance.hint,
                     ),
@@ -104,7 +104,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                       ],
                     ),
                     const SizedBox(height: 16),
-                    WidgetLabelText(
+                    CustomText(
                       text: "Select one",
                       colorSystem: ColorSystem.instance.hint,
                     ),
@@ -303,9 +303,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                                           top: 0,
                                           right: 0,
                                           child: Container(
-                                            decoration: BoxDecoration(
-                                                color: ColorSystem.instance.card,
-                                                borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(8))),
+                                            decoration: BoxDecoration(color: ColorSystem.instance.card, borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(8))),
                                             child: IconButton(
                                               padding: EdgeInsets.zero,
                                               icon: Icon(Icons.delete, color: ColorSystem.instance.error),
@@ -502,11 +500,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                           flex: 1,
                           child: InkWell(
                             onTap: () async {
-                              final DateTime? picked = await showDatePicker(
-                                  context: context,
-                                  initialDate: selectedMonth,
-                                  firstDate: DateTime(2015, 8),
-                                  lastDate: DateTime(2101));
+                              final DateTime? picked = await showDatePicker(context: context, initialDate: selectedMonth, firstDate: DateTime(2015, 8), lastDate: DateTime(2101));
                               if (picked != null && picked != selectedMonth) {
                                 setState(() {
                                   selectedMonth = picked;
@@ -532,7 +526,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                         Expanded(
                           flex: 1,
                           child: InkWell(
-                            onTap: (){},
+                            onTap: () {},
                             child: Container(
                               alignment: Alignment.center,
                               height: 48,

@@ -6,29 +6,29 @@ import '../../../core/text_style.dart';
 
 class SearchWidget extends StatelessWidget {
   final Function onTap;
-  SearchWidget({Key? key,required this.onTap}) : super(key: key);
+  SearchWidget({Key? key, required this.onTap}) : super(key: key);
 
   final TextEditingController searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      margin:const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
-      decoration: BoxDecoration(
-          color: ColorSystem.instance.card, borderRadius: BorderRadius.circular(24)),
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      decoration: BoxDecoration(color: ColorSystem.instance.card, borderRadius: BorderRadius.circular(24)),
       child: ListTile(
-        dense: true,
+        dense: false,
         visualDensity: VisualDensity.compact,
-        horizontalTitleGap: 0,
+        horizontalTitleGap: 8,
         contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 0),
         leading: Icon(
           Icons.search,
           color: ColorSystem.instance.text,
         ),
-        title:  TextField(
+        title: TextField(
           keyboardType: TextInputType.text,
           controller: searchController,
           decoration: InputDecoration(
+            contentPadding: const EdgeInsets.all(8),
             hintText: "Search flat / varatia / area / phone no",
             hintStyle: TextSystem.instance.small(ColorSystem.instance.text),
             border: InputBorder.none,
@@ -41,7 +41,7 @@ class SearchWidget extends StatelessWidget {
             color: ColorSystem.instance.background,
           ),
         ),
-        onTap: (){
+        onTap: () {
           onTap();
         },
       ),

@@ -78,7 +78,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  WidgetLabelText(text: "Contact us", colorSystem: ColorSystem.instance.hint),
+                  CustomText(text: "Contact us", colorSystem: ColorSystem.instance.hint),
                   WidgetTitleText(text: "(606) 439-0566", colorSystem: ColorSystem.instance.text),
                   WidgetTitleText(text: "340 E Main st.", colorSystem: ColorSystem.instance.text),
                   WidgetTitleText(text: "Texas,USA", colorSystem: ColorSystem.instance.text),

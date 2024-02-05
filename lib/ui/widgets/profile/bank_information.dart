@@ -12,7 +12,7 @@ class BankInformationCard extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height / 4.5,
       width: MediaQuery.of(context).size.width,
-      margin: const EdgeInsets.symmetric(horizontal: 0,vertical: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         gradient: LinearGradient(
@@ -29,8 +29,8 @@ class BankInformationCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                height: MediaQuery.of(context).size.height/11,
-                width: MediaQuery.of(context).size.width/6,
+                height: MediaQuery.of(context).size.height / 11,
+                width: MediaQuery.of(context).size.width / 6,
                 margin: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   color: ColorSystem.instance.background,
@@ -43,8 +43,7 @@ class BankInformationCard extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    WidgetLabelText(
-                        text: "Account name", colorSystem: ColorSystem.instance.background),
+                    CustomText(text: "Account name", colorSystem: ColorSystem.instance.background),
                     WidgetTitleText(
                       text: 'John doe',
                       colorSystem: ColorSystem.instance.background,
@@ -54,7 +53,7 @@ class BankInformationCard extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(height:MediaQuery.of(context).size.height/30),
+          SizedBox(height: MediaQuery.of(context).size.height / 30),
           Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,8 +64,7 @@ class BankInformationCard extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    WidgetLabelText(
-                        text: "Bank", colorSystem: ColorSystem.instance.background),
+                    CustomText(text: "Bank", colorSystem: ColorSystem.instance.background),
                     WidgetTitleText(
                       text: 'Sonali Bank Limited',
                       colorSystem: ColorSystem.instance.background,
@@ -80,8 +78,7 @@ class BankInformationCard extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    WidgetLabelText(
-                        text: "Account number", colorSystem: ColorSystem.instance.background),
+                    CustomText(text: "Account number", colorSystem: ColorSystem.instance.background),
                     WidgetTitleText(
                       text: '017238972472394',
                       colorSystem: ColorSystem.instance.background,

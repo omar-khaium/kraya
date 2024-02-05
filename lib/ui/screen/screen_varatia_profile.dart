@@ -32,8 +32,7 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
       backgroundColor: ColorSystem.instance.background,
       body: Column(
         children: [
-          const CustomAppBar(
-              firstWord: "Police", lastWord: "Verification", isBackButtonVisible: true),
+          const CustomAppBar(firstWord: "Police", lastWord: "Verification", isBackButtonVisible: true),
           const SizedBox(height: 16),
           Expanded(
             child: SingleChildScrollView(
@@ -72,17 +71,17 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                                 "John doe",
                                 style: TextSystem.instance.normal(ColorSystem.instance.text),
                               ),
-                              WidgetLabelText(
+                              CustomText(
                                 text: "Designation",
                                 colorSystem: ColorSystem.instance.hint,
                               ),
-                              WidgetLabelText(
+                              CustomText(
                                 text: "Joined : 22 May,2023",
                                 colorSystem: ColorSystem.instance.hint,
                               ),
                               Row(
                                 children: [
-                                  WidgetLabelText(
+                                  CustomText(
                                     text: "Rating : ",
                                     colorSystem: ColorSystem.instance.hint,
                                   ),
@@ -103,7 +102,7 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                                         ),
                                       ),
                                       onRatingUpdate: (value) {}),
-                                  WidgetLabelText(
+                                  CustomText(
                                     text: " (30)",
                                     colorSystem: ColorSystem.instance.gradientEnd,
                                   ),
@@ -117,8 +116,7 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                                     child: OutlinedButton(
                                       onPressed: () {},
                                       style: ButtonStyle(
-                                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(16.0))),
+                                        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
                                       ),
                                       child: const Text("24,Rupali tower"),
                                     ),
@@ -144,7 +142,7 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                     dense: true,
                     visualDensity: VisualDensity.compact,
                     contentPadding: EdgeInsets.zero,
-                    leading: WidgetLabelText(
+                    leading: CustomText(
                       text: "varatia information",
                       colorSystem: ColorSystem.instance.text,
                     ),
@@ -168,8 +166,7 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                                 }));
                       },
                       style: ButtonStyle(
-                        shape: MaterialStateProperty.all(
-                            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
                       ),
                       child: const Text("Add"),
                     ),
@@ -181,9 +178,9 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                       color: ColorSystem.instance.card,
                       elevation: 3,
                       borderRadius: const BorderRadius.all(Radius.circular(8)),
-                      child:  const Padding(
+                      child: const Padding(
                         padding: EdgeInsets.all(8.0),
-                        child:  Column(
+                        child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -231,7 +228,7 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                     dense: true,
                     visualDensity: VisualDensity.compact,
                     contentPadding: EdgeInsets.zero,
-                    leading: WidgetLabelText(
+                    leading: CustomText(
                       text: "Emergency contact",
                       colorSystem: ColorSystem.instance.text,
                     ),
@@ -241,14 +238,12 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                             context: context,
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             isScrollControlled: true,
-                            builder: (context) =>
-                                SheetEmergencyContact(onTap: (name, address, religion, phone) {
+                            builder: (context) => SheetEmergencyContact(onTap: (name, address, religion, phone) {
                                   setState(() {});
                                 }));
                       },
                       style: ButtonStyle(
-                        shape: MaterialStateProperty.all(
-                            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
                       ),
                       child: const Text("Add"),
                     ),
@@ -260,12 +255,12 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                       color: ColorSystem.instance.card,
                       elevation: 3,
                       borderRadius: const BorderRadius.all(Radius.circular(8)),
-                      child:  const Padding(
-                        padding:  EdgeInsets.all(8.0),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children:  [
+                          children: [
                             VaratiaInformationWidget(
                               titleText: 'Name',
                               titleTextValue: 'Tanvir',
@@ -295,7 +290,7 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                     dense: true,
                     visualDensity: VisualDensity.compact,
                     contentPadding: EdgeInsets.zero,
-                    leading: WidgetLabelText(
+                    leading: CustomText(
                       text: "Family information",
                       colorSystem: ColorSystem.instance.text,
                     ),
@@ -305,8 +300,7 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                             context: context,
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             isScrollControlled: true,
-                            builder: (context) =>
-                                SheetFamilyInformation(onTap: (name, age, occupation, relation) {
+                            builder: (context) => SheetFamilyInformation(onTap: (name, age, occupation, relation) {
                                   setState(() {
                                     familyInfos.add(FamilyInformation(
                                       name: name,
@@ -318,8 +312,7 @@ class _VaratiaProfileScreenState extends State<VaratiaProfileScreen> {
                                 }));
                       },
                       style: ButtonStyle(
-                        shape: MaterialStateProperty.all(
-                            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
                       ),
                       child: const Text("Add"),
                     ),

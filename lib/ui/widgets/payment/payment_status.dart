@@ -33,7 +33,7 @@ class _PaymentStatusState extends State<PaymentStatus> with SingleTickerProvider
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        WidgetLabelText(text: "Payment information", colorSystem: ColorSystem.instance.text),
+        CustomText(text: "Payment information", colorSystem: ColorSystem.instance.text),
         Expanded(
           child: DefaultTabController(
               length: 3,

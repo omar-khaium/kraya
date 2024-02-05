@@ -14,16 +14,15 @@ class VaratiaInformationWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        WidgetLabelText(
+        CustomText(
           text: "$titleText : ",
           colorSystem: ColorSystem.instance.hint,
         ),
-     const SizedBox(width: 8),
-      WidgetLabelText(
+        const SizedBox(width: 8),
+        CustomText(
           text: titleTextValue,
           colorSystem: ColorSystem.instance.text,
         ),
-      
       ],
     );
   }

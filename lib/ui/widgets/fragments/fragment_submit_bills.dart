@@ -16,13 +16,12 @@ class FragmentSubmitBills extends StatefulWidget {
   State<FragmentSubmitBills> createState() => _FragmentSubmitBillsState();
 }
 
-
 class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
-  final List<Bill> bill=[
-    Bill(billName: "Monthly rent",amount: 2500),
-    Bill(billName: "Gas",amount: 1400),
-    Bill(billName: "Water",amount: 500),
-    Bill(billName: "Electricity",amount: 1000),
+  final List<Bill> bill = [
+    Bill(billName: "Monthly rent", amount: 2500),
+    Bill(billName: "Gas", amount: 1400),
+    Bill(billName: "Water", amount: 500),
+    Bill(billName: "Electricity", amount: 1000),
   ];
   @override
   Widget build(BuildContext context) {
@@ -46,13 +45,13 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
               physics: const ScrollPhysics(),
               scrollDirection: Axis.vertical,
               padding: const EdgeInsets.all(16),
-              itemCount: 10,
+              itemCount: 5,
               itemBuilder: (BuildContext context, int index) {
                 return PhysicalModel(
                   color: ColorSystem.instance.card,
                   borderRadius: BorderRadius.circular(8),
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
+                    mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ListTile(
@@ -64,17 +63,25 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
                         ),
                         trailing: SizedBox(
                             width: MediaQuery.of(context).size.width / 3,
+                            height: 36,
                             child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(maximumSize: Size(MediaQuery.of(context).size.width / 5, 36)),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: ColorSystem.instance.gradientEnd,
+                                elevation: 7,
+                              ),
                               onPressed: () {},
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  WidgetLabelText(text: "Add bill", colorSystem: ColorSystem.instance.background),
+                                  CustomText(
+                                    text: "Add bill",
+                                    colorSystem: ColorSystem.instance.background,
+                                  ),
                                   const SizedBox(width: 8),
-                                  const Icon(
+                                  Icon(
                                     Icons.add,
+                                    color: ColorSystem.instance.background,
                                     size: 14,
                                   ),
                                 ],
@@ -85,7 +92,10 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
                       ListTile(
                         dense: true,
                         visualDensity: VisualDensity.compact,
-                        title: WidgetLabelText(text: "Total amount", colorSystem: ColorSystem.instance.hint),
+                        title: CustomText(
+                          text: "Total amount",
+                          colorSystem: ColorSystem.instance.hint,
+                        ),
                         subtitle: Text(
                           "৳ 32,000",
                           style: TextSystem.instance.normal(ColorSystem.instance.text).copyWith(fontWeight: FontWeight.w900),
@@ -93,16 +103,17 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
                         trailing: SizedBox(
                             width: MediaQuery.of(context).size.width / 3,
                             child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(maximumSize: Size(MediaQuery.of(context).size.width / 5, 36)),
+                              style: ElevatedButton.styleFrom(backgroundColor: ColorSystem.instance.gradientEnd, elevation: 7),
                               onPressed: () {},
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  WidgetLabelText(text: "Send bill", colorSystem: ColorSystem.instance.background),
+                                  CustomText(text: "Send bill", colorSystem: ColorSystem.instance.background),
                                   const SizedBox(width: 8),
                                   Icon(
                                     MdiIcons.sendCircleOutline,
+                                    color: ColorSystem.instance.background,
                                     size: 14,
                                   ),
                                 ],
@@ -110,6 +121,7 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
                             )),
                       ),
                       ExpansionTile(
+                        tilePadding: EdgeInsets.zero,
                         initiallyExpanded: false,
                         title: const Text("Bills"),
                         children: [
@@ -119,15 +131,15 @@ class _FragmentSubmitBillsState extends State<FragmentSubmitBills> {
                             padding: const EdgeInsets.all(8),
                             itemCount: bill.length,
                             itemBuilder: (context, int index) {
-                              final Bill billModel=bill.elementAt(index);
+                              final Bill billModel = bill.elementAt(index);
                               return ListTile(
                                 dense: true,
                                 visualDensity: VisualDensity.compact,
-                                leading: WidgetLabelText(
+                                leading: CustomText(
                                   text: billModel.billName,
                                   colorSystem: ColorSystem.instance.text,
                                 ),
-                                trailing: WidgetLabelText(
+                                trailing: CustomText(
                                   text: billModel.amount.toString(),
                                   colorSystem: ColorSystem.instance.text,
                                 ),
@@ -165,11 +177,11 @@ Widget billsItem() {
         return ListTile(
           dense: true,
           visualDensity: VisualDensity.compact,
-          leading: WidgetLabelText(
+          leading: CustomText(
             text: "Bill",
             colorSystem: ColorSystem.instance.text,
           ),
-          trailing: WidgetLabelText(
+          trailing: CustomText(
             text: "Amount",
             colorSystem: ColorSystem.instance.text,
           ),

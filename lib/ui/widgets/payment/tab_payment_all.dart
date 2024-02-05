@@ -14,7 +14,7 @@ class TabPaymentAll extends StatelessWidget {
       physics: const ScrollPhysics(),
       scrollDirection: Axis.vertical,
       itemCount: 5,
-      padding:const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 8),
       itemBuilder: (BuildContext context, int index) {
         return PhysicalModel(
           color: ColorSystem.instance.card,
@@ -39,10 +39,12 @@ class TabPaymentAll extends StatelessWidget {
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(ColorSystem.instance.background),
                           shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                            side: BorderSide(color: ColorSystem.instance.background,style: BorderStyle.solid),
-                              borderRadius: BorderRadius.circular(16.0))),
+                              side: BorderSide(color: ColorSystem.instance.background, style: BorderStyle.solid), borderRadius: BorderRadius.circular(16.0))),
                         ),
-                        child:  Text("24,Rupali tower",style: TextSystem.instance.small(ColorSystem.instance.text),),
+                        child: Text(
+                          "24,Rupali tower",
+                          style: TextSystem.instance.small(ColorSystem.instance.text),
+                        ),
                       ),
                     ],
                   ),
@@ -55,9 +57,9 @@ class TabPaymentAll extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SizedBox(height:8),
-                      WidgetLabelText(text: "Total :৳ 30,500", colorSystem: ColorSystem.instance.text),
-                      WidgetLabelText(text: "Note :Payment in 4,June", colorSystem: ColorSystem.instance.text)
+                      const SizedBox(height: 8),
+                      CustomText(text: "Total :৳ 30,500", colorSystem: ColorSystem.instance.text),
+                      CustomText(text: "Note :Payment in 4,June", colorSystem: ColorSystem.instance.text)
                     ],
                   ),
                 ),
@@ -70,9 +72,7 @@ class TabPaymentAll extends StatelessWidget {
                     children: [
                       Container(
                         padding: const EdgeInsets.all(6),
-                        decoration: BoxDecoration(
-                            color: ColorSystem.instance.primary,
-                            borderRadius: BorderRadius.circular(48)),
+                        decoration: BoxDecoration(color: ColorSystem.instance.primary, borderRadius: BorderRadius.circular(48)),
                         child: Icon(
                           Icons.notifications_active_outlined,
                           color: ColorSystem.instance.background,
@@ -81,9 +81,7 @@ class TabPaymentAll extends StatelessWidget {
                       const SizedBox(width: 8),
                       Container(
                         padding: const EdgeInsets.all(6),
-                        decoration: BoxDecoration(
-                            color: ColorSystem.instance.primary,
-                            borderRadius: BorderRadius.circular(48)),
+                        decoration: BoxDecoration(color: ColorSystem.instance.primary, borderRadius: BorderRadius.circular(48)),
                         child: Icon(
                           Icons.call,
                           color: ColorSystem.instance.background,
