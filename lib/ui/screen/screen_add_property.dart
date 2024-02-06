@@ -79,10 +79,12 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                           child: WidgetCardSelection(
                             label: "Residential",
                             icon: Icons.apartment_rounded,
-                            selected: propertySelection == PropertySelection.residential,
+                            selected: propertySelection ==
+                                PropertySelection.residential,
                             onTap: () {
                               setState(() {
-                                propertySelection = PropertySelection.residential;
+                                propertySelection =
+                                    PropertySelection.residential;
                               });
                             },
                           ),
@@ -93,10 +95,12 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                           child: WidgetCardSelection(
                             label: "Commercial",
                             icon: Icons.store_outlined,
-                            selected: propertySelection == PropertySelection.commercial,
+                            selected: propertySelection ==
+                                PropertySelection.commercial,
                             onTap: () {
                               setState(() {
-                                propertySelection = PropertySelection.commercial;
+                                propertySelection =
+                                    PropertySelection.commercial;
                               });
                             },
                           ),
@@ -117,10 +121,12 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                           child: WidgetCardSelection(
                             label: "Flat",
                             icon: Icons.other_houses_outlined,
-                            selected: buildingTypeSelection == BuildingTypeSelection.flat,
+                            selected: buildingTypeSelection ==
+                                BuildingTypeSelection.flat,
                             onTap: () {
                               setState(() {
-                                buildingTypeSelection = BuildingTypeSelection.flat;
+                                buildingTypeSelection =
+                                    BuildingTypeSelection.flat;
                               });
                             },
                           ),
@@ -131,10 +137,12 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                           child: WidgetCardSelection(
                             label: "Apartment",
                             icon: Icons.home_work_outlined,
-                            selected: buildingTypeSelection == BuildingTypeSelection.apartment,
+                            selected: buildingTypeSelection ==
+                                BuildingTypeSelection.apartment,
                             onTap: () {
                               setState(() {
-                                buildingTypeSelection = BuildingTypeSelection.apartment;
+                                buildingTypeSelection =
+                                    BuildingTypeSelection.apartment;
                               });
                             },
                           ),
@@ -145,10 +153,12 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                           child: WidgetCardSelection(
                             label: "Building",
                             icon: Icons.apartment_outlined,
-                            selected: buildingTypeSelection == BuildingTypeSelection.building,
+                            selected: buildingTypeSelection ==
+                                BuildingTypeSelection.building,
                             onTap: () {
                               setState(() {
-                                buildingTypeSelection = BuildingTypeSelection.building;
+                                buildingTypeSelection =
+                                    BuildingTypeSelection.building;
                               });
                             },
                           ),
@@ -184,7 +194,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                     const SizedBox(height: 16),
                     InputCopy(
                       label: "Address",
-                      controller: flatController,
+                      controller: addressController,
                       icon: Icons.location_on_outlined,
                       type: TextInputType.text,
                       validator: (address) {
@@ -245,7 +255,9 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                       ],
                     ),
                     const SizedBox(height: 16),
-                    Text("Description", style: TextSystem.instance.small(ColorSystem.instance.hint)),
+                    Text("Description",
+                        style: TextSystem.instance
+                            .small(ColorSystem.instance.hint)),
                     const SizedBox(height: 4),
                     PhysicalModel(
                       elevation: 2,
@@ -268,7 +280,9 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Picture(optional)", style: TextSystem.instance.small(ColorSystem.instance.hint)),
+                        Text("Picture(optional)",
+                            style: TextSystem.instance
+                                .small(ColorSystem.instance.hint)),
                       ],
                     ),
                     const SizedBox(height: 4),
@@ -289,7 +303,8 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                                     height: 144,
                                     margin: const EdgeInsets.all(4),
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8)),
                                     child: Stack(
                                       children: [
                                         Positioned(
@@ -297,69 +312,121 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                                           left: 0,
                                           right: 0,
                                           bottom: 0,
-                                          child: Image.file(files[index], fit: BoxFit.cover, width: 144, height: 144),
+                                          child: Image.file(files[index],
+                                              fit: BoxFit.cover,
+                                              width: 144,
+                                              height: 144),
                                         ),
                                         Positioned(
                                           top: 0,
                                           right: 0,
                                           child: Container(
-                                            decoration: BoxDecoration(color: ColorSystem.instance.card, borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(8))),
+                                            decoration: BoxDecoration(
+                                                color:
+                                                    ColorSystem.instance.card,
+                                                borderRadius:
+                                                    const BorderRadius.only(
+                                                        bottomLeft:
+                                                            Radius.circular(
+                                                                8))),
                                             child: IconButton(
                                               padding: EdgeInsets.zero,
-                                              icon: Icon(Icons.delete, color: ColorSystem.instance.error),
-                                              visualDensity: VisualDensity.compact,
+                                              icon: Icon(Icons.delete,
+                                                  color: ColorSystem
+                                                      .instance.error),
+                                              visualDensity:
+                                                  VisualDensity.compact,
                                               splashRadius: 12,
                                               onPressed: () {
                                                 showDialog(
                                                   context: context,
-                                                  builder: (deleteContext) => AlertDialog(
+                                                  builder: (deleteContext) =>
+                                                      AlertDialog(
                                                     title: Text(
                                                       "Confirmation",
-                                                      style: TextSystem.instance.normal(
-                                                        ColorSystem.instance.text,
+                                                      style: TextSystem.instance
+                                                          .normal(
+                                                        ColorSystem
+                                                            .instance.text,
                                                       ),
                                                     ),
                                                     content: Text(
                                                       "Are you sure?",
-                                                      style: TextSystem.instance.small(
-                                                        ColorSystem.instance.text,
+                                                      style: TextSystem.instance
+                                                          .small(
+                                                        ColorSystem
+                                                            .instance.text,
                                                       ),
                                                     ),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () {
-                                                          Navigator.of(deleteContext).pop();
+                                                          Navigator.of(
+                                                                  deleteContext)
+                                                              .pop();
                                                         },
-                                                        style: TextButton.styleFrom(
-                                                          foregroundColor: ColorSystem.instance.card,
-                                                          shape: RoundedRectangleBorder(
-                                                            side: BorderSide(color: ColorSystem.instance.text, width: 1),
-                                                            borderRadius: BorderRadius.circular(4),
+                                                        style: TextButton
+                                                            .styleFrom(
+                                                          foregroundColor:
+                                                              ColorSystem
+                                                                  .instance
+                                                                  .card,
+                                                          shape:
+                                                              RoundedRectangleBorder(
+                                                            side: BorderSide(
+                                                                color:
+                                                                    ColorSystem
+                                                                        .instance
+                                                                        .text,
+                                                                width: 1),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        4),
                                                           ),
                                                         ),
                                                         child: Text(
                                                           "Cancel",
-                                                          style: TextSystem.instance.small(
-                                                            ColorSystem.instance.error,
+                                                          style: TextSystem
+                                                              .instance
+                                                              .small(
+                                                            ColorSystem
+                                                                .instance.error,
                                                           ),
                                                         ),
                                                       ),
                                                       ElevatedButton(
                                                         onPressed: () async {
-                                                          Navigator.of(deleteContext).pop();
+                                                          Navigator.of(
+                                                                  deleteContext)
+                                                              .pop();
                                                           setState(() {
-                                                            files.removeAt(index);
+                                                            files.removeAt(
+                                                                index);
                                                           });
                                                         },
-                                                        style: ElevatedButton.styleFrom(
-                                                          backgroundColor: ColorSystem.instance.error,
-                                                          shape: RoundedRectangleBorder(
-                                                            borderRadius: BorderRadius.circular(4),
+                                                        style: ElevatedButton
+                                                            .styleFrom(
+                                                          backgroundColor:
+                                                              ColorSystem
+                                                                  .instance
+                                                                  .error,
+                                                          shape:
+                                                              RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        4),
                                                           ),
                                                         ),
-                                                        child: Text("Yes, Delete",
-                                                            style: TextSystem.instance.small(
-                                                              ColorSystem.instance.background,
+                                                        child: Text(
+                                                            "Yes, Delete",
+                                                            style: TextSystem
+                                                                .instance
+                                                                .small(
+                                                              ColorSystem
+                                                                  .instance
+                                                                  .background,
                                                             )),
                                                       )
                                                     ],
@@ -383,7 +450,8 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                           barrierColor: ColorSystem.instance.secondaryText,
                           backgroundColor: ColorSystem.instance.background,
                           builder: (builderContext) => Container(
-                            decoration: BoxDecoration(color: ColorSystem.instance.card),
+                            decoration:
+                                BoxDecoration(color: ColorSystem.instance.card),
                             child: SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
@@ -393,19 +461,25 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                                     padding: const EdgeInsets.all(16.0),
                                     child: Text(
                                       "Choose an option",
-                                      style: TextSystem.instance.normal(ColorSystem.instance.gradientStart),
+                                      style: TextSystem.instance.normal(
+                                          ColorSystem.instance.gradientStart),
                                     ),
                                   ),
                                   const Divider(),
                                   ListTile(
-                                    leading: Icon(Icons.camera_enhance_outlined, color: ColorSystem.instance.text),
+                                    leading: Icon(Icons.camera_enhance_outlined,
+                                        color: ColorSystem.instance.text),
                                     title: Text(
                                       "Camera",
-                                      style: TextSystem.instance.normal(ColorSystem.instance.text),
+                                      style: TextSystem.instance
+                                          .normal(ColorSystem.instance.text),
                                     ),
                                     onTap: () async {
-                                      if (await Helper().askForPermission(ImageSource.camera)) {
-                                        final XFile? path = await pickedFile.pickImage(source: ImageSource.camera);
+                                      if (await Helper().askForPermission(
+                                          ImageSource.camera)) {
+                                        final XFile? path =
+                                            await pickedFile.pickImage(
+                                                source: ImageSource.camera);
                                         if (path != null) {
                                           setState(() {
                                             files.add(File(path.path));
@@ -419,14 +493,19 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                                     },
                                   ),
                                   ListTile(
-                                    leading: Icon(Icons.wallpaper_outlined, color: ColorSystem.instance.text),
+                                    leading: Icon(Icons.wallpaper_outlined,
+                                        color: ColorSystem.instance.text),
                                     title: Text(
                                       "Gallery",
-                                      style: TextSystem.instance.normal(ColorSystem.instance.gradientStart),
+                                      style: TextSystem.instance.normal(
+                                          ColorSystem.instance.gradientStart),
                                     ),
                                     onTap: () async {
-                                      if (await Helper().askForPermission(ImageSource.gallery)) {
-                                        final XFile? path = await pickedFile.pickImage(source: ImageSource.gallery);
+                                      if (await Helper().askForPermission(
+                                          ImageSource.gallery)) {
+                                        final XFile? path =
+                                            await pickedFile.pickImage(
+                                                source: ImageSource.gallery);
                                         if (path != null) {
                                           setState(() {
                                             files.add(File(path.path));
@@ -486,7 +565,8 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                       children: [
                         Text(
                           "Available from",
-                          style: TextSystem.instance.small(ColorSystem.instance.hint),
+                          style: TextSystem.instance
+                              .small(ColorSystem.instance.hint),
                         ),
                         CupertinoSwitch(value: true, onChanged: (v) {})
                       ],
@@ -500,7 +580,11 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                           flex: 1,
                           child: InkWell(
                             onTap: () async {
-                              final DateTime? picked = await showDatePicker(context: context, initialDate: selectedMonth, firstDate: DateTime(2015, 8), lastDate: DateTime(2101));
+                              final DateTime? picked = await showDatePicker(
+                                  context: context,
+                                  initialDate: selectedMonth,
+                                  firstDate: DateTime(2015, 8),
+                                  lastDate: DateTime(2101));
                               if (picked != null && picked != selectedMonth) {
                                 setState(() {
                                   selectedMonth = picked;
@@ -517,7 +601,8 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                               padding: const EdgeInsets.all(8),
                               child: Text(
                                 DateFormat("MMMM").format(selectedMonth),
-                                style: TextSystem.instance.small(ColorSystem.instance.text),
+                                style: TextSystem.instance
+                                    .small(ColorSystem.instance.text),
                               ),
                             ),
                           ),
@@ -537,7 +622,8 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                               padding: const EdgeInsets.all(8),
                               child: Text(
                                 DateFormat("yyyy").format(selectedMonth),
-                                style: TextSystem.instance.small(ColorSystem.instance.text),
+                                style: TextSystem.instance
+                                    .small(ColorSystem.instance.text),
                               ),
                             ),
                           ),
@@ -554,7 +640,8 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
             child: GradientButton(
               onPressed: () {
                 if (formKey.currentState?.validate() ?? false) {
-                  Navigator.of(context).pushReplacementNamed(AppRouter.utilityBills);
+                  Navigator.of(context)
+                      .pushReplacementNamed(AppRouter.utilityBills);
                 } else {
                   TaskNotifier.instance.warning(
                     context,

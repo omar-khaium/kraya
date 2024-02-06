@@ -45,14 +45,16 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
                 ? Center(
                     child: Text(
                       "No bills added yet",
-                      style: TextSystem.instance.small(ColorSystem.instance.text),
+                      style:
+                          TextSystem.instance.small(ColorSystem.instance.text),
                     ),
                   )
                 : GridView.builder(
                     itemCount: bills.length,
                     physics: const BouncingScrollPhysics(),
                     shrinkWrap: true,
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 24),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 24),
                     itemBuilder: (_, index) {
                       final Bill bill = bills[index];
                       return WidgetMenuCard(
@@ -84,10 +86,12 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
                 ),
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 builder: (_) => Padding(
-                  padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+                  padding: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).viewInsets.bottom),
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Form(
+                      key: formKey,
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,7 +99,8 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
                           Align(
                             child: Text(
                               "Add Bill",
-                              style: TextSystem.instance.large(ColorSystem.instance.text),
+                              style: TextSystem.instance
+                                  .large(ColorSystem.instance.text),
                             ),
                           ),
                           InputCopy(
@@ -107,7 +112,9 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
                                 if (billName == null) {
                                   return "Invalid bill name";
                                 }
-                                return billName.isEmpty ? " *Bill name is Required" : null;
+                                return billName.isEmpty
+                                    ? " *Bill name is Required"
+                                    : null;
                               }),
                           InputCopy(
                               label: "Amount",
@@ -118,7 +125,9 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
                                 if (amount == null) {
                                   return "Invalid amount";
                                 }
-                                return amount.isEmpty ? " *Amount is Required" : null;
+                                return amount.isEmpty
+                                    ? " *Amount is Required"
+                                    : null;
                               }),
                           const SizedBox(
                             height: 24,
@@ -127,8 +136,10 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
                               onPressed: () {
                                 if (formKey.currentState?.validate() ?? false) {
                                   setState(() {
-                                    bills.add(
-                                        Bill(billName: billNameController.text, amount: int.parse(billAmountController.text)));
+                                    bills.add(Bill(
+                                        billName: billNameController.text,
+                                        amount: int.parse(
+                                            billAmountController.text)));
                                     billNameController.text = "";
                                     billAmountController.text = "";
                                     Navigator.of(context).pop();
@@ -147,7 +158,9 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
               alignment: Alignment.bottomRight,
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                decoration: BoxDecoration(color: ColorSystem.instance.primary, borderRadius: BorderRadius.circular(48)),
+                decoration: BoxDecoration(
+                    color: ColorSystem.instance.primary,
+                    borderRadius: BorderRadius.circular(48)),
                 child: Icon(
                   Icons.add,
                   size: 64,
@@ -158,8 +171,10 @@ class _UtilityBillsScreenState extends State<UtilityBillsScreen> {
           ),
           GradientButton(
             onPressed: () {
-              if (formKey.currentState?.validate() ?? false) {
-                Navigator.of(context).pushReplacementNamed(AppRouter.confirmProperty, arguments: bills);
+              if (bills.isNotEmpty) {
+                Navigator.of(context).pushReplacementNamed(
+                    AppRouter.confirmProperty,
+                    arguments: bills);
               }
             },
             text: "Done",

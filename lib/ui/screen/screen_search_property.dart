@@ -23,7 +23,10 @@ class SearchPropertyScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const CustomAppBar(firstWord: "Search", lastWord: "Property", isBackButtonVisible: true),
+            const CustomAppBar(
+                firstWord: "Search",
+                lastWord: "Property",
+                isBackButtonVisible: true),
             const SizedBox(height: 24),
             SearchWidget(
               onTap: () {},
@@ -40,7 +43,9 @@ class SearchPropertyScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     child: InkWell(
                       onTap: () {
-                        Navigator.of(context).pushReplacementNamed(AppRouter.confirmProperty, arguments: billsList);
+                        Navigator.of(context).pushReplacementNamed(
+                            AppRouter.confirmProperty,
+                            arguments: billsList);
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
@@ -60,12 +65,15 @@ class SearchPropertyScreen extends StatelessWidget {
                                   mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    WidgetTitleText(text: "John doe", colorSystem: ColorSystem.instance.text),
+                                    WidgetTitleText(
+                                        text: "John doe",
+                                        colorSystem: ColorSystem.instance.text),
                                     const SizedBox(height: 8),
-                                    Row(
+                                    const Row(
                                       mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                      children: const [
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
                                         WidgetSearchIconText(
                                           iconData: Icons.bed_outlined,
                                           text: '3',
@@ -78,22 +86,25 @@ class SearchPropertyScreen extends StatelessWidget {
                                       ],
                                     ),
                                     const SizedBox(height: 8),
-                                    Row(
+                                    const Row(
                                       mainAxisSize: MainAxisSize.min,
-                                      children: const [
+                                      children: [
                                         WidgetSearchIconText(
                                           iconData: Icons.apartment_outlined,
                                           text: '2',
                                         ),
                                         SizedBox(width: 8),
                                         WidgetSearchIconText(
-                                          iconData: Icons.photo_size_select_small_rounded,
+                                          iconData: Icons
+                                              .photo_size_select_small_rounded,
                                           text: '1300 sqft',
                                         ),
                                       ],
                                     ),
                                     const SizedBox(height: 8),
-                                    CustomText(text: "Zoo road, Mirpur-1", colorSystem: ColorSystem.instance.hint)
+                                    CustomText(
+                                        text: "Zoo road, Mirpur-1",
+                                        colorSystem: ColorSystem.instance.hint)
                                   ],
                                 )),
                             Expanded(
@@ -102,26 +113,37 @@ class SearchPropertyScreen extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  CustomText(text: "2B,Rupali tower", colorSystem: ColorSystem.instance.primary),
+                                  CustomText(
+                                      text: "2B,Rupali tower",
+                                      colorSystem:
+                                          ColorSystem.instance.primary),
                                   const SizedBox(height: 16),
                                   Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Container(
                                         padding: const EdgeInsets.all(6),
-                                        decoration: BoxDecoration(color: ColorSystem.instance.primary, borderRadius: BorderRadius.circular(48)),
+                                        decoration: BoxDecoration(
+                                            color: ColorSystem.instance.primary,
+                                            borderRadius:
+                                                BorderRadius.circular(48)),
                                         child: Icon(
                                           Icons.mark_email_unread_outlined,
-                                          color: ColorSystem.instance.background,
+                                          color:
+                                              ColorSystem.instance.background,
                                         ),
                                       ),
                                       const SizedBox(width: 8),
                                       Container(
                                         padding: const EdgeInsets.all(6),
-                                        decoration: BoxDecoration(color: ColorSystem.instance.primary, borderRadius: BorderRadius.circular(48)),
+                                        decoration: BoxDecoration(
+                                            color: ColorSystem.instance.primary,
+                                            borderRadius:
+                                                BorderRadius.circular(48)),
                                         child: Icon(
                                           Icons.call,
-                                          color: ColorSystem.instance.background,
+                                          color:
+                                              ColorSystem.instance.background,
                                         ),
                                       ),
                                     ],
